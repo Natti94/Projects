@@ -13,10 +13,10 @@ function Nav() {
       </button>
       <ul>
         <li>
-          <Link to="/">Profile</Link>
+          <Link to="/">Introduction</Link>
         </li>
         <li>
-          <Link to="/projects">Projects</Link>
+          <Link to="/cv">CV</Link>
         </li>
       </ul>
     </nav>

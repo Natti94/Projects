@@ -1,11 +1,15 @@
-import { useState } from "react";
-
 function Introduction() {
+  const isProd = import.meta.env.PROD;
+
   const projectsLink = {
-    tibiaOptimizer: "https://tibiaoptimizer.netlify.app/",
+    tibiaOptimizer_URL: isProd
+      ? "/api/getAsset?asset=tibiaOptimizer_URL"
+      : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_URL,
+    chat_URL: isProd
+      ? "/api/getAsset?asset=chat_URL"
+      : import.meta.env.VITE_CLOUDINARY_CHAT_URL,
   };
 
-  const isProd = import.meta.env.PROD;
   const assets = {
     tibiaOptimizer_title_small: isProd
       ? "/api/getAsset?asset=tibiaOptimizer_title_small"
@@ -40,11 +44,14 @@ function Introduction() {
         <>
           <h2 className="project-preview-title">Projects</h2>
           <div className="projects-cards-flex">
-            {/* Tibia Optimizer Card */}
             <div
               className="tibia-optimizer-project-card"
               onClick={() =>
-                window.open(projectsLink.tibiaOptimizer, "_blank", "noreferrer")
+                window.open(
+                  projectsLink.tibiaOptimizer_URL,
+                  "_blank",
+                  "noreferrer"
+                )
               }
             >
               <div className="tibia-optimizer-image-hover">
@@ -68,40 +75,63 @@ function Introduction() {
               </div>
             </div>
 
-            {/* Weather Forecast Card */}
-
             <div
-              className="weather-forecast-card"
+              className="chat-card"
               onClick={() =>
-                window.open(
-                  "https://example.com/weather-forecast",
-                  "_blank",
-                  "noreferrer"
-                )
+                window.open(projectsLink.chat_URL, "_blank", "noreferrer")
               }
             >
-              <div className="weather-forecast-image-hover">
+              <div className="chat-image-hover">
                 <img
                   src="https://placehold.co/340x200/EEE/AAA?text=Weather+Forecast+BG"
                   alt="Weather Forecast Background"
-                  className="weather-forecast-background-img"
+                  className="chat-background-img"
                 />
-                <div className="weather-forecast-center-stack">
+                <div className="chat-center-stack">
                   <img
                     src="https://placehold.co/100x40/285bb5/fff?text=Weather+Forecast"
                     alt="Weather Forecast Title"
-                    className="weather-forecast-title-img"
+                    className="chat-title-img"
                   />
                   <img
                     src="https://placehold.co/50x50/444/fff?text=Icon"
                     alt="Weather Forecast Icon"
-                    className="weather-forecast-icon-img"
+                    className="chat-icon-img"
                   />
                 </div>
               </div>
             </div>
 
-            {/* Quiz Plu Card */}
+            <div
+              className="chat-card"
+              onClick={() =>
+                window.open(
+                  "https://example.com/chatify",
+                  "_blank",
+                  "noreferrer"
+                )
+              }
+            >
+              <div className="chat-image-hover">
+                <img
+                  src="https://placehold.co/340x200/EEE/AAA?text=Weather+Forecast+BG"
+                  alt="Weather Forecast Background"
+                  className="chat-background-img"
+                />
+                <div className="chat-center-stack">
+                  <img
+                    src="https://placehold.co/100x40/285bb5/fff?text=Weather+Forecast"
+                    alt="Weather Forecast Title"
+                    className="chat-title-img"
+                  />
+                  <img
+                    src="https://placehold.co/50x50/444/fff?text=Icon"
+                    alt="Weather Forecast Icon"
+                    className="chat-icon-img"
+                  />
+                </div>
+              </div>
+            </div>
 
             <div
               className="quiz-plu-card"
@@ -133,8 +163,6 @@ function Introduction() {
                 </div>
               </div>
             </div>
-
-            {/* Quiz Apt Card */}
 
             <div
               className="quiz-apt-card"

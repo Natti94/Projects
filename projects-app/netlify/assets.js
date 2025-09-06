@@ -1,8 +1,11 @@
 function assetHandler(event) {
   const assetPaths = {
-    tibiaOptimizer_icon: process.env.VITE_CLOUDINARY_TIBIA_ICON,
+    CV: process.env.VITE_CLOUDINARY_CV,
+    tibiaOptimizer_URL: process.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_URL,
     tibiaOptimizer_background:
       process.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_BACKGROUND,
+    tibiaOptimizer_icon: process.env.VITE_CLOUDINARY_TIBIA_ICON,
+    chat_URL: process.env.VITE_CLOUDINARY_CHAT_URL,
   };
 
   const { asset } = event.queryStringParameters;

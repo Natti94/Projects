@@ -11,13 +11,13 @@ function Panel() {
 
   return (
     <div className="panel-container">
-      <h2>Work Flow</h2>
-      <h3>Repository Commits:</h3>
-      <ul>
+      <h3>Latest commits:</h3>
+      <ul className="panel-commits-list">
         {commits.map((c) => (
-          <li key={c.hash}>
-            <strong>{c.message}</strong>
-            <div>
+          <li className="panel-commit-item" key={c.hash}>
+            <span className="panel-commit-label">Commit message:</span>
+            <span className="panel-commit-message">{c.message}</span>
+            <div className="panel-commit-meta">
               by {c.author} - {c.date}
             </div>
           </li>
