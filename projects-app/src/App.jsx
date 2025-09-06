@@ -1,12 +1,14 @@
 import { BrowserRouter } from "react-router-dom";
-import Projects from "./components/projects";
+import Introduction from "./components/introduction";
 import Nav from "./components/nav";
+import Panel from "./components/panel";
 
 function App() {
   return (
     <BrowserRouter>
-      <Projects />
+      <Introduction />
       <Nav />
+      <Panel />
     </BrowserRouter>
   );
 }
