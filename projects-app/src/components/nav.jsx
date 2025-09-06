@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Nav() {
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
   return (
     <nav className={`side-nav${collapsed ? " collapsed" : ""}`}>
       <button
@@ -13,7 +13,7 @@ function Nav() {
       </button>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">Profile</Link>
         </li>
         <li>
           <Link to="/projects">Projects</Link>
