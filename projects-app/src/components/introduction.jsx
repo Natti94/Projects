@@ -2,12 +2,12 @@ function Introduction() {
   const isProd = import.meta.env.PROD;
 
   const projectsLink = {
-    tibiaOptimizer_URL: isProd
-      ? "/api/getAsset?asset=tibiaOptimizer_URL"
-      : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_URL,
-    chat_URL: isProd
-      ? "/api/getAsset?asset=chat_URL"
-      : import.meta.env.VITE_CLOUDINARY_CHAT_URL,
+    tibiaOptimizer_link: isProd
+      ? "/api/getAsset?asset=tibiaOptimizer_link"
+      : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_LINK,
+    chat_link: isProd
+      ? "/api/getAsset?asset=chat_link"
+      : import.meta.env.VITE_CLOUDINARY_CHAT_LINK,
   };
 
   const assets = {
@@ -45,11 +45,12 @@ function Introduction() {
         <>
           <h2 className="project-preview-title">Projects</h2>
           <div className="projects-cards-flex">
+            {/* Tibia Optimizer Card */}
             <div
               className="tibia-optimizer-project-card"
               onClick={() =>
                 window.open(
-                  projectsLink.tibiaOptimizer_URL,
+                  projectsLink.tibiaOptimizer_link,
                   "_blank",
                   "noreferrer"
                 )
@@ -75,7 +76,7 @@ function Introduction() {
             <div
               className="chat-card"
               onClick={() =>
-                window.open(projectsLink.chat_URL, "_blank", "noreferrer")
+                window.open(projectsLink.chat_link, "_blank", "noreferrer")
               }
             >
               <div className="chat-image-hover">
@@ -111,7 +112,30 @@ function Introduction() {
                 </div>
               </div>
             </div>
+            {/* Weather Forecast Card */}
+            <div
+              className="weather-forecast-card"
+              onClick={() =>
+                window.open(
+                  "https://example.com/weather-forecast",
+                  "_blank",
+                  "noreferrer"
+                )
+              }
+            >
+              <div className="weather-forecast-image-hover">
+                <img
+                  src="https://placehold.co/340x200/EEE/AAA?text=Weather+Forecast+BG"
+                  alt="Weather Forecast Background"
+                  className="weather-forecast-background-img"
+                />
+                <div className="project-center-stack">
+                  <h2 className="project-title-text">Weather Forecast</h2>
+                </div>
+              </div>
+            </div>
 
+            {/* Quiz Plu Card */}
             <div
               className="quiz-plu-card"
               onClick={() =>

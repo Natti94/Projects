@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 const isProd = import.meta.env.PROD;
 
 const profileLinks = {
-  gitHub_URL: isProd
-    ? "/api/getAsset?asset=gitHub_URL"
-    : import.meta.env.VITE_CLOUDINARY_GITHUB_URL,
-  linkedIn_URL: isProd
-    ? "/api/getAsset?asset=linkedIn_URL"
-    : import.meta.env.VITE_CLOUDINARY_LINKEDIN_URL,
+  gitHub_link: isProd
+    ? "/api/getAsset?asset=gitHub_link"
+    : import.meta.env.VITE_CLOUDINARY_GITHUB_LINK,
+  linkedIn_link: isProd
+    ? "/api/getAsset?asset=linkedIn_link"
+    : import.meta.env.VITE_CLOUDINARY_LINKEDIN_LINK,
 };
 
 const navIcons = {
@@ -46,7 +46,7 @@ function Nav() {
           alt="GitHub"
           className="nav-icon nav-icon-large"
           onClick={() =>
-            window.open(profileLinks.gitHub_URL, "_blank", "noreferrer")
+            window.open(profileLinks.gitHub_link, "_blank", "noreferrer")
           }
         />
         <img
@@ -54,7 +54,7 @@ function Nav() {
           alt="LinkedIn"
           className="nav-icon nav-icon-small"
           onClick={() =>
-            window.open(profileLinks.linkedIn_URL, "_blank", "noreferrer")
+            window.open(profileLinks.linkedIn_link, "_blank", "noreferrer")
           }
         />
       </div>
