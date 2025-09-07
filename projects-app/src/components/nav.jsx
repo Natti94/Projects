@@ -9,7 +9,7 @@ function Nav() {
         className="nav-toggle-btn"
         onClick={() => setCollapsed(!collapsed)}
       >
-        {collapsed ? ">>" : "<<"}
+        {collapsed ? "⮞" : "⮜"}
       </button>
       <ul>
         <li>

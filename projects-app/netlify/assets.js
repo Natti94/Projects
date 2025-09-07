@@ -6,6 +6,7 @@ function assetHandler(event) {
       process.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_BACKGROUND,
     tibiaOptimizer_icon: process.env.VITE_CLOUDINARY_TIBIA_ICON,
     chat_URL: process.env.VITE_CLOUDINARY_CHAT_URL,
+    chat_icon: process.env.VITE_CLOUDINARY_CHAT_ICON,
   };
 
   const { asset } = event.queryStringParameters;

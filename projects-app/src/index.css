@@ -1,3 +1,58 @@
+.chat-project-card {
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 1.5px 6px rgba(0, 0, 0, 0.04);
+  background: #fff;
+  transition: box-shadow 0.18s, transform 0.12s;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+.chat-project-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px) scale(1.03);
+}
+.chat-image-hover {
+  position: relative;
+  width: 340px;
+  min-width: 340px;
+  height: 200px;
+  margin-right: 0;
+  transition: transform 0.2s;
+  overflow: hidden;
+}
+.chat-background-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+.chat-image-hover:hover {
+  transform: scale(1.08);
+  z-index: 2;
+}
+.chat-center-stack {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.chat-title-img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 30px;
+  display: block;
+}
+.chat-icon-img {
+  width: 50px;
+  height: 50px;
+  display: block;
+}
 .cv-page {
   min-height: 100vh;
   display: flex;
@@ -65,7 +120,7 @@ body {
 }
 
 .profile-preview-container {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 16px auto 0 auto;
   background: #fff;
   border-radius: 5px;
@@ -208,13 +263,16 @@ body {
 .tibia-optimizer-project-card,
 .weather-forecast-card,
 .quiz-plu-card,
-.quiz-apt-card {
+.quiz-apt-card,
+.chat-project-card {
   cursor: pointer;
   border-radius: 8px;
   box-shadow: 0 1.5px 6px rgba(0, 0, 0, 0.04);
-  background: #fff;
+  background: transparent;
   transition: box-shadow 0.18s, transform 0.12s;
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  padding: 0;
+  overflow: hidden;
 }
 
 .tibia-optimizer-project-card:hover,
@@ -242,66 +300,61 @@ body {
   height: 200px;
   object-fit: cover;
   display: block;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 .tibia-optimizer-image-hover:hover {
   transform: scale(1.08);
-  z-index: 2;
-}
-
-.tibia-optimizer-center-stack {
-  position: absolute;
-  top: -30px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-
-.tibia-optimizer-title-img {
-  width: 100px;
-  height: auto;
-  margin-bottom: 30px;
-  display: block;
-}
-
-.tibia-optimizer-icon-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 2;
-}
-
-.tibia-optimizer-icon-img {
-  width: 50px;
-  height: 50px;
-  display: block;
-}
-
-.weather-forecast-card {}
-
-.weather-forecast-image-hover {
-  position: relative;
-  width: 340px;
-  min-width: 340px;
-  height: 200px;
-  margin-right: 0;
-  transition: transform 0.2s;
-  overflow: hidden;
-}
-
-.weather-forecast-background-img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  display: block;
-  border-radius: 8px;
+  .chat-project-card {
+    /* see above for shared styles */
+  }
+  .chat-project-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+    transform: translateY(-2px) scale(1.03);
+  }
+  .chat-image-hover {
+    position: relative;
+    width: 340px;
+    min-width: 340px;
+    height: 200px;
+    margin-right: 0;
+    transition: transform 0.2s;
+    overflow: hidden;
+  }
+  .chat-background-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+  }
+  .chat-image-hover:hover {
+    transform: scale(1.08);
+    z-index: 2;
+  }
+  .chat-center-stack {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  .chat-title-img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 30px;
+    display: block;
+  }
+  .chat-icon-img {
+    width: 50px;
+    height: 50px;
+    display: block;
+  }
 }
 
 .weather-forecast-image-hover:hover {
@@ -595,23 +648,28 @@ body {
 }
 
 .nav-toggle-btn {
-  background: #fff;
-  color: #285bb5;
+  background: none;
+  color: white;
   border: none;
   border-radius: 4px;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.3rem;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   cursor: pointer;
   box-shadow: none;
-  transition: background 0.18s, color 0.18s;
-  border: 1.2px solid #e0e3e8;
+  transition: background 0.18s, color 0.18s, transform 0.18s;
+  border: none;
+  align-self: flex-end;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .nav-toggle-btn:hover {
-  background: #e3f0ff;
-  color: #23272f;
+  background: none;
+  color: black;
+  transform: scale(1.22);
+  transition: transform 0.18s, color 0.18s;
 }
 
 .side-nav ul {
@@ -639,8 +697,8 @@ body {
 }
 
 .side-nav a:hover {
-  background: #4fd6ff;
-  color: #23272f;
+  background: lightgray;
+  color: black;
 }
 
 .side-nav.collapsed ul {

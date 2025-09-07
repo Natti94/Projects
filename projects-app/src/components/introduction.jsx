@@ -11,15 +11,21 @@ function Introduction() {
   };
 
   const assets = {
+    tibiaOptimizer_background: isProd
+      ? "/api/getAsset?asset=tibiaOptimizer_background"
+      : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_BACKGROUND,
     tibiaOptimizer_title_small: isProd
       ? "/api/getAsset?asset=tibiaOptimizer_title_small"
       : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_TITLE_SMALL,
     tibiaOptimizer_icon: isProd
-      ? "/api/getAsset?asset=tibiaOptimizer"
+      ? "/api/getAsset?asset=tibiaOptimizer_icon"
       : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_ICON,
-    tibiaOptimizer_background: isProd
-      ? "/api/getAsset?asset=tibiaOptimizer_background"
-      : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_BACKGROUND,
+    chat_background: isProd
+      ? "/api/getAsset?asset=chat_background"
+      : import.meta.env.VITE_CLOUDINARY_CHAT_BACKGROUND,
+    chat_icon: isProd
+      ? "/api/getAsset?asset=chat_icon"
+      : import.meta.env.VITE_CLOUDINARY_CHAT_ICON,
   };
 
   return (
@@ -83,8 +89,8 @@ function Introduction() {
             >
               <div className="chat-image-hover">
                 <img
-                  src="https://placehold.co/340x200/EEE/AAA?text=Weather+Forecast+BG"
-                  alt="Weather Forecast Background"
+                  src={assets.chat_background}
+                  alt="Chat Background"
                   className="chat-background-img"
                 />
                 <div className="chat-center-stack">
@@ -94,7 +100,7 @@ function Introduction() {
                     className="chat-title-img"
                   />
                   <img
-                    src="https://placehold.co/50x50/444/fff?text=Icon"
+                    src={assets.chat_icon}
                     alt="Weather Forecast Icon"
                     className="chat-icon-img"
                   />
