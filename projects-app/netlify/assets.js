@@ -7,6 +7,10 @@ function assetHandler(event) {
     tibiaOptimizer_icon: process.env.VITE_CLOUDINARY_TIBIA_ICON,
     chat_URL: process.env.VITE_CLOUDINARY_CHAT_URL,
     chat_icon: process.env.VITE_CLOUDINARY_CHAT_ICON,
+    gitHub_icon: process.env.VITE_CLOUDINARY_GITHUB_ICON,
+    gitHub_URL: process.env.VITE_CLOUDINARY_GITHUB_URL,
+    linkedIn_URL: process.env.VITE_CLOUDINARY_LINKEDIN_URL,
+    linkedIn_icon: process.env.VITE_CLOUDINARY_LINKEDIN_ICON,
   };
 
   const { asset } = event.queryStringParameters;

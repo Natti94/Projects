@@ -14,37 +14,32 @@ function Introduction() {
     tibiaOptimizer_background: isProd
       ? "/api/getAsset?asset=tibiaOptimizer_background"
       : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_BACKGROUND,
-    tibiaOptimizer_title_small: isProd
-      ? "/api/getAsset?asset=tibiaOptimizer_title_small"
-      : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_TITLE_SMALL,
-    tibiaOptimizer_icon: isProd
-      ? "/api/getAsset?asset=tibiaOptimizer_icon"
-      : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_ICON,
     chat_background: isProd
       ? "/api/getAsset?asset=chat_background"
       : import.meta.env.VITE_CLOUDINARY_CHAT_BACKGROUND,
-    chat_icon: isProd
-      ? "/api/getAsset?asset=chat_icon"
-      : import.meta.env.VITE_CLOUDINARY_CHAT_ICON,
   };
 
   return (
     <div>
       <div className="profile-preview-container">
         <h2>Profile</h2>
-        <p className="profile-introduction">
+        <div className="profile-introduction">
           Fullstack Developer specializing in web security. I have always had a
           great interest in programming and technology since I was young, and
           now I am in my final year of studies. I like to focus on areas where I
           see a real need, and right now I am doing that through a project for
-          the game Tibia – with a focus on <strong>Optimization</strong>.{" "}
-          <p>
-            This project aims to improve the gaming experience by optimizing
-            performance and user interface. <br />
-            <br />
-            See the project and its details below.
-          </p>
-        </p>
+          the game Tibia – with a focus on <strong>Optimization</strong>.
+          <br />
+          <br />
+          This project aims to improve the gaming experience by optimizing
+          performance and user interface. I hope to achieve this by implementing
+          various enhancements and features that will make the game more
+          enjoyable for players and later partner up with other developers to
+          expand the project.
+          <br />
+          <br />
+          See the project and its details below.
+        </div>
       </div>
       <div className="project-preview-container">
         <>
@@ -66,17 +61,13 @@ function Introduction() {
                   alt="Tibia Optimizer Background"
                   className="tibia-optimizer-background-img"
                 />
-                <div className="tibia-optimizer-center-stack">
-                  <img
-                    src={assets.tibiaOptimizer_title_small}
-                    alt="Tibia Optimizer Title Small"
-                    className="tibia-optimizer-title-img"
-                  />
-                  <img
-                    src={assets.tibiaOptimizer_icon}
-                    alt="Tibia Optimizer Icon"
-                    className="tibia-optimizer-icon-img"
-                  />
+                <div className="project-center-stack">
+                  <h2
+                    className="project-title-text"
+                    style={{ color: "orange" }}
+                  >
+                    Tibia Optimizer
+                  </h2>
                 </div>
               </div>
             </div>
@@ -93,17 +84,8 @@ function Introduction() {
                   alt="Chat Background"
                   className="chat-background-img"
                 />
-                <div className="chat-center-stack">
-                  <img
-                    src="https://placehold.co/100x40/285bb5/fff?text=Weather+Forecast"
-                    alt="Weather Forecast Title"
-                    className="chat-title-img"
-                  />
-                  <img
-                    src={assets.chat_icon}
-                    alt="Weather Forecast Icon"
-                    className="chat-icon-img"
-                  />
+                <div className="project-center-stack">
+                  <h2 className="project-title-text">Chatify</h2>
                 </div>
               </div>
             </div>
@@ -124,17 +106,8 @@ function Introduction() {
                   alt="Weather Forecast Background"
                   className="chat-background-img"
                 />
-                <div className="chat-center-stack">
-                  <img
-                    src="https://placehold.co/100x40/285bb5/fff?text=Weather+Forecast"
-                    alt="Weather Forecast Title"
-                    className="chat-title-img"
-                  />
-                  <img
-                    src="https://placehold.co/50x50/444/fff?text=Icon"
-                    alt="Weather Forecast Icon"
-                    className="chat-icon-img"
-                  />
+                <div className="project-center-stack">
+                  <h2 className="project-title-text">Weather Forecast</h2>
                 </div>
               </div>
             </div>
@@ -155,17 +128,8 @@ function Introduction() {
                   alt="Quiz Plu Background"
                   className="quiz-plu-background-img"
                 />
-                <div className="quiz-plu-center-stack">
-                  <img
-                    src="https://placehold.co/100x40/285bb5/fff?text=Quiz+Plu"
-                    alt="Quiz Plu Title"
-                    className="quiz-plu-title-img"
-                  />
-                  <img
-                    src="https://placehold.co/50x50/444/fff?text=Icon"
-                    alt="Quiz Plu Icon"
-                    className="quiz-plu-icon-img"
-                  />
+                <div className="project-center-stack">
+                  <h2 className="project-title-text">Quiz Plu</h2>
                 </div>
               </div>
             </div>
@@ -186,17 +150,8 @@ function Introduction() {
                   alt="Quiz Apt Background"
                   className="quiz-apt-background-img"
                 />
-                <div className="quiz-apt-center-stack">
-                  <img
-                    src="https://placehold.co/100x40/285bb5/fff?text=Quiz+Apt"
-                    alt="Quiz Apt Title"
-                    className="quiz-apt-title-img"
-                  />
-                  <img
-                    src="https://placehold.co/50x50/444/fff?text=Icon"
-                    alt="Quiz Apt Icon"
-                    className="quiz-apt-icon-img"
-                  />
+                <div className="project-center-stack">
+                  <h2 className="project-title-text">Quiz Apt</h2>
                 </div>
               </div>
             </div>

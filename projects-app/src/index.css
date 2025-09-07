@@ -6,10 +6,12 @@
   transition: box-shadow 0.18s, transform 0.12s;
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
 }
+
 .chat-project-card:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
   transform: translateY(-2px) scale(1.03);
 }
+
 .chat-image-hover {
   position: relative;
   width: 340px;
@@ -19,6 +21,7 @@
   transition: transform 0.2s;
   overflow: hidden;
 }
+
 .chat-background-img {
   width: 100%;
   height: 200px;
@@ -26,10 +29,12 @@
   display: block;
   border-radius: 8px;
 }
+
 .chat-image-hover:hover {
   transform: scale(1.08);
   z-index: 2;
 }
+
 .chat-center-stack {
   position: absolute;
   top: -30px;
@@ -42,17 +47,20 @@
   justify-content: center;
   z-index: 2;
 }
-.chat-title-img {
+
+.chat-title-text {
   width: 100px;
   height: auto;
   margin-bottom: 30px;
   display: block;
 }
+
 .chat-icon-img {
   width: 50px;
   height: 50px;
   display: block;
 }
+
 .cv-page {
   min-height: 100vh;
   display: flex;
@@ -72,7 +80,6 @@
   border-radius: 8px;
 }
 
-.panel-commits-list {}
 
 .panel-commits-list::-webkit-scrollbar {
   width: 8px;
@@ -252,7 +259,7 @@ body {
 .projects-cards-flex {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   gap: 32px;
   margin-top: 24px;
@@ -266,13 +273,20 @@ body {
 .quiz-apt-card,
 .chat-project-card {
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 2px;
   box-shadow: 0 1.5px 6px rgba(0, 0, 0, 0.04);
   background: transparent;
   transition: box-shadow 0.18s, transform 0.12s;
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
   padding: 0;
   overflow: hidden;
+  flex: 1 1 0;
+  min-width: 220px;
+  max-width: 340px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  height: 200px;
 }
 
 .tibia-optimizer-project-card:hover,
@@ -285,82 +299,38 @@ body {
 
 .tibia-optimizer-project-card {}
 
-.tibia-optimizer-image-hover {
-  position: relative;
-  width: 340px;
-  min-width: 340px;
-  height: 200px;
-  margin-right: 24px;
-  transition: transform 0.2s;
-  overflow: hidden;
-}
-
-.tibia-optimizer-background-img {
+/* Standardized center stack for all project cards */
+.project-center-stack {
+  position: absolute;
+  top: -30px;
+  left: 0;
   width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-  border-radius: 0;
-}
-
-.tibia-optimizer-image-hover:hover {
-  transform: scale(1.08);
-  .chat-project-card {
-    /* see above for shared styles */
-  }
-  .chat-project-card:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
-    transform: translateY(-2px) scale(1.03);
-  }
-  .chat-image-hover {
-    position: relative;
-    width: 340px;
-    min-width: 340px;
-    height: 200px;
-    margin-right: 0;
-    transition: transform 0.2s;
-    overflow: hidden;
-  }
-  .chat-background-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    border-radius: 0;
-  }
-  .chat-image-hover:hover {
-    transform: scale(1.08);
-    z-index: 2;
-  }
-  .chat-center-stack {
-    position: absolute;
-    top: -30px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-  }
-  .chat-title-img {
-    width: 100px;
-    height: auto;
-    margin-bottom: 30px;
-    display: block;
-  }
-  .chat-icon-img {
-    width: 50px;
-    height: 50px;
-    display: block;
-  }
-}
-
-.weather-forecast-image-hover:hover {
-  transform: scale(1.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
 }
+
+/* Standardized title image/text for all project cards */
+
+/* Standardize title image and text to same height and alignment */
+
+.project-title-text {
+  width: 100%;
+  margin-bottom: 0px;
+  font-family: monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
 
 .weather-forecast-center-stack {
   position: absolute;
@@ -406,7 +376,6 @@ body {
   height: 160px;
   object-fit: cover;
   display: block;
-  border-radius: 8px;
 }
 
 .quiz-plu-image-hover:hover {
@@ -491,57 +460,6 @@ body {
   width: 50px;
   height: 40px;
   display: block;
-}
-
-.project-list-title {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #285bb5;
-  margin-bottom: 1rem;
-}
-
-.project-list li:hover {
-  background: #f0f4fa;
-  border-color: #b3c6e0;
-}
-
-.project-list li:hover img {
-  width: 38px;
-  height: 38px;
-  object-fit: contain;
-  margin-right: 0.7rem;
-  vertical-align: middle;
-  border-radius: 2px;
-  border: 1px solid #e0e3e8;
-  background: #fff;
-  box-shadow: none;
-}
-
-.project-image-hover {
-  transition: transform 0.2s;
-}
-
-.project-image-hover:hover {
-  transform: scale(1.08);
-  z-index: 2;
-}
-
-.side-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 210px;
-  background: gray;
-  color: #fff;
-  box-shadow: 2px 0 12px rgba(40, 91, 181, 0.07);
-  border-right: 1.5px solid #e0e3e8;
-  padding: 2rem 1.2rem 1.2rem 1.2rem;
-  transition: width 0.25s cubic-bezier(.4, 0, .2, 1), left 0.2s;
-  z-index: 100;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .project-list-title {
@@ -672,6 +590,38 @@ body {
   transition: transform 0.18s, color 0.18s;
 }
 
+
+.nav-icons-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-left: 50px;
+  margin-top: 24px;
+}
+
+.nav-icon {
+  cursor: pointer;
+  filter: invert(1);
+  transition: filter 0.18s, transform 0.18s;
+  display: block;
+}
+
+.nav-icon-large {
+  width: 100px;
+  height: 50px;
+}
+
+.nav-icon-small {
+  width: 60px;
+  height: 40px;
+}
+
+.nav-icon:hover {
+  filter: invert(0);
+  transform: scale(1.15);
+}
+
 .side-nav ul {
   list-style: none;
   padding: 0;
@@ -705,10 +655,13 @@ body {
   display: none;
 }
 
-.side-nav.collapsed a {
-  padding: 0.7rem 0.5rem;
-  text-align: center;
-  font-size: 1.2rem;
+.side-nav hr {
+  border: none;
+  border-top: 1.5px solid #e0e3e8;
+  margin: 1.2rem 0 0.5rem 0;
+  width: 100%;
+  background: none;
+  height: 0;
 }
 
 @media (max-width: 1200px) {
@@ -782,5 +735,4 @@ body {
     font-size: 1.1rem;
     padding: 0.5rem 0.5rem;
   }
-
 }

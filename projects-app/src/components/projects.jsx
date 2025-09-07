@@ -4,17 +4,13 @@ function Projects() {
   const [intro, setIntro] = useState(true);
 
   const projectsLink = {
-    tibiaOptimizer: "https://tibiaoptimizer.netlify.app/",
+    tibiaOptimizer_URL: isProd
+      ? import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_URL
+      : "/api/getAsset?asset=tibiaOptimizer_URL",
   };
 
   const isProd = import.meta.env.PROD;
   const assets = {
-    tibiaOptimizer_title_small: isProd
-      ? "/api/getAsset?asset=tibiaOptimizer_title_small"
-      : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_TITLE_SMALL,
-    tibiaOptimizer_icon: isProd
-      ? "/api/getAsset?asset=tibiaOptimizer"
-      : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_ICON,
     tibiaOptimizer_background: isProd
       ? "/api/getAsset?asset=tibiaOptimizer_background"
       : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_BACKGROUND,
