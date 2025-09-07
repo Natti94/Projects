@@ -13,6 +13,12 @@ const profileLinks = {
 };
 
 const navIcons = {
+  profile_icon: isProd
+    ? "/api/getAsset?asset=profile_icon"
+    : import.meta.env.VITE_CLOUDINARY_PROFILE_ICON,
+  CV_icon: isProd
+    ? "/api/getAsset?asset=CV_icon"
+    : import.meta.env.VITE_CLOUDINARY_CV_ICON,
   gitHub_icon: isProd
     ? "/api/getAsset?asset=gitHub_icon"
     : import.meta.env.VITE_CLOUDINARY_GITHUB_ICON,
@@ -22,7 +28,7 @@ const navIcons = {
 };
 
 function Nav() {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   return (
     <nav className={`side-nav${collapsed ? " collapsed" : ""}`}>
       <button
@@ -31,32 +37,61 @@ function Nav() {
       >
         {collapsed ? "⮞" : "⮜"}
       </button>
-      <ul>
+      <ul
+        style={
+          collapsed
+            ? {
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "18px",
+              }
+            : {}
+        }
+      >
         <li>
-          <Link to="/">Introduction</Link>
+          <Link to="/" className="nav-link-flex">
+            <span className="nav-icon">
+              <img
+                src={navIcons.profile_icon}
+                alt="Profile Icon"
+                className="nav-icon"
+              />
+            </span>
+            {!collapsed && <span className="nav-link-text">Introduction</span>}
+          </Link>
         </li>
         <li>
-          <Link to="/cv">CV</Link>
+          <Link to="/cv" className="nav-link-flex">
+            <span className="nav-icon">
+              <img
+                src={navIcons.CV_icon}
+                alt="CV Icon"
+                className="nav-icon"
+              />
+            </span>
+            {!collapsed && <span className="nav-link-text">CV</span>}
+          </Link>
         </li>
       </ul>
       <hr />
       <div className="nav-icons-vertical">
-        <img
-          src={navIcons.gitHub_icon}
-          alt="GitHub"
-          className="nav-icon nav-icon-large"
-          onClick={() =>
-            window.open(profileLinks.gitHub_link, "_blank", "noreferrer")
-          }
-        />
-        <img
-          src={navIcons.linkedIn_icon}
-          alt="LinkedIn"
-          className="nav-icon nav-icon-small"
-          onClick={() =>
-            window.open(profileLinks.linkedIn_link, "_blank", "noreferrer")
-          }
-        />
+        <div className="nav-social-link" onClick={() => window.open(profileLinks.gitHub_link, "_blank", "noreferrer") } tabIndex={0} role="button">
+          <img
+            src={navIcons.gitHub_icon}
+            alt="GitHub Icon"
+            className="nav-social-icon"
+          />
+          {!collapsed && <span className="nav-social-text">GitHub</span>}
+        </div>
+        <div className="nav-social-link" onClick={() => window.open(profileLinks.linkedIn_link, "_blank", "noreferrer") } tabIndex={0} role="button">
+          <img
+            src={navIcons.linkedIn_icon}
+            alt="LinkedIn Icon"
+            className="nav-social-icon"
+          />
+          {!collapsed && <span className="nav-social-text">LinkedIn</span>}
+        </div>
       </div>
     </nav>
   );

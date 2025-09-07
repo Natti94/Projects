@@ -1,3 +1,12 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: #f4f6f8;
+  color: #23272f;
+}
+
 .chat-project-card {
   cursor: pointer;
   border-radius: 8px;
@@ -157,12 +166,14 @@ body {
 }
 
 .side-nav {
+  position: relative;
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 210px;
-  background: gray;
+  background: #285bb5;
+
   color: #fff;
   box-shadow: 2px 0 12px rgba(40, 91, 181, 0.07);
   border-right: 1.5px solid #e0e3e8;
@@ -180,7 +191,8 @@ body {
   right: 0;
   width: 250px;
   height: 100vh;
-  background: gray;
+  background: #285bb5;
+
   box-shadow: -2px 0 16px 0 rgba(40, 91, 181, 0.07);
   z-index: 100;
   display: flex;
@@ -299,7 +311,6 @@ body {
 
 .tibia-optimizer-project-card {}
 
-/* Standardized center stack for all project cards */
 .project-center-stack {
   position: absolute;
   top: -30px;
@@ -313,10 +324,6 @@ body {
   z-index: 2;
 }
 
-/* Standardized title image/text for all project cards */
-
-/* Standardize title image and text to same height and alignment */
-
 .project-title-text {
   width: 100%;
   margin-bottom: 0px;
@@ -329,6 +336,89 @@ body {
   font-weight: 700;
   letter-spacing: 0.01em;
   line-height: 1;
+}
+
+/* Flattened nested rules from .project-title-text */
+.panel-commit-label {
+  font-size: 0.93rem;
+  color: #b3c6e0;
+  font-weight: 400;
+  margin-right: 0.5rem;
+}
+
+.profile-introduction {
+  font-size: 1.1rem;
+  color: #23272f;
+  margin-bottom: 1.2rem;
+}
+
+.project-preview-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #285bb5;
+  margin-bottom: 0.7rem;
+}
+
+.project-preview-desc {
+  font-size: 1.08rem;
+  color: #23272f;
+  margin-bottom: 1.2rem;
+}
+
+.project-preview-btn {
+  background: #285bb5;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 0.7rem;
+  transition: background 0.18s, color 0.18s;
+}
+
+.project-preview-btn:hover {
+  background: #1d3e7a;
+  color: #fff;
+}
+
+.tibia-optimizer-center-stack,
+.chat-center-stack,
+.weather-forecast-center-stack,
+.quiz-plu-center-stack,
+.quiz-apt-center-stack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.tibia-optimizer-title-img,
+.chat-title-img,
+.weather-forecast-title-img,
+.quiz-plu-title-img,
+.quiz-apt-title-img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 30px;
+  display: block;
+}
+
+.tibia-optimizer-icon-img,
+.chat-icon-img,
+.weather-forecast-icon-img,
+.quiz-plu-icon-img,
+.quiz-apt-icon-img {
+  width: 50px;
+  height: 50px;
+  display: block;
 }
 
 
@@ -558,11 +648,18 @@ body {
   display: block;
 }
 
+
 .side-nav.collapsed {
   width: 60px;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   align-items: center;
+}
+
+.side-nav.collapsed .nav-icons-vertical {
+  position: static;
+  margin-left: -10px;
+  margin-top: 32px;
 }
 
 .nav-toggle-btn {
@@ -595,21 +692,37 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
-  margin-left: 50px;
-  margin-top: 24px;
+  gap: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
 }
 
 .nav-icon {
-  cursor: pointer;
+  width: 26px;
+  height: 26px;
+  margin-right: 0.5rem;
+  margin-left: 0;
+  flex-shrink: 0;
   filter: invert(1);
   transition: filter 0.18s, transform 0.18s;
   display: block;
+  cursor: pointer;
 }
 
 .nav-icon-large {
-  width: 100px;
-  height: 50px;
+  width: 26px;
+  height: 26px;
+  margin-right: 0.5rem;
+  margin-left: 0;
+  flex-shrink: 0;
+  filter: invert(1);
+  transition: filter 0.18s, transform 0.18s;
 }
 
 .nav-icon-small {
@@ -622,33 +735,128 @@ body {
   transform: scale(1.15);
 }
 
+.nav-social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  cursor: pointer;
+  min-height: 40px;
+  margin-bottom: 2px;
+  padding: 0.5rem 1.1rem 0.5rem 1.1rem;
+  border-radius: 6px;
+  transition: background 0.18s, color 0.18s, transform 0.18s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+.nav-social-icon {
+  width: 40px;
+  height: 40px;
+  filter: invert(1);
+  transition: filter 0.18s, transform 0.18s;
+  display: block;
+  object-fit: contain;
+  aspect-ratio: 1 / 1;
+}
+
+.nav-social-link:hover .nav-social-icon,
+.nav-social-link:focus .nav-social-icon {
+  filter: invert(0);
+  transform: scale(1.18);
+}
+
+.nav-social-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  line-height: 1;
+  color: #fff;
+  transition: color 0.18s;
+}
+
+.nav-social-link:hover .nav-social-text,
+.nav-social-link:focus .nav-social-text {
+  color: #000;
+}
+
+.nav-social-icon:hover,
+.nav-social-icon:focus {
+  filter: invert(0);
+  transform: scale(1.18);
+  transition: filter 0.18s, transform 0.18s;
+}
+
+.nav-icons-vertical {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 30%;
+  transform: translateY(-36%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.side-nav.collapsed .nav-icons-vertical {
+  position: static;
+  margin-left: -10px;
+  margin-top: 30px;
+
+}
+
+.nav-link-text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  line-height: 1;
+}
+
 .side-nav ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto 0 auto;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
 }
 
 .side-nav li {
-  margin-bottom: 1.2rem;
+  margin-bottom: 0;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .side-nav a {
-  display: block;
+  display: flex;
+  align-items: center;
   color: #fff;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 500;
-  padding: 0.7rem 1rem;
-  border-radius: 4px;
-  transition: background 0.15s, color 0.15s;
+  padding: 0.5rem 1.1rem 0.5rem 1.1rem;
+  border-radius: 6px;
   letter-spacing: 0.01em;
+  margin-bottom: 0.05rem;
+  min-height: 36px;
+  box-sizing: border-box;
 }
 
 .side-nav a:hover {
-  background: lightgray;
-  color: black;
+  color: #000;
+
+  transform: scale(1.07);
 }
 
 .side-nav.collapsed ul {
@@ -657,12 +865,14 @@ body {
 
 .side-nav hr {
   border: none;
-  border-top: 1.5px solid #e0e3e8;
-  margin: 1.2rem 0 0.5rem 0;
-  width: 100%;
+  border-top: 1.5px solid #b3c6e0;
+  margin: 1.2rem 0 1.2rem 0;
+  width: 90%;
   background: none;
   height: 0;
 }
+
+
 
 @media (max-width: 1200px) {
   .project-preview-container {
@@ -733,6 +943,7 @@ body {
 
   .side-nav.collapsed a {
     font-size: 1.1rem;
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem 01rem;
   }
+
 }

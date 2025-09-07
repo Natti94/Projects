@@ -45,7 +45,6 @@ function Introduction() {
         <>
           <h2 className="project-preview-title">Projects</h2>
           <div className="projects-cards-flex">
-            {/* Tibia Optimizer Card */}
             <div
               className="tibia-optimizer-project-card"
               onClick={() =>
@@ -112,7 +111,6 @@ function Introduction() {
                 </div>
               </div>
             </div>
-            {/* Weather Forecast Card */}
             <div
               className="weather-forecast-card"
               onClick={() =>
@@ -134,8 +132,6 @@ function Introduction() {
                 </div>
               </div>
             </div>
-
-            {/* Quiz Plu Card */}
             <div
               className="quiz-plu-card"
               onClick={() =>

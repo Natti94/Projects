@@ -2,11 +2,14 @@ import express from "express";
 import { execSync } from "child_process";
 import dotenv from "dotenv";
 
-
 const PORT = process.env.PORT;
+
 const app = express();
+
 dotenv.config();
+
 app.use(express.json());
+
 app.get("/api/commits", (req, res) => {
   try {
     const log = execSync(
