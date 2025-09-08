@@ -29,11 +29,13 @@ const navIcons = {
 
 function Nav() {
   const [collapsed, setCollapsed] = useState(true);
+
   return (
-    <nav className={`side-nav${collapsed ? " collapsed" : ""}`}>
+    <nav className={`side-nav ${collapsed ? "collapsed" : "uncollapsed"}`}>
       <button
         className="nav-toggle-btn"
         onClick={() => setCollapsed(!collapsed)}
+        aria-label={collapsed ? "Expand navigation" : "Collapse navigation"}
       >
         {collapsed ? "⮞" : "⮜"}
       </button>
@@ -45,8 +47,9 @@ function Nav() {
                 flexDirection: "column",
                 alignItems: "center",
                 gap: "18px",
+                overflow: "hidden", // Prevent content overflow
               }
-            : {}
+            : { overflow: "hidden" } // Ensure no overflow in uncollapsed state
         }
       >
         <li>
@@ -76,7 +79,7 @@ function Nav() {
       </ul>
       <hr />
       <div className="nav-icons-vertical">
-        <div className="nav-social-link" onClick={() => window.open(profileLinks.gitHub_link, "_blank", "noreferrer") } tabIndex={0} role="button">
+        <div className="nav-social-link" onClick={() => window.open(profileLinks.gitHub_link, "_blank", "noreferrer")} tabIndex={0} role="button">
           <img
             src={navIcons.gitHub_icon}
             alt="GitHub Icon"
@@ -84,7 +87,7 @@ function Nav() {
           />
           {!collapsed && <span className="nav-social-text">GitHub</span>}
         </div>
-        <div className="nav-social-link" onClick={() => window.open(profileLinks.linkedIn_link, "_blank", "noreferrer") } tabIndex={0} role="button">
+        <div className="nav-social-link" onClick={() => window.open(profileLinks.linkedIn_link, "_blank", "noreferrer")} tabIndex={0} role="button">
           <img
             src={navIcons.linkedIn_icon}
             alt="LinkedIn Icon"
