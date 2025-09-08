@@ -1,4 +1,3 @@
-// Panel.jsx
 import { useEffect, useState } from "react";
 
 function Panel() {
