@@ -31,7 +31,7 @@ const navIcons = {
 };
 
 function Nav() {
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
 
   return (
     <nav className={`side-nav ${collapsed ? "collapsed" : "uncollapsed"}`}>

@@ -1,6 +1,3 @@
-// Introduction.jsx
-import { useState } from "react";
-
 function Introduction() {
   const isProd = import.meta.env.PROD;
 
@@ -30,15 +27,13 @@ function Introduction() {
           Fullstack Developer specializing in web security. I have always had a
           great interest in programming and technology since I was young, and
           now I am in my final year of studies. I like to focus on areas where I
-          see a real need, and right now I am doing that through a project for
-          the game Tibia – with a focus on <strong>Optimization</strong>.
+          see a real need, and with my latest project for the game Tibia, I've
+          identified a gap that hasn't been addressed yet – with a focus on <strong>Optimization</strong>.
           <br />
           <br />
-          This project aims to improve the gaming experience by optimizing
-          performance and user interface. I hope to achieve this by implementing
-          various enhancements and features that will make the game more
-          enjoyable for players and later partner up with other developers to
-          expand the project.
+          This project is designed to fill that gap by improving the gaming experience through optimized
+          performance and user interface. My goal is to implement enhancements and features that make the game
+          more enjoyable for players, and eventually collaborate with other developers to expand the project further.
           <br />
           <br />
           See the project and its details below.
