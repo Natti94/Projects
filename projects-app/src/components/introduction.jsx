@@ -5,6 +5,9 @@ function Introduction() {
     code_effect: isProd
       ? "/api/getAsset?asset=code_effect"
       : import.meta.env.VITE_CLOUDINARY_CODE_EFFECT_LINK,
+    mern_image: isProd
+      ? "/api/getAsset?asset=mern_image"
+      : import.meta.env.VITE_CLOUDINARY_MERN_IMAGE,
     tibiaOptimizer_background: isProd
       ? "/api/getAsset?asset=tibiaOptimizer_background"
       : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_BACKGROUND,
@@ -25,25 +28,31 @@ function Introduction() {
         className="profile-preview-container"
         style={{ position: "relative", zIndex: 2 }}
       >
-        <h2>Profile</h2>
+        <h2>Who am I?</h2>
         <div className="profile-introduction">
-          Fullstack Developer specializing in web security. I have always had a
-          great interest in programming and technology since I was young, and
-          now I am in my final year of studies. I like to focus on areas where I
-          see a real need, and with my latest project for the game Tibia, I've
-          identified a gap that hasn't been addressed yet – with a focus on{" "}
-          <strong>Optimization</strong>.
+          Hello! My name is Natnael and I'm a Fullstack Developer passionate
+          about understanding the real needs of end users. I enjoy exploring
+          unique challenges and finding niche opportunities where technology can
+          make a difference. My main goal is to provide valuable services by
+          identifying gaps and creating solutions that truly help people.
           <br />
           <br />
-          This project is designed to fill that gap by improving the gaming
-          experience through optimized performance and user interface. My goal
-          is to implement enhancements and features that make the game more
-          enjoyable for players, and eventually collaborate with other
-          developers to expand the project further.
+          Projects like <strong>Tibia Optimizer</strong> are examples of my
+          approach—discovering specific needs and building applications that
+          address them. I am always looking for new ideas and ways to deliver
+          meaningful improvements, whether through optimizing user experiences
+          or developing entirely new tools.
           <br />
           <br />
-          See the project and its details below.
+          Below you can find some of the projects I've worked on and other ideas
+          in the pipeline.
         </div>
+        <hr color="lightgreen" />
+        <h2>Skills</h2>
+        <div>
+        <img src={assets.mern_image} alt="MERN Stack" className="skills-image" />
+        </div>
+        <ul></ul>
       </div>
       <div
         className="project-preview-container"

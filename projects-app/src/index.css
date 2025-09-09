@@ -1,3 +1,14 @@
+/* Skills icon responsive sizing */
+.skills-image {
+  max-height: 600px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.7rem auto;
+  border: 2px solid;
+  border-image: linear-gradient(90deg, green, lightgreen) 1;
+}
+
 /* --- Panel Commit Navigation Row and Buttons --- */
 .panel-commits-nav-row {
   display: flex;
@@ -579,7 +590,8 @@ nav.side-nav a {
   }
 
   .panel-commit-message {
-    max-width: 300px;
+    max-width: 700px;
+    overflow: hidden;
   }
 
   .nav-toggle-btn {
@@ -657,7 +669,8 @@ nav.side-nav a {
   }
 
   .panel-commit-message {
-    max-width: 300px;
+    max-width: 700px;
+    overflow: hidden;
   }
 
   .panel-container h3 {
@@ -711,7 +724,7 @@ nav.side-nav a {
     display: none;
   }
 
-  
+
   .nav-icon {
     width: 14px;
     height: 14px;
@@ -725,12 +738,13 @@ nav.side-nav a {
   }
 
   .panel-commits-list {
-    height: 300px;
+    height: 250px;
     gap: 0.5rem;
   }
 
   .panel-commit-message {
-    max-width: 300px;
+    max-width: 700px;
+    overflow: hidden;
   }
 
   .panel-container h3 {
