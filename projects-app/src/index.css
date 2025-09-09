@@ -184,6 +184,9 @@ body {
   text-align: center;
   border: 2px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .project-preview-desc {
@@ -225,6 +228,8 @@ body {
   margin-top: 1.2rem;
   width: 100%;
   box-sizing: border-box;
+  justify-content: center; /* Center the grid items horizontally */
+  align-items: center; /* Vertically center items */
 }
 
 .tibia-optimizer-project-card,
@@ -241,6 +246,7 @@ body {
   flex-direction: column;
   align-items: center;
   height: 110px;
+  margin: 0 auto; /* Ensure individual centering */
 }
 
 .project-center-stack {
@@ -414,7 +420,6 @@ nav.side-nav a:hover {
 
 .nav-icon:hover {
   transform: scale(1.15);
-  filter: brightness(1.2) sepia(1) hue-rotate(90deg);
 }
 
 .nav-link-text,
@@ -435,7 +440,6 @@ nav.side-nav a:hover {
 
 .nav-link-flex:hover .nav-icon {
   transform: scale(1.15);
-  filter: brightness(1.2) sepia(1) hue-rotate(90deg);
 }
 
 .nav-social-icon {
@@ -450,10 +454,7 @@ nav.side-nav a:hover {
 
 .nav-social-icon:hover {
   transform: scale(1.15);
-  filter: brightness(1.2) sepia(1) hue-rotate(90deg);
 }
-
-
 
 @media (min-width: 1400px) {
   .profile-preview-container {
@@ -550,8 +551,6 @@ nav.side-nav a:hover {
     display: none;
   }
 
-
-
   .projects-cards-flex {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 0.9rem;
@@ -584,7 +583,6 @@ nav.side-nav a:hover {
 }
 
 @media (max-width: 600px) {
-
   nav.side-nav,
   nav.side-nav.collapsed,
   nav.side-nav.uncollapsed {
@@ -660,7 +658,6 @@ nav.side-nav a:hover {
 }
 
 @media (max-width: 400px) {
-
   nav.side-nav,
   nav.side-nav.collapsed,
   nav.side-nav.uncollapsed {
@@ -669,7 +666,7 @@ nav.side-nav a:hover {
     width: 50px;
     min-width: 50px;
     max-width: 50px;
-    padding: 0.3rem;
+    padding: 0.2rem;
     flex-direction: column;
     align-items: center;
     z-index: 1000;
@@ -678,6 +675,11 @@ nav.side-nav a:hover {
   .nav-link-text,
   .nav-social-text {
     display: none;
+  }
+
+  .nav-icon {
+    width: 20px;
+    height: 20px;
   }
 
   .panel-container {
@@ -719,6 +721,12 @@ nav.side-nav a:hover {
     padding: 0.7rem 0.2rem;
   }
 
+  .projects-cards-flex {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
   .tibia-optimizer-project-card,
   .chat-project-card,
   .weather-forecast-project-card,
@@ -727,6 +735,7 @@ nav.side-nav a:hover {
     min-width: 110px;
     max-width: 110px;
     height: 80px;
+    margin: 0 auto;
   }
 }
 
@@ -747,7 +756,9 @@ nav.side-nav a:hover {
   }
 
   .projects-cards-flex {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
     gap: 0.5rem;
+    justify-content: center;
   }
 
   .tibia-optimizer-project-card,
@@ -758,5 +769,37 @@ nav.side-nav a:hover {
     min-width: 90px;
     max-width: 90px;
     height: 70px;
+    margin: 0 auto;
   }
+}
+
+/* New media queries for 400% and 500% zoom */
+@media (max-width: 2000px) { /* 500% zoom for 400px CSS breakpoint */
+
+  .profile-preview-container {
+    padding: 1.1rem;
+    max-width: 50vw;
+  }
+  .project-preview-container {
+    padding: 1.5rem;
+    max-width: 50vw;
+  }
+
+  .projects-cards-flex {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .tibia-optimizer-project-card,
+  .chat-project-card,
+  .weather-forecast-project-card,
+  .quiz-plu-project-card,
+  .quiz-apt-project-card {
+    min-width: 150px;
+    max-width: 150px;
+    height: 100px;
+    margin: 0 auto;
+  }
+
 }

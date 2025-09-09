@@ -27,7 +27,6 @@ const assets = {
     : import.meta.env.VITE_CLOUDINARY_LINKEDIN_ICON,
 };
 
-
 function Nav() {
   const [collapsed, setCollapsed] = useState(false);
 
@@ -40,20 +39,8 @@ function Nav() {
       >
         {collapsed ? "↠" : "↞"}
       </button>
-
       <ul className={collapsed ? "nav-list-collapsed" : "nav-list-uncollapsed"}>
-        <li>
-          <Link to="/" className="nav-link-flex">
-            <span className="nav-icon">
-              <img
-                src={assets.profile_icon}
-                alt="Profile Icon"
-                className="nav-icon"
-              />
-            </span>
-            {!collapsed && <span className="nav-link-text">Introduction</span>}
-          </Link>
-        </li>
+    
         <li>
           <a
             className="nav-link-flex"
