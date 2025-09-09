@@ -2,6 +2,9 @@ function Introduction() {
   const isProd = import.meta.env.PROD;
 
   const assets = {
+    code_effect: isProd
+      ? "/api/getAsset?asset=code_effect"
+      : import.meta.env.VITE_CLOUDINARY_CODE_EFFECT_LINK,
     tibiaOptimizer_background: isProd
       ? "/api/getAsset?asset=tibiaOptimizer_background"
       : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_BACKGROUND,
@@ -18,7 +21,10 @@ function Introduction() {
 
   return (
     <div>
-      <div className="profile-preview-container">
+      <div
+        className="profile-preview-container"
+        style={{ position: "relative", zIndex: 2 }}
+      >
         <h2>Profile</h2>
         <div className="profile-introduction">
           Fullstack Developer specializing in web security. I have always had a
@@ -39,7 +45,10 @@ function Introduction() {
           See the project and its details below.
         </div>
       </div>
-      <div className="project-preview-container">
+      <div
+        className="project-preview-container"
+        style={{ position: "relative", zIndex: 2 }}
+      >
         <h2>Projects</h2>
         <div className="projects-cards-flex">
           <div
@@ -55,9 +64,7 @@ function Introduction() {
                 className="tibia-optimizer-background-img"
               />
               <div className="project-center-stack">
-                <h2 className="project-title-text" style={{ color: "orange" }}>
-                  Tibia Optimizer
-                </h2>
+                <h2 className="project-title-text">Tibia Optimizer</h2>
               </div>
             </div>
           </div>

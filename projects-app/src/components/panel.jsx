@@ -28,9 +28,9 @@ function Panel() {
         )}
         {commits.length > 0 && (
           <div className="panel-commit-item panel-commit-item-single">
-            <span className="panel-commit-label">Commit message:</span>
+            <span className="panel-commit-label">ACTIVITY FEED</span>
             <span className="panel-commit-message">
-              {commits[current].message}
+              Commit message: {commits[current].message}
             </span>
             <div className="panel-commit-meta">
               by {commits[current].author} - {commits[current].date}
