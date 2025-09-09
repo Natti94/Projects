@@ -16,7 +16,7 @@ function Panel() {
 
   return (
     <div className="panel-container">
-  <div className="panel-commits-nav-row">
+      <div className="panel-commits-nav-row">
         {current > 0 && (
           <button
             onClick={goLeft}

@@ -27,6 +27,7 @@ const assets = {
     : import.meta.env.VITE_CLOUDINARY_LINKEDIN_ICON,
 };
 
+
 function Nav() {
   const [collapsed, setCollapsed] = useState(false);
 
@@ -39,6 +40,7 @@ function Nav() {
       >
         {collapsed ? "↠" : "↞"}
       </button>
+
       <ul className={collapsed ? "nav-list-collapsed" : "nav-list-uncollapsed"}>
         <li>
           <Link to="/" className="nav-link-flex">
@@ -55,9 +57,7 @@ function Nav() {
         <li>
           <a
             className="nav-link-flex"
-            onClick={() =>
-              window.open(assets.cv_link, "_blank", "noreferrer")
-            }
+            onClick={() => window.open(assets.cv_link, "_blank", "noreferrer")}
             tabIndex={0}
             role="button"
           >
