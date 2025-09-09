@@ -9,13 +9,12 @@ body {
 }
 
 .profile-preview-container {
-  max-width: 700px !important;
-  /* Increased from 600px */
+  max-width: 700px;
   margin: 16px auto 0 auto;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 1.5px 6px rgba(0, 0, 0, 0.04);
-  padding: 0.2rem 1.15rem 0.58rem 1.15rem !important;
+  padding: 0.2rem 1.15rem 0.58rem 1.15rem;
   text-align: center;
   border: 1.5px solid #e0e3e8;
 }
@@ -28,13 +27,12 @@ body {
 }
 
 .project-preview-container {
-  max-width: 700px !important;
-  /* Increased from 600px */
+  max-width: 700px;
   margin: 48px auto 0 auto;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 1.5px 6px rgba(0, 0, 0, 0.04);
-  padding: 1rem 1.15rem 1rem 1.15rem !important;
+  padding: 1rem 1.15rem 1rem 1.15rem;
   text-align: center;
   border: 1.5px solid #e0e3e8;
   transition: box-shadow 0.18s;
@@ -104,9 +102,9 @@ body {
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
   padding: 0;
   overflow: hidden;
-  flex: 0 0 calc(33.33% - 8.2px) !important;
-  min-width: 112px !important;
-  max-width: 174px !important;
+  flex: 0 0 calc(33.33% - 8.2px);
+  min-width: 112px;
+  max-width: 174px;
   width: 100%;
   display: flex;
   position: relative;
@@ -185,9 +183,9 @@ body {
 
 /* Side Nav */
 nav.side-nav {
-  position: fixed !important;
+  position: fixed;
   top: 0;
-  left: 0 !important;
+  left: 0;
   height: 100vh;
   width: 150px;
   background: #285bb5;
@@ -207,14 +205,12 @@ nav.side-nav.collapsed {
   width: 50px;
   padding: 0.5rem;
   align-items: center;
-  left: 0 !important;
 }
 
 nav.side-nav.uncollapsed {
   width: 150px;
   padding: 1.5rem 0.9rem 0.9rem 0.9rem;
   align-items: flex-start;
-  left: 0 !important;
 }
 
 nav.side-nav ul {
@@ -435,13 +431,13 @@ nav.side-nav hr {
 /* Media Queries */
 @media (min-width: 1400px) {
   .profile-preview-container {
-    max-width: 769px !important;
-    padding: 0.2rem 2.05rem 0.69rem 2.05rem !important;
+    max-width: 769px;
+    padding: 0.2rem 2.05rem 0.69rem 2.05rem;
   }
 
   .project-preview-container {
-    max-width: 769px !important;
-    padding: 1rem 2.05rem 1rem 2.05rem !important;
+    max-width: 769px;
+    padding: 1rem 2.05rem 1rem 2.05rem;
   }
 
   .projects-cards-flex {
@@ -453,20 +449,21 @@ nav.side-nav hr {
   .weather-forecast-project-card,
   .quiz-plu-project-card,
   .quiz-apt-project-card {
-    flex: 0 0 calc(33.33% - 10.25px) !important;
-    min-width: 128px !important;
-    max-width: 195px !important;
+    flex: 0 0 calc(33.33% - 10.25px);
+    min-width: 128px;
+    max-width: 195px;
   }
 }
 
 @media (max-width: 1200px) {
   .project-preview-container {
-    max-width: 100vw;
-    padding: 0.5rem 0.25rem 1rem 0.25rem !important;
+    max-width: 90vw;
+    padding: 0.5rem 0.25rem 1rem 0.25rem;
   }
 
   .profile-preview-container {
-    padding: 0.2rem 0.77rem 0.77rem 0.77rem !important;
+    padding: 0.2rem 0.77rem 0.77rem 0.77rem;
+    max-width: 90vw;
   }
 
   .projects-cards-flex {
@@ -478,8 +475,8 @@ nav.side-nav hr {
   .weather-forecast-project-card,
   .quiz-plu-project-card,
   .quiz-apt-project-card {
-    flex: 0 0 calc(33.33% - 6.15px) !important;
-    min-width: 103px !important;
+    flex: 0 0 calc(50% - 4.6px);
+    min-width: 100px;
   }
 }
 
@@ -527,24 +524,23 @@ nav.side-nav hr {
   .weather-forecast-project-card,
   .quiz-plu-project-card,
   .quiz-apt-project-card {
-    flex: 0 0 100% !important;
-    min-width: 103px !important;
-    max-width: 138px !important;
+    flex: 0 0 100%;
+    min-width: 100px;
+    max-width: 138px;
     height: 103px;
   }
 
   .profile-preview-container {
-    padding: 0.2rem 0.46rem 0.69rem 0.46rem !important;
+    padding: 0.2rem 0.46rem 0.69rem 0.46rem;
     max-width: 90vw;
   }
 
   .profile-introduction {
-    font-size: 0.46rem;
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 600px) {
-
   nav.side-nav,
   nav.side-nav.collapsed,
   nav.side-nav.uncollapsed {
@@ -553,7 +549,7 @@ nav.side-nav hr {
     max-width: 50px;
     height: 100vh;
     position: fixed;
-    left: 0 !important;
+    left: 0;
     top: 0;
     padding: 0.5rem;
     flex-direction: column;
@@ -578,17 +574,21 @@ nav.side-nav hr {
   }
 
   .profile-preview-container {
-    padding: 0.2rem 0.23rem 0.46rem 0.23rem !important;
+    padding: 0.2rem 0.23rem 0.46rem 0.23rem;
     max-width: 85vw;
   }
 
   .profile-introduction {
-    font-size: 0.44rem;
+    font-size: 0.8rem;
+  }
+
+  .project-preview-container {
+    max-width: 85vw;
+    padding: 0.5rem 0.23rem 0.5rem 0.23rem;
   }
 }
 
 @media (max-width: 400px) {
-
   nav.side-nav,
   nav.side-nav.collapsed,
   nav.side-nav.uncollapsed {
@@ -597,7 +597,7 @@ nav.side-nav hr {
     max-width: 50px;
     height: 100vh;
     position: fixed;
-    left: 0 !important;
+    left: 0;
     top: 0;
     padding: 0.2rem;
     flex-direction: column;
@@ -622,12 +622,17 @@ nav.side-nav hr {
   }
 
   .profile-preview-container {
-    padding: 0.2rem 0.14rem 0.38rem 0.14rem !important;
+    padding: 0.2rem 0.14rem 0.38rem 0.14rem;
     max-width: 80vw;
   }
 
   .profile-introduction {
-    font-size: 0.41rem;
+    font-size: 0.7rem;
+  }
+
+  .project-preview-container {
+    max-width: 80vw;
+    padding: 0.5rem 0.14rem 0.5rem 0.14rem;
   }
 
   .tibia-optimizer-project-card,
@@ -635,24 +640,24 @@ nav.side-nav hr {
   .weather-forecast-project-card,
   .quiz-plu-project-card,
   .quiz-apt-project-card {
-    min-width: 82px !important;
-    max-width: 129px !important;
-    height: 103px;
+    min-width: 80px;
+    max-width: 120px;
+    height: 90px;
   }
 }
 
 @media (max-width: 300px) {
   .profile-preview-container {
-    padding: 0.1rem 0.09rem 0.28rem 0.09rem !important;
+    padding: 0.1rem 0.09rem 0.28rem 0.09rem;
     max-width: 75vw;
   }
 
   .profile-introduction {
-    font-size: 0.39rem;
+    font-size: 0.6rem;
   }
 
   .project-preview-container {
-    padding: 0.5rem 0.09rem 0.46rem 0.09rem !important;
+    padding: 0.5rem 0.09rem 0.46rem 0.09rem;
     max-width: 75vw;
   }
 
@@ -665,477 +670,8 @@ nav.side-nav hr {
   .weather-forecast-project-card,
   .quiz-plu-project-card,
   .quiz-apt-project-card {
-    min-width: 69px !important;
-    max-width: 115px !important;
-    height: 77px;
-  }
-}
-
-/* Zoom-Specific Adjustments with Finer Steps */
-@media (min-resolution: 1dppx) and (max-resolution: 1.25dppx) {
-
-  /* 100% to 125% zoom */
-  .projects-cards-flex {
-    gap: 12.3px;
-    /* Baseline gap */
-  }
-
-  .profile-preview-container {
-    max-width: 700px !important;
-    /* Increased from 600px */
-    padding: 0.2rem 1.15rem 0.58rem 1.15rem !important;
-  }
-
-  .project-preview-container {
-    max-width: 700px !important;
-    /* Increased from 600px */
-    padding: 1rem 1.15rem 1rem 1.15rem !important;
-  }
-
-  nav.side-nav {
-    width: 150px;
-    padding: 1.5rem 0.9rem 0.9rem 0.9rem;
-  }
-
-  .panel-container {
-    width: 200px;
-    padding: 1.5rem 1rem;
-  }
-}
-
-@media (min-resolution: 1.25dppx) and (max-resolution: 1.5dppx) {
-
-  /* 125% to 150% zoom */
-  .projects-cards-flex {
-    gap: 10.2px;
-    /* Reduced by ~2px */
-  }
-
-  .profile-preview-container {
-    max-width: 550px !important;
-    /* Increased from 450px */
-    padding: 0.2rem 1rem 0.5rem 1rem !important;
-  }
-
-  .project-preview-container {
-    max-width: 550px !important;
-    /* Increased from 450px */
-    padding: 0.8rem 1rem 0.8rem 1rem !important;
-  }
-
-  nav.side-nav {
-    width: 140px;
-    padding: 1.4rem 0.8rem 0.8rem 0.8rem;
-  }
-
-  .panel-container {
-    width: 180px;
-    padding: 1.4rem 0.9rem;
-  }
-}
-
-@media (min-resolution: 1.5dppx) and (max-resolution: 1.7dppx) {
-
-  /* 150% to 170% zoom */
-  .projects-cards-flex {
-    gap: 8.1px;
-    /* Reduced by ~2px */
-  }
-
-  .profile-preview-container {
-    max-width: 500px !important;
-    /* Increased from 400px */
-    padding: 0.2rem 0.9rem 0.45rem 0.9rem !important;
-  }
-
-  .project-preview-container {
-    max-width: 500px !important;
-    /* Increased from 400px */
-    padding: 0.7rem 0.9rem 0.7rem 0.9rem !important;
-  }
-
-  nav.side-nav {
-    width: 130px;
-    padding: 1.3rem 0.7rem 0.7rem 0.7rem;
-  }
-
-  .panel-container {
-    width: 170px;
-    padding: 1.3rem 0.8rem;
-  }
-}
-
-@media (min-resolution: 1.7dppx) and (max-resolution: 2dppx) {
-
-  /* 170% to 200% zoom */
-  .projects-cards-flex {
-    gap: 6.0px;
-    /* Reduced by ~2px */
-  }
-
-  .profile-preview-container {
-    max-width: 450px !important;
-    /* Increased from 350px */
-    padding: 0.2rem 0.8rem 0.4rem 0.8rem !important;
-  }
-
-  .project-preview-container {
-    max-width: 450px !important;
-    /* Increased from 350px */
-    padding: 0.6rem 0.8rem 0.6rem 0.8rem !important;
-  }
-
-  nav.side-nav {
-    width: 120px;
-    padding: 1.2rem 0.6rem 0.6rem 0.6rem;
-  }
-
-  .nav-link-text,
-  .nav-social-text {
-    display: contents;
-  }
-
-  .panel-container {
-    width: 160px;
-    padding: 1.2rem 0.7rem;
-  }
-}
-
-@media (min-resolution: 2dppx) and (max-resolution: 2.25dppx) {
-
-  /* 200% to 225% zoom */
-  .projects-cards-flex {
-    gap: 4.5px;
-    /* Reduced by ~1.5px */
-  }
-
-  .profile-preview-container {
-    max-width: 400px !important;
-    /* Increased from 300px */
-    padding: 0.2rem 0.7rem 0.35rem 0.7rem !important;
-  }
-
-  .project-preview-container {
-    max-width: 400px !important;
-    /* Increased from 300px */
-    padding: 0.5rem 0.7rem 0.5rem 0.7rem !important;
-  }
-
-  nav.side-nav {
-    width: 110px;
-    padding: 1.1rem 0.5rem 0.5rem 0.5rem;
-  }
-
-  .panel-container {
-    width: 150px;
-    padding: 1.1rem 0.6rem;
-  }
-}
-
-@media (min-resolution: 2.25dppx) and (max-resolution: 2.5dppx) {
-
-  /* 225% to 250% zoom */
-  .projects-cards-flex {
-    gap: 3.0px;
-    /* Reduced by ~1.5px */
-  }
-
-  .profile-preview-container {
-    max-width: 350px !important;
-    /* Increased from 250px */
-    padding: 0.2rem 0.6rem 0.3rem 0.6rem !important;
-  }
-
-  .project-preview-container {
-    max-width: 350px !important;
-    /* Increased from 250px */
-    padding: 0.4rem 0.6rem 0.4rem 0.6rem !important;
-  }
-
-  nav.side-nav {
-    width: 100px;
-    padding: 1.0rem 0.4rem 0.4rem 0.4rem;
-  }
-
-  .panel-container {
-    width: 140px;
-    padding: 1.0rem 0.5rem;
-  }
-}
-
-@media (min-resolution: 2.5dppx) and (max-resolution: 2.75dppx) {
-
-  /* 250% to 275% zoom */
-  .projects-cards-flex {
-    gap: 1.5px;
-    /* Reduced by ~1.5px */
-  }
-
-  .profile-preview-container {
-    max-width: 325px !important;
-    /* Increased from 200px */
-    padding: 0.2rem 0.5rem 0.25rem 0.5rem !important;
-  }
-
-  .project-preview-container {
-    max-width: 325px !important;
-    /* Increased from 200px */
-    padding: 0.3rem 0.5rem 0.3rem 0.5rem !important;
-  }
-
-  nav.side-nav {
-    width: 90px;
-    padding: 0.9rem 0.3rem 0.3rem 0.3rem;
-  }
-
-  .panel-container {
-    width: 130px;
-    padding: 0.9rem 0.4rem;
-  }
-}
-
-@media (min-resolution: 2.75dppx) and (max-resolution: 3dppx) {
-
-  /* 275% to 300% zoom */
-  .projects-cards-flex {
-    gap: 0.5px;
-    /* Reduced to minimum */
-  }
-
-  .profile-preview-container {
-    max-width: 300px !important;
-    /* Increased from 150px */
-    padding: 0.2rem 0.4rem 0.2rem 0.4rem !important;
-  }
-
-  .project-preview-container {
-    max-width: 300px !important;
-    /* Increased from 150px */
-    padding: 0.2rem 0.4rem 0.2rem 0.4rem !important;
-  }
-
-  nav.side-nav {
-    width: 80px;
-    padding: 0.8rem 0.2rem 0.2rem 0.2rem;
-  }
-
-  .panel-container {
-    width: 120px;
-    padding: 0.8rem 0.3rem;
-  }
-}
-
-@media (min-resolution: 3dppx) and (max-resolution: 3.25dppx) {
-
-  /* 300% to 325% zoom */
-  .projects-cards-flex {
-    gap: 0.3px;
-    /* Even smaller */
-  }
-
-  .profile-preview-container {
-    max-width: 290px !important;
-    /* Increased from 140px */
-    padding: 0.2rem 0.3rem 0.15rem 0.3rem !important;
-  }
-
-  .project-preview-container {
-    max-width: 290px !important;
-    /* Increased from 140px */
-    padding: 0.2rem 0.3rem 0.15rem 0.3rem !important;
-  }
-
-  nav.side-nav {
-    width: 70px;
-    padding: 0.7rem 0.1rem 0.1rem 0.1rem;
-  }
-
-  .panel-container {
-    width: 110px;
-    padding: 0.7rem 0.2rem;
-  }
-}
-
-@media (min-resolution: 3.25dppx) and (max-resolution: 3.5dppx) {
-
-  /* 325% to 350% zoom */
-  .projects-cards-flex {
-    gap: 0.1px;
-    /* Minimum practical gap */
-  }
-
-  .profile-preview-container {
-    max-width: 280px !important;
-    /* Increased from 130px */
-    padding: 0.1rem 0.2rem 0.1rem 0.2rem !important;
-  }
-
-  .project-preview-container {
-    max-width: 280px !important;
-    /* Increased from 130px */
-    padding: 0.1rem 0.2rem 0.1rem 0.2rem !important;
-  }
-
-  nav.side-nav {
-    width: 60px;
-    padding: 0.6rem 0.1rem 0.1rem 0.1rem;
-  }
-
-  .panel-container {
-    width: 100px;
-    padding: 0.6rem 0.1rem;
-  }
-}
-
-@media (min-resolution: 3.5dppx) and (max-resolution: 4dppx) {
-
-  /* 350% to 400% zoom */
-  .projects-cards-flex {
-    gap: 0px;
-    /* No gap at very high zoom */
-  }
-
-  .profile-preview-container {
-    max-width: 200px !important;
-    /* Reduced from 270px */
-    padding: 0.1rem 0.1rem 0.1rem 0.1rem !important;
-  }
-
-  .project-preview-container {
-    max-width: 200px !important;
-    /* Reduced from 270px */
-    padding: 0.1rem 0.1rem 0.1rem 0.1rem !important;
-  }
-
-  .tibia-optimizer-project-card,
-  .chat-project-card,
-  .weather-forecast-project-card,
-  .quiz-plu-project-card,
-  .quiz-apt-project-card {
-    min-width: 60px !important;
-    max-width: 100px !important;
-    height: 55px;
-  }
-
-  nav.side-nav {
-    width: 50px;
-    padding: 0.5rem 0.1rem 0.1rem 0.1rem;
-  }
-
-  nav.side-nav.collapsed {
-    width: 35px;
-    padding: 0.2rem;
-  }
-
-  nav.side-nav.uncollapsed {
-    width: 50px;
-    padding: 0.5rem 0.1rem 0.1rem 0.1rem;
-  }
-
-  .panel-container {
-    width: 90px;
-    padding: 0.5rem 0.1rem;
-  }
-}
-
-@media (min-resolution: 4dppx) and (max-resolution: 5dppx) {
-
-  /* 400% to 500% zoom */
-  .projects-cards-flex {
-    gap: 0px;
-    /* No gap at very high zoom */
-  }
-
-  .profile-preview-container {
-    max-width: 150px !important;
-    /* Reduced from 200px */
-    padding: 0.1rem 0.1rem 0.1rem 0.1rem !important;
-  }
-
-  .project-preview-container {
-    max-width: 150px !important;
-    /* Reduced from 200px */
-    padding: 0.1rem 0.1rem 0.1rem 0.1rem !important;
-  }
-
-  .tibia-optimizer-project-card,
-  .chat-project-card,
-  .weather-forecast-project-card,
-  .quiz-plu-project-card,
-  .quiz-apt-project-card {
-    min-width: 50px !important;
-    max-width: 90px !important;
-    height: 45px;
-  }
-
-  nav.side-nav {
-    width: 40px;
-    padding: 0.4rem 0.1rem 0.1rem 0.1rem;
-  }
-
-  nav.side-nav.collapsed {
-    width: 30px;
-    padding: 0.2rem;
-  }
-
-  nav.side-nav.uncollapsed {
-    width: 40px;
-    padding: 0.4rem 0.1rem 0.1rem 0.1rem;
-  }
-
-  .panel-container {
-    width: 80px;
-    padding: 0.4rem 0.1rem;
-  }
-}
-
-@media (min-resolution: 5dppx) {
-
-  /* 500% and above */
-  .projects-cards-flex {
-    gap: 0px;
-    /* No gap at very high zoom */
-  }
-
-  .profile-preview-container {
-    max-width: 150px !important;
-    /* Further reduced */
-    padding: 0.1rem 0.1rem 0.1rem 0.1rem !important;
-  }
-
-  .project-preview-container {
-    max-width: 180px !important;
-    /* Further reduced */
-    padding: 0.1rem 0.1rem 0.1rem 0.1rem !important;
-  }
-
-  .tibia-optimizer-project-card,
-  .chat-project-card,
-  .weather-forecast-project-card,
-  .quiz-plu-project-card,
-  .quiz-apt-project-card {
-    min-width: 120px !important;
-    max-width: 80px !important;
-    height: 35px;
-  }
-
-  nav.side-nav {
-    width: 35px;
-    padding: 0.3rem 0.1rem 0.1rem 0.1rem;
-  }
-
-  nav.side-nav.collapsed {
-    width: 25px;
-    padding: 0.2rem;
-  }
-
-  nav.side-nav.uncollapsed {
-    width: 35px;
-    padding: 0.3rem 0.1rem 0.1rem 0.1rem;
-  }
-
-  .panel-container {
-    width: 70px;
-    padding: 0.3rem 0.1rem;
+    min-width: 70px;
+    max-width: 110px;
+    height: 80px;
   }
 }
