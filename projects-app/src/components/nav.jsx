@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const isProd = import.meta.env.PROD;
 
-const profileLinks = {
+const assets = {
   cv_link: isProd
     ? "/api/getAsset?asset=cv_link"
     : import.meta.env.VITE_CLOUDINARY_CV_LINK,
@@ -13,9 +13,6 @@ const profileLinks = {
   linkedIn_link: isProd
     ? "/api/getAsset?asset=linkedIn_link"
     : import.meta.env.VITE_CLOUDINARY_LINKEDIN_LINK,
-};
-
-const navIcons = {
   profile_icon: isProd
     ? "/api/getAsset?asset=profile_icon"
     : import.meta.env.VITE_CLOUDINARY_PROFILE_ICON,
@@ -47,7 +44,7 @@ function Nav() {
           <Link to="/" className="nav-link-flex">
             <span className="nav-icon">
               <img
-                src={navIcons.profile_icon}
+                src={assets.profile_icon}
                 alt="Profile Icon"
                 className="nav-icon"
               />
@@ -59,13 +56,13 @@ function Nav() {
           <a
             className="nav-link-flex"
             onClick={() =>
-              window.open(profileLinks.cv_link, "_blank", "noreferrer")
+              window.open(assets.cv_link, "_blank", "noreferrer")
             }
             tabIndex={0}
             role="button"
           >
             <span className="nav-icon">
-              <img src={navIcons.CV_icon} alt="CV Icon" className="nav-icon" />
+              <img src={assets.CV_icon} alt="CV Icon" className="nav-icon" />
             </span>
             {!collapsed && <span className="nav-link-text">CV</span>}
           </a>
@@ -74,14 +71,14 @@ function Nav() {
           <a
             className="nav-link-flex"
             onClick={() =>
-              window.open(profileLinks.gitHub_link, "_blank", "noreferrer")
+              window.open(assets.gitHub_link, "_blank", "noreferrer")
             }
             tabIndex={0}
             role="button"
           >
             <span className="nav-icon">
               <img
-                src={navIcons.gitHub_icon}
+                src={assets.gitHub_icon}
                 alt="GitHub Icon"
                 className="nav-icon"
               />
@@ -93,14 +90,14 @@ function Nav() {
           <a
             className="nav-link-flex"
             onClick={() =>
-              window.open(profileLinks.linkedIn_link, "_blank", "noreferrer")
+              window.open(assets.linkedIn_link, "_blank", "noreferrer")
             }
             tabIndex={0}
             role="button"
           >
             <span className="nav-icon">
               <img
-                src={navIcons.linkedIn_icon}
+                src={assets.linkedIn_icon}
                 alt="LinkedIn Icon"
                 className="nav-icon"
               />

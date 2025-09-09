@@ -1,22 +1,19 @@
 function Introduction() {
   const isProd = import.meta.env.PROD;
 
-  const projectsLink = {
-    tibiaOptimizer_link: isProd
-      ? "/api/getAsset?asset=tibiaOptimizer_link"
-      : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_LINK,
-    chat_link: isProd
-      ? "/api/getAsset?asset=chat_link"
-      : import.meta.env.VITE_CLOUDINARY_CHAT_LINK,
-  };
-
   const assets = {
     tibiaOptimizer_background: isProd
       ? "/api/getAsset?asset=tibiaOptimizer_background"
       : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_BACKGROUND,
+    tibiaOptimizer_link: isProd
+      ? "/api/getAsset?asset=tibiaOptimizer_link"
+      : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_LINK,
     chat_background: isProd
       ? "/api/getAsset?asset=chat_background"
       : import.meta.env.VITE_CLOUDINARY_CHAT_BACKGROUND,
+    chat_link: isProd
+      ? "/api/getAsset?asset=chat_link"
+      : import.meta.env.VITE_CLOUDINARY_CHAT_LINK,
   };
 
   return (
@@ -28,28 +25,27 @@ function Introduction() {
           great interest in programming and technology since I was young, and
           now I am in my final year of studies. I like to focus on areas where I
           see a real need, and with my latest project for the game Tibia, I've
-          identified a gap that hasn't been addressed yet – with a focus on <strong>Optimization</strong>.
+          identified a gap that hasn't been addressed yet – with a focus on{" "}
+          <strong>Optimization</strong>.
           <br />
           <br />
-          This project is designed to fill that gap by improving the gaming experience through optimized
-          performance and user interface. My goal is to implement enhancements and features that make the game
-          more enjoyable for players, and eventually collaborate with other developers to expand the project further.
+          This project is designed to fill that gap by improving the gaming
+          experience through optimized performance and user interface. My goal
+          is to implement enhancements and features that make the game more
+          enjoyable for players, and eventually collaborate with other
+          developers to expand the project further.
           <br />
           <br />
           See the project and its details below.
         </div>
       </div>
       <div className="project-preview-container">
-        <h2 className="project-preview-title">Projects</h2>
+        <h2>Projects</h2>
         <div className="projects-cards-flex">
           <div
             className="tibia-optimizer-project-card"
             onClick={() =>
-              window.open(
-                projectsLink.tibiaOptimizer_link,
-                "_blank",
-                "noreferrer"
-              )
+              window.open(assets.tibiaOptimizer_link, "_blank", "noreferrer")
             }
           >
             <div className="tibia-optimizer-image-hover">
@@ -69,7 +65,7 @@ function Introduction() {
           <div
             className="chat-project-card"
             onClick={() =>
-              window.open(projectsLink.chat_link, "_blank", "noreferrer")
+              window.open(assets.chat_link, "_blank", "noreferrer")
             }
           >
             <div className="chat-image-hover">

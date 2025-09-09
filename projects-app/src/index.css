@@ -9,13 +9,14 @@ body {
 }
 
 .profile-preview-container {
-  max-width: 500px !important;
+  max-width: 700px !important;
+  /* Increased from 600px */
   margin: 16px auto 0 auto;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 1.5px 6px rgba(0, 0, 0, 0.04);
   padding: 0.2rem 1.15rem 0.58rem 1.15rem !important;
-  text-align: left;
+  text-align: center;
   border: 1.5px solid #e0e3e8;
 }
 
@@ -23,10 +24,12 @@ body {
   font-size: 1.1rem;
   color: #23272f;
   margin-bottom: 1.2rem;
+  text-align: left;
 }
 
 .project-preview-container {
-  max-width: 500px !important;
+  max-width: 700px !important;
+  /* Increased from 600px */
   margin: 48px auto 0 auto;
   background: #fff;
   border-radius: 5px;
@@ -42,13 +45,6 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 350px;
-}
-
-.project-preview-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #285bb5;
-  margin-bottom: 0.7rem;
 }
 
 .project-preview-desc {
@@ -80,6 +76,7 @@ body {
   font-weight: 500;
   color: #285bb5;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .projects-cards-flex {
@@ -359,6 +356,7 @@ nav.side-nav hr {
   font-size: 1rem;
   margin-bottom: 0.7rem;
   font-weight: 500;
+  text-align: center;
 }
 
 .panel-commits-list {
@@ -392,11 +390,11 @@ nav.side-nav hr {
 .panel-commit-item {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 6px;
-  padding: 0.5rem 0.6rem 0.4rem; /* Reduced from 0.7rem, 0.8rem, 0.6rem */
+  padding: 0.5rem 0.6rem 0.4rem;
   box-shadow: 0 1.5px 6px rgba(0, 0, 0, 0.04);
   border-left: 3px solid lightgray;
   position: relative;
-  font-size: 0.7rem; /* Reduced from 0.9rem */
+  font-size: 0.7rem;
   transition: background 0.18s;
 }
 
@@ -412,26 +410,26 @@ nav.side-nav hr {
 }
 
 .panel-commit-label {
-  font-size: 0.65rem; /* Reduced from 0.85rem */
+  font-size: 0.65rem;
   color: #b3c6e0;
   font-weight: 400;
-  margin-right: 0.4rem; /* Reduced from 0.5rem */
+  margin-right: 0.4rem;
 }
 
 .panel-commit-message {
   display: block;
-  font-size: 0.75rem; /* Reduced from 0.95rem */
+  font-size: 0.75rem;
   font-weight: 600;
   color: #fff;
   font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', 'Liberation Mono', monospace;
-  margin-bottom: 0.15rem; /* Reduced from 0.2rem */
+  margin-bottom: 0.15rem;
   word-break: break-word;
 }
 
 .panel-commit-meta {
-  color: #6b7a90;
-  font-size: 0.65rem; /* Reduced from 0.85rem */
-  margin-top: 0.08rem; /* Reduced from 0.1rem */
+  color: white;
+  font-size: 0.65rem;
+  margin-top: 0.08rem;
 }
 
 /* Media Queries */
@@ -509,7 +507,7 @@ nav.side-nav hr {
 
   .nav-link-text,
   .nav-social-text {
-    display: contents;
+    display: none;
   }
 
   .nav-icon img,
@@ -546,6 +544,7 @@ nav.side-nav hr {
 }
 
 @media (max-width: 600px) {
+
   nav.side-nav,
   nav.side-nav.collapsed,
   nav.side-nav.uncollapsed {
@@ -589,6 +588,7 @@ nav.side-nav hr {
 }
 
 @media (max-width: 400px) {
+
   nav.side-nav,
   nav.side-nav.collapsed,
   nav.side-nav.uncollapsed {
@@ -617,7 +617,7 @@ nav.side-nav hr {
   }
 
   .panel-container {
-    width: 100px;
+    width: 80px;
     padding: 0.6rem;
   }
 
@@ -671,33 +671,59 @@ nav.side-nav hr {
   }
 }
 
-/* Zoom-Specific Adjustments */
-@media (min-resolution: 1.5dppx) and (max-resolution: 2dppx) { /* 150% to 200% zoom */
-  .profile-preview-container {
-    max-width: 450px !important;
-    padding: 0.2rem 1rem 0.5rem 1rem !important;
+/* Zoom-Specific Adjustments with Finer Steps */
+@media (min-resolution: 1dppx) and (max-resolution: 1.25dppx) {
+
+  /* 100% to 125% zoom */
+  .projects-cards-flex {
+    gap: 12.3px;
+    /* Baseline gap */
   }
 
-  .profile-introduction {
-    font-size: 0.9rem;
+  .profile-preview-container {
+    max-width: 700px !important;
+    /* Increased from 600px */
+    padding: 0.2rem 1.15rem 0.58rem 1.15rem !important;
   }
 
   .project-preview-container {
-    max-width: 450px !important;
+    max-width: 700px !important;
+    /* Increased from 600px */
+    padding: 1rem 1.15rem 1rem 1.15rem !important;
+  }
+
+  nav.side-nav {
+    width: 150px;
+    padding: 1.5rem 0.9rem 0.9rem 0.9rem;
+  }
+
+  .panel-container {
+    width: 200px;
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (min-resolution: 1.25dppx) and (max-resolution: 1.5dppx) {
+
+  /* 125% to 150% zoom */
+  .projects-cards-flex {
+    gap: 10.2px;
+    /* Reduced by ~2px */
+  }
+
+  .profile-preview-container {
+    max-width: 550px !important;
+    /* Increased from 450px */
+    padding: 0.2rem 1rem 0.5rem 1rem !important;
+  }
+
+  .project-preview-container {
+    max-width: 550px !important;
+    /* Increased from 450px */
     padding: 0.8rem 1rem 0.8rem 1rem !important;
   }
 
   nav.side-nav {
-    width: 140px;
-    padding: 1.4rem 0.8rem 0.8rem 0.8rem;
-  }
-
-  nav.side-nav.collapsed {
-    width: 45px;
-    padding: 0.4rem;
-  }
-
-  nav.side-nav.uncollapsed {
     width: 140px;
     padding: 1.4rem 0.8rem 0.8rem 0.8rem;
   }
@@ -708,65 +734,277 @@ nav.side-nav hr {
   }
 }
 
-@media (min-resolution: 2dppx) and (max-resolution: 3dppx) { /* 200% to 300% zoom */
+@media (min-resolution: 1.5dppx) and (max-resolution: 1.7dppx) {
+
+  /* 150% to 170% zoom */
+  .projects-cards-flex {
+    gap: 8.1px;
+    /* Reduced by ~2px */
+  }
+
   .profile-preview-container {
-    max-width: 250px !important;
+    max-width: 500px !important;
+    /* Increased from 400px */
+    padding: 0.2rem 0.9rem 0.45rem 0.9rem !important;
+  }
+
+  .project-preview-container {
+    max-width: 500px !important;
+    /* Increased from 400px */
+    padding: 0.7rem 0.9rem 0.7rem 0.9rem !important;
+  }
+
+  nav.side-nav {
+    width: 130px;
+    padding: 1.3rem 0.7rem 0.7rem 0.7rem;
+  }
+
+  .panel-container {
+    width: 170px;
+    padding: 1.3rem 0.8rem;
+  }
+}
+
+@media (min-resolution: 1.7dppx) and (max-resolution: 2dppx) {
+
+  /* 170% to 200% zoom */
+  .projects-cards-flex {
+    gap: 6.0px;
+    /* Reduced by ~2px */
+  }
+
+  .profile-preview-container {
+    max-width: 450px !important;
+    /* Increased from 350px */
     padding: 0.2rem 0.8rem 0.4rem 0.8rem !important;
   }
 
-  .profile-introduction {
-    font-size: 0.7rem;
-  }
-
   .project-preview-container {
-    max-width: 250px !important;
+    max-width: 450px !important;
+    /* Increased from 350px */
     padding: 0.6rem 0.8rem 0.6rem 0.8rem !important;
   }
 
-  .tibia-optimizer-project-card,
-  .chat-project-card,
-  .weather-forecast-project-card,
-  .quiz-plu-project-card,
-  .quiz-apt-project-card {
-    min-width: 90px !important;
-    max-width: 140px !important;
-    height: 85px;
+  nav.side-nav {
+    width: 120px;
+    padding: 1.2rem 0.6rem 0.6rem 0.6rem;
+  }
+
+  .nav-link-text,
+  .nav-social-text {
+    display: contents;
+  }
+
+  .panel-container {
+    width: 160px;
+    padding: 1.2rem 0.7rem;
+  }
+}
+
+@media (min-resolution: 2dppx) and (max-resolution: 2.25dppx) {
+
+  /* 200% to 225% zoom */
+  .projects-cards-flex {
+    gap: 4.5px;
+    /* Reduced by ~1.5px */
+  }
+
+  .profile-preview-container {
+    max-width: 400px !important;
+    /* Increased from 300px */
+    padding: 0.2rem 0.7rem 0.35rem 0.7rem !important;
+  }
+
+  .project-preview-container {
+    max-width: 400px !important;
+    /* Increased from 300px */
+    padding: 0.5rem 0.7rem 0.5rem 0.7rem !important;
   }
 
   nav.side-nav {
-    width: 120px; /* Reduced from 110px to match 400%-500% range */
-    padding: 1.2rem 0.6rem 0.6rem 0.6rem;
+    width: 110px;
+    padding: 1.1rem 0.5rem 0.5rem 0.5rem;
   }
 
-  nav.side-nav.collapsed {
-    width: 20px;
-    padding: 0.2rem;
+  .panel-container {
+    width: 150px;
+    padding: 1.1rem 0.6rem;
+  }
+}
+
+@media (min-resolution: 2.25dppx) and (max-resolution: 2.5dppx) {
+
+  /* 225% to 250% zoom */
+  .projects-cards-flex {
+    gap: 3.0px;
+    /* Reduced by ~1.5px */
   }
 
-  nav.side-nav.uncollapsed {
-    width: 140px;
-    padding: 1.2rem 0.6rem 0.6rem 0.6rem;
+  .profile-preview-container {
+    max-width: 350px !important;
+    /* Increased from 250px */
+    padding: 0.2rem 0.6rem 0.3rem 0.6rem !important;
+  }
+
+  .project-preview-container {
+    max-width: 350px !important;
+    /* Increased from 250px */
+    padding: 0.4rem 0.6rem 0.4rem 0.6rem !important;
+  }
+
+  nav.side-nav {
+    width: 100px;
+    padding: 1.0rem 0.4rem 0.4rem 0.4rem;
   }
 
   .panel-container {
     width: 140px;
-    padding: 1.1rem 0.7rem;
+    padding: 1.0rem 0.5rem;
   }
 }
 
-@media (min-resolution: 4dppx) { /* 400% and above, e.g., 500% */
-  .profile-preview-container {
-    max-width: 270px !important;
-    padding: 0.2rem 0.6rem 0.3rem 0.6rem !important;
+@media (min-resolution: 2.5dppx) and (max-resolution: 2.75dppx) {
+
+  /* 250% to 275% zoom */
+  .projects-cards-flex {
+    gap: 1.5px;
+    /* Reduced by ~1.5px */
   }
 
-  .profile-introduction {
-    font-size: 0.5rem;
+  .profile-preview-container {
+    max-width: 325px !important;
+    /* Increased from 200px */
+    padding: 0.2rem 0.5rem 0.25rem 0.5rem !important;
   }
 
   .project-preview-container {
-    max-width: 270px !important;
-    padding: 0.4rem 0.6rem 0.4rem 0.6rem !important;
+    max-width: 325px !important;
+    /* Increased from 200px */
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem !important;
+  }
+
+  nav.side-nav {
+    width: 90px;
+    padding: 0.9rem 0.3rem 0.3rem 0.3rem;
+  }
+
+  .panel-container {
+    width: 130px;
+    padding: 0.9rem 0.4rem;
+  }
+}
+
+@media (min-resolution: 2.75dppx) and (max-resolution: 3dppx) {
+
+  /* 275% to 300% zoom */
+  .projects-cards-flex {
+    gap: 0.5px;
+    /* Reduced to minimum */
+  }
+
+  .profile-preview-container {
+    max-width: 300px !important;
+    /* Increased from 150px */
+    padding: 0.2rem 0.4rem 0.2rem 0.4rem !important;
+  }
+
+  .project-preview-container {
+    max-width: 300px !important;
+    /* Increased from 150px */
+    padding: 0.2rem 0.4rem 0.2rem 0.4rem !important;
+  }
+
+  nav.side-nav {
+    width: 80px;
+    padding: 0.8rem 0.2rem 0.2rem 0.2rem;
+  }
+
+  .panel-container {
+    width: 120px;
+    padding: 0.8rem 0.3rem;
+  }
+}
+
+@media (min-resolution: 3dppx) and (max-resolution: 3.25dppx) {
+
+  /* 300% to 325% zoom */
+  .projects-cards-flex {
+    gap: 0.3px;
+    /* Even smaller */
+  }
+
+  .profile-preview-container {
+    max-width: 290px !important;
+    /* Increased from 140px */
+    padding: 0.2rem 0.3rem 0.15rem 0.3rem !important;
+  }
+
+  .project-preview-container {
+    max-width: 290px !important;
+    /* Increased from 140px */
+    padding: 0.2rem 0.3rem 0.15rem 0.3rem !important;
+  }
+
+  nav.side-nav {
+    width: 70px;
+    padding: 0.7rem 0.1rem 0.1rem 0.1rem;
+  }
+
+  .panel-container {
+    width: 110px;
+    padding: 0.7rem 0.2rem;
+  }
+}
+
+@media (min-resolution: 3.25dppx) and (max-resolution: 3.5dppx) {
+
+  /* 325% to 350% zoom */
+  .projects-cards-flex {
+    gap: 0.1px;
+    /* Minimum practical gap */
+  }
+
+  .profile-preview-container {
+    max-width: 280px !important;
+    /* Increased from 130px */
+    padding: 0.1rem 0.2rem 0.1rem 0.2rem !important;
+  }
+
+  .project-preview-container {
+    max-width: 280px !important;
+    /* Increased from 130px */
+    padding: 0.1rem 0.2rem 0.1rem 0.2rem !important;
+  }
+
+  nav.side-nav {
+    width: 60px;
+    padding: 0.6rem 0.1rem 0.1rem 0.1rem;
+  }
+
+  .panel-container {
+    width: 100px;
+    padding: 0.6rem 0.1rem;
+  }
+}
+
+@media (min-resolution: 3.5dppx) and (max-resolution: 4dppx) {
+
+  /* 350% to 400% zoom */
+  .projects-cards-flex {
+    gap: 0px;
+    /* No gap at very high zoom */
+  }
+
+  .profile-preview-container {
+    max-width: 200px !important;
+    /* Reduced from 270px */
+    padding: 0.1rem 0.1rem 0.1rem 0.1rem !important;
+  }
+
+  .project-preview-container {
+    max-width: 200px !important;
+    /* Reduced from 270px */
+    padding: 0.1rem 0.1rem 0.1rem 0.1rem !important;
   }
 
   .tibia-optimizer-project-card,
@@ -774,14 +1012,14 @@ nav.side-nav hr {
   .weather-forecast-project-card,
   .quiz-plu-project-card,
   .quiz-apt-project-card {
-    min-width: 70px !important;
-    max-width: 110px !important;
-    height: 65px;
+    min-width: 60px !important;
+    max-width: 100px !important;
+    height: 55px;
   }
 
   nav.side-nav {
-    width: 120px;
-    padding: 1.2rem 0.6rem 0.6rem 0.6rem;
+    width: 50px;
+    padding: 0.5rem 0.1rem 0.1rem 0.1rem;
   }
 
   nav.side-nav.collapsed {
@@ -790,30 +1028,34 @@ nav.side-nav hr {
   }
 
   nav.side-nav.uncollapsed {
-    width: 120px;
-    padding: 1.2rem 0.6rem 0.6rem 0.6rem;
+    width: 50px;
+    padding: 0.5rem 0.1rem 0.1rem 0.1rem;
   }
 
   .panel-container {
-    width: 85px;
-    padding: 1.2rem 0.7rem;
+    width: 90px;
+    padding: 0.5rem 0.1rem;
   }
 }
 
+@media (min-resolution: 4dppx) and (max-resolution: 5dppx) {
 
-@media (min-resolution: 5dppx) { /* 500% */
-  .profile-preview-container {
-    max-width: 170px !important;
-    padding: 0.2rem 0.6rem 0.3rem 0.6rem !important;
+  /* 400% to 500% zoom */
+  .projects-cards-flex {
+    gap: 0px;
+    /* No gap at very high zoom */
   }
 
-  .profile-introduction {
-    font-size: 0.5rem;
+  .profile-preview-container {
+    max-width: 150px !important;
+    /* Reduced from 200px */
+    padding: 0.1rem 0.1rem 0.1rem 0.1rem !important;
   }
 
   .project-preview-container {
-    max-width: 170px !important;
-    padding: 0.4rem 0.6rem 0.4rem 0.6rem !important;
+    max-width: 150px !important;
+    /* Reduced from 200px */
+    padding: 0.1rem 0.1rem 0.1rem 0.1rem !important;
   }
 
   .tibia-optimizer-project-card,
@@ -821,28 +1063,79 @@ nav.side-nav hr {
   .weather-forecast-project-card,
   .quiz-plu-project-card,
   .quiz-apt-project-card {
-    min-width: 70px !important;
-    max-width: 110px !important;
-    height: 65px;
+    min-width: 50px !important;
+    max-width: 90px !important;
+    height: 45px;
   }
 
   nav.side-nav {
-    width: 120px;
-    padding: 1.2rem 0.6rem 0.6rem 0.6rem;
+    width: 40px;
+    padding: 0.4rem 0.1rem 0.1rem 0.1rem;
   }
 
   nav.side-nav.collapsed {
-    width: 35px;
+    width: 30px;
     padding: 0.2rem;
   }
 
   nav.side-nav.uncollapsed {
-    width: 120px;
-    padding: 1.2rem 0.6rem 0.6rem 0.6rem;
+    width: 40px;
+    padding: 0.4rem 0.1rem 0.1rem 0.1rem;
   }
 
   .panel-container {
-    width: 85px;
-    padding: 1.2rem 0.7rem;
+    width: 80px;
+    padding: 0.4rem 0.1rem;
+  }
+}
+
+@media (min-resolution: 5dppx) {
+
+  /* 500% and above */
+  .projects-cards-flex {
+    gap: 0px;
+    /* No gap at very high zoom */
+  }
+
+  .profile-preview-container {
+    max-width: 150px !important;
+    /* Further reduced */
+    padding: 0.1rem 0.1rem 0.1rem 0.1rem !important;
+  }
+
+  .project-preview-container {
+    max-width: 180px !important;
+    /* Further reduced */
+    padding: 0.1rem 0.1rem 0.1rem 0.1rem !important;
+  }
+
+  .tibia-optimizer-project-card,
+  .chat-project-card,
+  .weather-forecast-project-card,
+  .quiz-plu-project-card,
+  .quiz-apt-project-card {
+    min-width: 120px !important;
+    max-width: 80px !important;
+    height: 35px;
+  }
+
+  nav.side-nav {
+    width: 35px;
+    padding: 0.3rem 0.1rem 0.1rem 0.1rem;
+  }
+
+  nav.side-nav.collapsed {
+    width: 25px;
+    padding: 0.2rem;
+  }
+
+  nav.side-nav.uncollapsed {
+    width: 35px;
+    padding: 0.3rem 0.1rem 0.1rem 0.1rem;
+  }
+
+  .panel-container {
+    width: 70px;
+    padding: 0.3rem 0.1rem;
   }
 }
