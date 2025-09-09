@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 function Panel() {
   const [commits, setCommits] = useState([]);
+  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     fetch("/api/commits")
@@ -9,20 +10,43 @@ function Panel() {
       .then(setCommits);
   }, []);
 
+  const goLeft = () => setCurrent((prev) => (prev > 0 ? prev - 1 : prev));
+  const goRight = () =>
+    setCurrent((prev) => (prev < commits.length - 1 ? prev + 1 : prev));
+
   return (
     <div className="panel-container">
-      <h3>Latest commits:</h3>
-      <ul className="panel-commits-list">
-        {commits.map((c) => (
-          <li className="panel-commit-item" key={c.hash}>
+  <div className="panel-commits-nav-row">
+        {current > 0 && (
+          <button
+            onClick={goLeft}
+            className="panel-commit-nav-btn panel-commit-nav-btn-left"
+            aria-label="Previous commit"
+          >
+            &#60;
+          </button>
+        )}
+        {commits.length > 0 && (
+          <div className="panel-commit-item panel-commit-item-single">
             <span className="panel-commit-label">Commit message:</span>
-            <span className="panel-commit-message">{c.message}</span>
+            <span className="panel-commit-message">
+              {commits[current].message}
+            </span>
             <div className="panel-commit-meta">
-              by {c.author} - {c.date}
+              by {commits[current].author} - {commits[current].date}
             </div>
-          </li>
-        ))}
-      </ul>
+          </div>
+        )}
+        {current < commits.length - 1 && (
+          <button
+            onClick={goRight}
+            className="panel-commit-nav-btn panel-commit-nav-btn-right"
+            aria-label="Next commit"
+          >
+            &#62;
+          </button>
+        )}
+      </div>
     </div>
   );
 }

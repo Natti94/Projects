@@ -37,7 +37,7 @@ function Nav() {
         onClick={() => setCollapsed(!collapsed)}
         aria-label={collapsed ? "Expand navigation" : "Collapse navigation"}
       >
-        {collapsed ? "⮞" : "⮜"}
+        {collapsed ? "↠" : "↞"}
       </button>
       <ul className={collapsed ? "nav-list-collapsed" : "nav-list-uncollapsed"}>
         <li>
