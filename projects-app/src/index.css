@@ -70,7 +70,7 @@ body {
   padding: 0.8rem 1rem;
   border-bottom: 2px solid rgba(255, 255, 255, 0.12);
   transition: height 0.3s cubic-bezier(0.4, 2, 0.6, 1);
-  overflow-x: auto;
+  overflow-x: hidden;
   color: #fff;
   box-sizing: border-box;
 }
@@ -111,7 +111,7 @@ body {
   border-radius: 10px;
   padding: 0.7rem 0.9rem;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
-  border-left: 3px solid #ffd700;
+  border-left: 3px solid white;
   position: relative;
   font-size: 0.8rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -124,7 +124,6 @@ body {
 
 .panel-commit-item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 7px 18px rgba(0, 144, 0, 0.2);
 }
 
 .panel-commit-label {
