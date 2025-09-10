@@ -1,12 +1,13 @@
+
 import express from "express";
 import { execSync } from "child_process";
 import dotenv from "dotenv";
 
+dotenv.config();
+
 const PORT = process.env.PORT;
 
 const app = express();
-
-dotenv.config();
 
 app.use(express.json());
 
