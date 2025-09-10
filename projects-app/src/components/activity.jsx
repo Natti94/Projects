@@ -5,7 +5,7 @@ function Activity() {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    fetch("/api/commits")
+    fetch("/api/getActivity")
       .then((res) => res.json())
       .then(setCommits);
   }, []);
