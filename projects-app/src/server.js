@@ -2,7 +2,7 @@ import express from "express";
 import { execSync } from "child_process";
 import dotenv from "dotenv";
 
-const PORT = process.env.VITE_PORT;
+const PORT = process.env.PORT;
 
 const app = express();
 
