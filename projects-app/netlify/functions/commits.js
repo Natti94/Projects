@@ -10,7 +10,6 @@ exports.handler = async (event) => {
     const response = await fetch(url, {
       headers: {
         "User-Agent": "NetlifyFunction",
-        // Optionally add Authorization: `token ${process.env.GITHUB_TOKEN}`
       },
     });
     if (!response.ok) {
