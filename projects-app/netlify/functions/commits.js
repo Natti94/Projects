@@ -1,4 +1,3 @@
-const fetch = require("node-fetch");
 
 exports.handler = async (event) => {
   const owner = "Natti94";
@@ -7,11 +6,13 @@ exports.handler = async (event) => {
   const url = `https://api.github.com/repos/${owner}/${repo}/commits?per_page=${per_page}`;
 
   try {
-    const response = await fetch(url, {
-      headers: {
-        "User-Agent": "NetlifyFunction",
-      },
-    });
+    const headers = {
+      "User-Agent": "NetlifyFunction",
+    };
+    if (process.env.GITHUB_TOKEN) {
+      headers["Authorization"] = `token ${process.env.GITHUB_TOKEN}`;
+    }
+    const response = await fetch(url, { headers });
     if (!response.ok) {
       throw new Error(`GitHub API error: ${response.status}`);
     }
