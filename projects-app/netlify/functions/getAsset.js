@@ -5,7 +5,7 @@ const assetPaths = {
   tibiaOptimizer_link: process.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_LINK,
   tibiaOptimizer_background:
     process.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_BACKGROUND,
-  tibiaOptimizer_icon: process.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_ICON || "", // Fallback if not set
+  tibiaOptimizer_icon: process.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_ICON,
   chat_link: process.env.VITE_CLOUDINARY_CHAT_LINK,
   chat_icon: process.env.VITE_CLOUDINARY_CHAT_ICON,
   cv_link: process.env.VITE_CLOUDINARY_CV_LINK,

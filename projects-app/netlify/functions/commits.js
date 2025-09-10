@@ -1,24 +1,43 @@
-
-const { execSync } = require("child_process");
+const fetch = require("node-fetch");
 
 exports.handler = async (event) => {
-	try {
-		const log = execSync('git log -10 --pretty=format:"%h|%an|%ar|%s"').toString();
-		const commits = log.split("\n").map((line) => {
-			const [hash, author, date, message] = line.split("|");
-			return { hash, author, date, message };
-		});
-		return {
-			statusCode: 200,
-			body: JSON.stringify(commits),
-			headers: {
-				'Content-Type': 'application/json',
-			},
-		};
-	} catch (err) {
-		return {
-			statusCode: 500,
-			body: JSON.stringify({ error: "Failed to retrieve commits" }),
-		};
-	}
+  const owner = "Natti94";
+  const repo = "Projects";
+  const per_page = 10;
+  const url = `https://api.github.com/repos/${owner}/${repo}/commits?per_page=${per_page}`;
+
+  try {
+    const response = await fetch(url, {
+      headers: {
+        "User-Agent": "NetlifyFunction",
+        // Optionally add Authorization: `token ${process.env.GITHUB_TOKEN}`
+      },
+    });
+    if (!response.ok) {
+      throw new Error(`GitHub API error: ${response.status}`);
+    }
+    const data = await response.json();
+    const commits = data.map((commit) => ({
+      hash: commit.sha.substring(0, 7),
+      author: commit.commit.author.name,
+      date: commit.commit.author.date,
+      message: commit.commit.message,
+      url: commit.html_url,
+    }));
+    return {
+      statusCode: 200,
+      body: JSON.stringify(commits),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+  } catch (err) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        error: "Failed to retrieve commits",
+        details: err.message,
+      }),
+    };
+  }
 };
