@@ -1,1 +1,2 @@
-/api/getAsset /.netlify/functions/getAsset 200 /* /index.html 200
+/api/getAsset    /.netlify/functions/getAsset    200
+/*               /index.html                     200
