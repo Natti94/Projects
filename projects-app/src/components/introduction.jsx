@@ -37,11 +37,23 @@ function Introduction() {
           identifying gaps and creating solutions that truly help people.
           <br />
           <br />
-          Projects like <strong>Tibia Optimizer</strong> are examples of my
-          approach—discovering specific needs and building applications that
-          address them. I am always looking for new ideas and ways to deliver
-          meaningful improvements, whether through optimizing user experiences
-          or developing entirely new tools.
+          Projects like{" "}
+          <strong
+            style={{
+              cursor: "pointer",
+              color: "cyan",
+              textDecoration: "underline",
+            }}
+            onClick={() =>
+              window.open(assets.tibiaOptimizer_link, "_blank", "noreferrer")
+            }
+          >
+            Tibia Optimizer
+          </strong>{" "}
+          are examples of my approach — discovering specific needs and building
+          applications that address them. I am always looking for new ideas and
+          ways to deliver meaningful improvements, whether through optimizing
+          user experiences or developing entirely new tools.
           <br />
           <br />
           Below you can find some of the projects I've worked on and other ideas
@@ -49,10 +61,34 @@ function Introduction() {
         </div>
         <hr color="lightgreen" />
         <h2>Skills</h2>
-        <div>
-        <img src={assets.mern_image} alt="MERN Stack" className="skills-image" />
-        </div>
-        <ul></ul>
+        <img
+          src={assets.mern_image}
+          alt="MERN Stack"
+          className="skills-image"
+        />
+        <p>
+          My main tech stack is the MERN stack (MongoDB, Express.js, React.js,
+          Node.js). Upon that foundation, I have experience with applying
+          various related security aspects such as:
+        </p>
+        <ul>
+          <p>Authentication and Authorization</p>
+          <p>Data Validation and Input Sanitization (e.g., DOMPurify)</p>
+          <p>
+            Session and Token Management (removing sensitive data from storage)
+          </p>
+          <p>JWT-based Authentication</p>
+          <p>Secure API Development</p>
+          <p>Use of Security Middleware</p>
+          <p>HTTPS and Secure Communication</p>
+          <p>CSRF Protection (e.g., csrfToken)</p>
+          <p>Database Security</p>
+          <p>Error Handpng and Logging</p>
+          <p>Environment Variable Management</p>
+          <p>Secure Port and Cookie Configurations</p>
+          <p>Regular Security Updates</p>
+          <p>Secure Package Management and Dependency Auditing</p>
+        </ul>
       </div>
       <div
         className="project-preview-container"
