@@ -16,8 +16,8 @@ const assets = {
   profile_icon: isProd
     ? "/api/getAsset?asset=profile_icon"
     : import.meta.env.VITE_CLOUDINARY_PROFILE_ICON,
-  CV_icon: isProd
-    ? "/api/getAsset?asset=CV_icon"
+  cv_icon: isProd
+    ? "/api/getAsset?asset=cv_icon"
     : import.meta.env.VITE_CLOUDINARY_CV_ICON,
   gitHub_icon: isProd
     ? "/api/getAsset?asset=gitHub_icon"
