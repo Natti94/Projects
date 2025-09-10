@@ -8,6 +8,22 @@ body {
   overflow-x: hidden;
 }
 
+h2 {
+  font-family: monospace;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: white;
+  text-align: center;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, green, lightgreen);
+  margin: 1.5rem 0;
+  opacity: 0.5;
+}
+
 .app-flex-layout {
   display: flex;
   min-height: 100vh;
@@ -187,7 +203,7 @@ body {
   height: auto;
   display: block;
   margin: 0 auto 0.7rem auto;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .news-feed-placeholder {

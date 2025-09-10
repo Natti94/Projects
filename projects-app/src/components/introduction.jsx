@@ -52,6 +52,7 @@ function Introduction() {
           Below you can find some of the projects I've worked on and other ideas
           in the pipeline.
         </div>
+        <hr />
         <h2>Skills</h2>
         <img
           src={assets.mern_image}
@@ -83,6 +84,7 @@ function Introduction() {
         </ul>
       </div>
       <div className="projects-section">
+        <hr />
         <h2>Projects</h2>
         <div className="projects-grid">
           <div
