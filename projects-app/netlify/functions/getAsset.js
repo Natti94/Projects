@@ -1,4 +1,3 @@
-// netlify/functions/getAsset.js
 const assetPaths = {
   profile_icon: process.env.VITE_CLOUDINARY_PROFILE_ICON,
   code_effect: process.env.VITE_CLOUDINARY_CODE_EFFECT_LINK,
