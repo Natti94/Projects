@@ -362,7 +362,6 @@ hr {
   max-width: 1400px;
   width: 100%;
 }
-
 .nav-links button {
   background: none;
   border: none;
@@ -398,6 +397,7 @@ hr {
 
 .nav-links:hover {
   background: transparent;
+  
 }
 
 @media screen and (min-width: 1400px) {

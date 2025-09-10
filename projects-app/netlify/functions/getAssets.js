@@ -14,6 +14,8 @@ const assetPaths = {
   gitHub_link: process.env.VITE_CLOUDINARY_GITHUB_LINK,
   linkedIn_link: process.env.VITE_CLOUDINARY_LINKEDIN_LINK,
   linkedIn_icon: process.env.VITE_CLOUDINARY_LINKEDIN_ICON,
+  discord_link: process.env.VITE_CLOUDINARY_DISCORD_LINK,
+  discord_icon: process.env.VITE_CLOUDINARY_DISCORD_ICON,
 };
 
 exports.handler = async (event) => {
