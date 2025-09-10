@@ -13,7 +13,7 @@ const assets = {
     ? "/api/getAsset?asset=cv_icon"
     : import.meta.env.VITE_CLOUDINARY_CV_ICON,
   gitHub_icon: isProd
-    ? "/api/asset?asset=gitHub_icon"
+    ? "/api/getAsset?asset=gitHub_icon"
     : import.meta.env.VITE_CLOUDINARY_GITHUB_ICON,
   linkedIn_icon: isProd
     ? "/api/getAsset?asset=linkedIn_icon"
