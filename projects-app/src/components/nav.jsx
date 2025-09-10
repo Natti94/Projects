@@ -1,8 +1,4 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-
 const isProd = import.meta.env.PROD;
-
 const assets = {
   cv_link: isProd
     ? "/api/getAsset?asset=cv_link"
@@ -13,9 +9,6 @@ const assets = {
   linkedIn_link: isProd
     ? "/api/getAsset?asset=linkedIn_link"
     : import.meta.env.VITE_CLOUDINARY_LINKEDIN_LINK,
-  profile_icon: isProd
-    ? "/api/getAsset?asset=profile_icon"
-    : import.meta.env.VITE_CLOUDINARY_PROFILE_ICON,
   cv_icon: isProd
     ? "/api/getAsset?asset=cv_icon"
     : import.meta.env.VITE_CLOUDINARY_CV_ICON,
@@ -28,72 +21,33 @@ const assets = {
 };
 
 function Nav() {
-  const [collapsed, setCollapsed] = useState(false);
-
   return (
-    <nav className={`side-nav ${collapsed ? "collapsed" : "uncollapsed"}`}>
-      <button
-        className="nav-toggle-btn"
-        onClick={() => setCollapsed(!collapsed)}
-        aria-label={collapsed ? "Expand navigation" : "Collapse navigation"}
-      >
-        {collapsed ? "↠" : "↞"}
-      </button>
-      <ul className={collapsed ? "nav-list-collapsed" : "nav-list-uncollapsed"}>
-    
-        <li>
-          <a
-            className="nav-link-flex"
-            onClick={() => window.open(assets.cv_link, "_blank", "noreferrer")}
-            tabIndex={0}
-            role="button"
-          >
-            <span className="nav-icon">
-              <img src={assets.CV_icon} alt="CV Icon" className="nav-icon" />
-            </span>
-            {!collapsed && <span className="nav-link-text">CV</span>}
-          </a>
-        </li>
-        <li>
-          <a
-            className="nav-link-flex"
-            onClick={() =>
-              window.open(assets.gitHub_link, "_blank", "noreferrer")
-            }
-            tabIndex={0}
-            role="button"
-          >
-            <span className="nav-icon">
-              <img
-                src={assets.gitHub_icon}
-                alt="GitHub Icon"
-                className="nav-icon"
-              />
-            </span>
-            {!collapsed && <span className="nav-link-text">GitHub</span>}
-          </a>
-        </li>
-        <li>
-          <a
-            className="nav-link-flex"
-            onClick={() =>
-              window.open(assets.linkedIn_link, "_blank", "noreferrer")
-            }
-            tabIndex={0}
-            role="button"
-          >
-            <span className="nav-icon">
-              <img
-                src={assets.linkedIn_icon}
-                alt="LinkedIn Icon"
-                className="nav-icon"
-              />
-            </span>
-            {!collapsed && <span className="nav-link-text">LinkedIn</span>}
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <div className="dashboard-nav">
+      <div className="nav-links">
+        <button
+          onClick={() => window.open(assets.cv_link, "_blank", "noreferrer")}
+          aria-label="CV"
+        >
+          <img src={assets.cv_icon} alt="CV Icon" />
+        </button>
+        <button
+          onClick={() =>
+            window.open(assets.gitHub_link, "_blank", "noreferrer")
+          }
+          aria-label="GitHub"
+        >
+          <img src={assets.gitHub_icon} alt="GitHub Icon" />
+        </button>
+        <button
+          onClick={() =>
+            window.open(assets.linkedIn_link, "_blank", "noreferrer")
+          }
+          aria-label="LinkedIn"
+        >
+          <img src={assets.linkedIn_icon} alt="LinkedIn Icon" />
+        </button>
+      </div>
+    </div>
   );
 }
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Panel() {
+function Activity() {
   const [commits, setCommits] = useState([]);
   const [current, setCurrent] = useState(0);
 
@@ -15,24 +15,24 @@ function Panel() {
     setCurrent((prev) => (prev < commits.length - 1 ? prev + 1 : prev));
 
   return (
-    <div className="panel-container">
-      <div className="panel-commits-nav-row">
+    <div className="activity-container">
+      <div className="activity-navigation">
         {current > 0 && (
           <button
             onClick={goLeft}
-            className="panel-commit-nav-btn panel-commit-nav-btn-left"
+            className="next-button prev-button"
             aria-label="Previous commit"
           >
-            &#60;
+            🢀
           </button>
         )}
         {commits.length > 0 && (
-          <div className="panel-commit-item panel-commit-item-single">
-            <span className="panel-commit-label">ACTIVITY FEED</span>
-            <span className="panel-commit-message">
+          <div className="commit-item commit-item-single">
+            <span className="commit-label">ACTIVITY FEED</span>
+            <span className="commit-message">
               Commit message: {commits[current].message}
             </span>
-            <div className="panel-commit-meta">
+            <div className="commit-meta">
               by {commits[current].author} - {commits[current].date}
             </div>
           </div>
@@ -40,10 +40,10 @@ function Panel() {
         {current < commits.length - 1 && (
           <button
             onClick={goRight}
-            className="panel-commit-nav-btn panel-commit-nav-btn-right"
+            className="next-button prev-button"
             aria-label="Next commit"
           >
-            &#62;
+            🢂
           </button>
         )}
       </div>
@@ -51,4 +51,4 @@ function Panel() {
   );
 }
 
-export default Panel;
+export default Activity;
