@@ -1,4 +1,3 @@
-
 exports.handler = async (event) => {
   const owner = "Natti94";
   const repo = "Projects";

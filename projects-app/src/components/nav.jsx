@@ -1,22 +1,22 @@
 const isProd = import.meta.env.PROD;
 const assets = {
   cv_link: isProd
-    ? "/api/getAsset?asset=cv_link"
+    ? "/api/assets?asset=cv_link"
     : import.meta.env.VITE_CLOUDINARY_CV_LINK,
   gitHub_link: isProd
-    ? "/api/getAsset?asset=gitHub_link"
+    ? "/api/asset?asset=gitHub_link"
     : import.meta.env.VITE_CLOUDINARY_GITHUB_LINK,
   linkedIn_link: isProd
-    ? "/api/getAsset?asset=linkedIn_link"
+    ? "/api/assets?asset=linkedIn_link"
     : import.meta.env.VITE_CLOUDINARY_LINKEDIN_LINK,
   cv_icon: isProd
-    ? "/api/getAsset?asset=cv_icon"
+    ? "/api/assets?asset=cv_icon"
     : import.meta.env.VITE_CLOUDINARY_CV_ICON,
   gitHub_icon: isProd
-    ? "/api/getAsset?asset=gitHub_icon"
+    ? "/api/assets?asset=gitHub_icon"
     : import.meta.env.VITE_CLOUDINARY_GITHUB_ICON,
   linkedIn_icon: isProd
-    ? "/api/getAsset?asset=linkedIn_icon"
+    ? "/api/assets?asset=linkedIn_icon"
     : import.meta.env.VITE_CLOUDINARY_LINKEDIN_ICON,
 };
 
