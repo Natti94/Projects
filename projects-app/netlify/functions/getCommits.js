@@ -1,6 +1,6 @@
 exports.handler = async (event) => {
   const owner = "Natti94";
-  const repo = "projects-app";
+  const repo = "Projects";
   const per_page = 10;
   const url = `https://api.github.com/repos/${owner}/${repo}/commits?per_page=${per_page}`;
 
