@@ -3,16 +3,16 @@ function Projects() {
 
   const assets = {
     tibiaOptimizer_background: isProd
-      ? "/api/assets?assets=tibiaOptimizer_background"
+      ? "/api/assets?asset=tibiaOptimizer_background"
       : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_BACKGROUND,
     chat_background: isProd
-      ? "/api/assets?assets=chat_background"
+      ? "/api/assets?asset=chat_background"
       : import.meta.env.VITE_CLOUDINARY_CHAT_BACKGROUND,
     tibiaOptimizer_link: isProd
-      ? "/api/assets?assets=tibiaOptimizer_link"
+      ? "/api/assets?asset=tibiaOptimizer_link"
       : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_LINK,
     chat_link: isProd
-      ? "/api/assets?assets=chat_link"
+      ? "/api/assets?asset=chat_link"
       : import.meta.env.VITE_CLOUDINARY_CHAT_LINK,
   };
 

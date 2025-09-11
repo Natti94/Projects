@@ -3,7 +3,7 @@ function Introduction() {
 
   const assets = {
     mern_image: isProd
-      ? "/api/assets?assets=mern_image"
+      ? "/api/assets?asset=mern_image"
       : import.meta.env.VITE_CLOUDINARY_MERN_IMAGE,
   };
 
