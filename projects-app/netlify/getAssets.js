@@ -18,7 +18,7 @@ const assetPaths = {
   discord_icon: process.env.VITE_CLOUDINARY_DISCORD_ICON,
 };
 
-exports.handler = async (event) => {
+export async function handler(event) {
   const { asset } = event.queryStringParameters;
 
   if (!asset) {

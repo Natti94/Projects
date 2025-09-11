@@ -1,4 +1,4 @@
-exports.handler = async (event) => {
+export async function handler(event) {
   const owner = "Natti94";
   const repo = "Projects";
   const per_page = 10;
@@ -39,4 +39,4 @@ exports.handler = async (event) => {
       }),
     };
   }
-};
+}

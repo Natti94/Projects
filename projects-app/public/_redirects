@@ -1,4 +1,3 @@
 /api/activity     /.netlify/getActivities    200
 /api/asset    /.netlify/getAssets    200
-
-/*               /index.html 
+/*    /index.html   200
