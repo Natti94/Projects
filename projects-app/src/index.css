@@ -3,7 +3,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', 'Segoe UI', 'Roboto', Arial, sans-serif;
-  background: #1c1c1c;
+  background: #1c1c1cc9;
   color: #e0e0e0;
   overflow-x: hidden;
 }
@@ -27,7 +27,7 @@ hr {
 .app-flex-layout {
   display: flex;
   min-height: 100vh;
-  background: #1c1c1c;
+  background: #1c1c1c9f;
 }
 
 .app-main-content {
