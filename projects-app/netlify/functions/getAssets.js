@@ -1,6 +1,5 @@
 const assetPaths = {
-  profile_icon: process.env.VITE_CLOUDINARY_PROFILE_ICON,
-  code_effect: process.env.VITE_CLOUDINARY_CODE_EFFECT_LINK,
+
   mern_image: process.env.VITE_CLOUDINARY_MERN_IMAGE,
   tibiaOptimizer_link: process.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_LINK,
   tibiaOptimizer_background:
@@ -10,10 +9,12 @@ const assetPaths = {
   chat_icon: process.env.VITE_CLOUDINARY_CHAT_ICON,
   cv_link: process.env.VITE_CLOUDINARY_CV_LINK,
   cv_icon: process.env.VITE_CLOUDINARY_CV_ICON,
-  gitHub_icon: process.env.VITE_CLOUDINARY_GITHUB_ICON,
-  gitHub_link: process.env.VITE_CLOUDINARY_GITHUB_LINK,
   linkedIn_link: process.env.VITE_CLOUDINARY_LINKEDIN_LINK,
   linkedIn_icon: process.env.VITE_CLOUDINARY_LINKEDIN_ICON,
+  mail_link: process.env.VITE_CLOUDINARY_MAIL_LINK,
+  mail_icon: process.env.VITE_CLOUDINARY_MAIL_ICON,
+  gitHub_icon: process.env.VITE_CLOUDINARY_GITHUB_ICON,
+  gitHub_link: process.env.VITE_CLOUDINARY_GITHUB_LINK,
   discord_link: process.env.VITE_CLOUDINARY_DISCORD_LINK,
   discord_icon: process.env.VITE_CLOUDINARY_DISCORD_ICON,
 };

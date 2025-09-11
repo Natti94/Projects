@@ -16,16 +16,16 @@ exports.handler = async (event) => {
       throw new Error(`GitHub API error: ${response.status}`);
     }
     const data = await response.json();
-    const commits = data.map((commit) => ({
-      hash: commit.sha.substring(0, 7),
-      author: commit.commit.author.name,
-      date: commit.commit.author.date,
-      message: commit.commit.message,
-      url: commit.html_url,
+    const activity = data.map((activity) => ({
+      hash: activity.sha.substring(0, 7),
+      author: activity.commit.author.name,
+      date: activity.commit.author.date,
+      message: activity.commit.message,
+      url: activity.html_url,
     }));
     return {
       statusCode: 200,
-      body: JSON.stringify(commits),
+      body: JSON.stringify(activity),
       headers: {
         "Content-Type": "application/json",
       },
@@ -34,7 +34,7 @@ exports.handler = async (event) => {
     return {
       statusCode: 500,
       body: JSON.stringify({
-        error: "Failed to retrieve commits",
+        error: "Failed to retrieve activity",
         details: err.message,
       }),
     };
