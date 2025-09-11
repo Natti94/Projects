@@ -20,10 +20,10 @@ function Introduction() {
   };
 
   return (
-    <div className="profile">
-      <div className="profile__section">
+    <div className="introduction">
+      <div className="introduction__section">
         <h2>PROFILE</h2>
-        <div className="profile__description">
+        <div className="introduction__description">
           Hello! My name is Natnael and I'm a Fullstack Developer passionate
           about understanding the real needs of end users. I enjoy exploring
           unique challenges and finding niche opportunities where technology can
@@ -45,10 +45,6 @@ function Introduction() {
           applications that address them. I am always looking for new ideas and
           ways to deliver meaningful improvements, whether through optimizing
           user experiences or developing entirely new tools.
-          <br />
-          <br />
-          Below you can find some of the projects I've worked on and other ideas
-          in the pipeline.
         </div>
         <h2>SKILLS</h2>
         <img
@@ -56,7 +52,7 @@ function Introduction() {
           alt="MERN Stack"
           className="skills__image"
         />
-        <div className="profile__description">
+        <div className="introduction__description">
           <p>
             My main tech stack is the MERN stack (MongoDB, Express.js, React.js,
             Node.js). Upon that foundation, I have experience with applying

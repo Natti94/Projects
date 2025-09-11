@@ -18,7 +18,7 @@ function Projects() {
 
   return (
     <div className="projects">
-      <h2>Projects</h2>
+      <h2>PROJECTS</h2>
       <div className="projects__grid">
         <div
           className="project-card project-card--tibia"
