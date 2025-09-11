@@ -15,24 +15,24 @@ function Activity() {
     setCurrent((prev) => (prev < commits.length - 1 ? prev + 1 : prev));
 
   return (
-    <div className="activity-container">
-      <div className="activity-navigation">
+    <div className="activity">
+      <div className="activity__navigation">
         {current > 0 && (
           <button
             onClick={goLeft}
-            className="next-button prev-button"
+            className="button--prev"
             aria-label="Previous commit"
           >
             🢀
           </button>
         )}
         {commits.length > 0 && (
-          <div className="commit-item commit-item-single">
-            <span className="commit-label">ACTIVITY FEED</span>
-            <span className="commit-message">
+          <div className="activity__commit activity__commit--single">
+            <span className="activity__label">ACTIVITY FEED</span>
+            <span className="activity__message">
               Commit message: {commits[current].message}
             </span>
-            <div className="commit-meta">
+            <div className="activity__meta">
               by {commits[current].author} - {commits[current].date}
             </div>
           </div>
@@ -40,7 +40,7 @@ function Activity() {
         {current < commits.length - 1 && (
           <button
             onClick={goRight}
-            className="next-button prev-button"
+            className="button--next"
             aria-label="Next commit"
           >
             🢂
