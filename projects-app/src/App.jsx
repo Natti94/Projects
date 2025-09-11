@@ -7,9 +7,6 @@ function App() {
   const isProd = import.meta.env.PROD;
 
   const assets = {
-    cv_link: isProd
-      ? "/api/assets?asset=cv_link"
-      : import.meta.env.VITE_CLOUDINARY_CV_LINK,
     page_background: isProd
       ? "/api/assets?asset=page_background"
       : import.meta.env.VITE_CLOUDINARY_PAGE_BACKGROUND,
