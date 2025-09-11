@@ -1,7 +1,8 @@
-export async function handler(event) {
+
+exports.handler = async (event) => {
   const owner = "Natti94";
-  const repo = "Projects";
-  const per_page = 10;
+  const repo = "projects-app";
+  const per_page = 5;
   const url = `https://api.github.com/repos/${owner}/${repo}/commits?per_page=${per_page}`;
 
   try {
@@ -39,4 +40,4 @@ export async function handler(event) {
       }),
     };
   }
-}
+};
