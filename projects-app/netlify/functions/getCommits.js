@@ -1,16 +1,13 @@
 exports.handler = async (event) => {
   const owner = "Natti94";
   const repo = "projects-app";
-  const per_page = 5;
+  const per_page = 10;
   const url = `https://api.github.com/repos/${owner}/${repo}/commits?per_page=${per_page}`;
 
   try {
     const headers = {
       "User-Agent": "NetlifyFunction",
     };
-    if (process.env.GITHUB_TOKEN) {
-      headers["Authorization"] = `token ${process.env.GITHUB_TOKEN}`;
-    }
     const response = await fetch(url, { headers });
     if (!response.ok) {
       throw new Error(`GitHub API error: ${response.status}`);
