@@ -12,7 +12,6 @@ h2 {
   font-family: monospace;
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: white;
   text-align: center;
 }
 
@@ -141,6 +140,7 @@ hr {
 .quiz-apt-card:hover {
   transform: scale(1.05);
   z-index: 2;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .project-image-hover {
@@ -171,10 +171,6 @@ hr {
   z-index: 2;
   color: #e0e0e0;
   height: 100%;
-}
-
-.project-text-overlay:hover {
-  color: #4CAF50;
 }
 
 .project-title {

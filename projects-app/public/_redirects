@@ -1,4 +1,4 @@
-/api/commits     /.netlifyt/fucnctions/getActivities    200
-/api/getAsset    /.netlify/functions/getAssets    200
+/api/activity     /.netlify/getActivities    200
+/api/asset    /.netlify/getAssets    200
 
 /*               /index.html 

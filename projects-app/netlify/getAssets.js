@@ -1,5 +1,4 @@
 const assetPaths = {
-
   mern_image: process.env.VITE_CLOUDINARY_MERN_IMAGE,
   tibiaOptimizer_link: process.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_LINK,
   tibiaOptimizer_background:

@@ -3,19 +3,19 @@ function Introduction() {
 
   const assets = {
     mern_image: isProd
-      ? "/api/getAsset?assets=mern_image"
+      ? "/api/asset?assets=mern_image"
       : import.meta.env.VITE_CLOUDINARY_MERN_IMAGE,
     tibiaOptimizer_background: isProd
-      ? "/api/getAsset?assets=tibiaOptimizer_background"
+      ? "/api/asset?assets=tibiaOptimizer_background"
       : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_BACKGROUND,
     chat_background: isProd
-      ? "/api/getAsset?assets=chat_background"
+      ? "/api/asset?assets=chat_background"
       : import.meta.env.VITE_CLOUDINARY_CHAT_BACKGROUND,
     tibiaOptimizer_link: isProd
-      ? "/api/getAsset?assets=tibiaOptimizer_link"
+      ? "/api/asset?assets=tibiaOptimizer_link"
       : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_LINK,
     chat_link: isProd
-      ? "/api/getAsset?assets=chat_link"
+      ? "/api/asset?assets=chat_link"
       : import.meta.env.VITE_CLOUDINARY_CHAT_LINK,
   };
 
