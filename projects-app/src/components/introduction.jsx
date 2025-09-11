@@ -5,18 +5,6 @@ function Introduction() {
     mern_image: isProd
       ? "/api/assets?assets=mern_image"
       : import.meta.env.VITE_CLOUDINARY_MERN_IMAGE,
-    tibiaOptimizer_background: isProd
-      ? "/api/assets?assets=tibiaOptimizer_background"
-      : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_BACKGROUND,
-    chat_background: isProd
-      ? "/api/assets?assets=chat_background"
-      : import.meta.env.VITE_CLOUDINARY_CHAT_BACKGROUND,
-    tibiaOptimizer_link: isProd
-      ? "/api/assets?assets=tibiaOptimizer_link"
-      : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_LINK,
-    chat_link: isProd
-      ? "/api/assets?assets=chat_link"
-      : import.meta.env.VITE_CLOUDINARY_CHAT_LINK,
   };
 
   return (
