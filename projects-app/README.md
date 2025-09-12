@@ -18,7 +18,8 @@
 ```
 ├── netlify/
 │   └── functions/
-│       └── getAsset.js         # Netlify function for asset redirects
+│       ├── getAssets.js       # Netlify function for asset redirects
+│       └── getCommits.js      # Netlify function for commit history
 ├── public/
 │   └── _redirects             # Netlify redirects for SPA and API
 ├── src/
@@ -28,8 +29,9 @@
 │   ├── server.js              # Express backend (local dev)
 │   └── components/
 │       ├── nav.jsx            # Navigation bar
-│       ├── panel.jsx          # Commit history panel
-│       └── introduction.jsx   # Introduction section
+│       ├── activity.jsx       # Commit history/activity feed
+│       ├── projects.jsx       # Projects section
+│       └── introduction.jsx   # Introduction/profile/skills section
 ├── .env                       # Local environment variables
 ├── package.json               # Scripts and dependencies
 ├── vite.config.js             # Vite config with API proxy
@@ -62,7 +64,7 @@
 	```sh
 	npm run dev
 	```
-	- This runs both the Vite frontend and Express backend (with API proxying).
+	- This runs both the Vite frontend and Express backend (with API proxying). The Express backend is only used locally; in production, Netlify functions handle API routes.
 
 5. **View the app:**
 	- Open [http://localhost:5173](http://localhost:5173) in your browser.
@@ -92,6 +94,9 @@ npm run build
 	netlify/functions
 	```
 6. **Ensure `_redirects` is present in `dist/` after build.**
+7. **Node version for Netlify Functions:**
+	- This project uses the global `fetch` API in Netlify functions (Node 18+). No need for `node-fetch`.
+	- If you get errors about `fetch` not being defined, set your Netlify function runtime to Node 18+ (see Netlify docs or add a `netlify.toml` with `[functions] node_version = "18"`).
 
 ## Environment Variables
 
@@ -108,20 +113,22 @@ These are used by both the frontend and the Netlify function for secure, dynamic
 
 ## API Endpoints
 
-- **/api/commits** (local Express, or Netlify function in production): Returns recent git commit history.
-- **/api/getAsset?asset=profile_icon**: Redirects to the asset URL defined in environment variables.
+- **/api/commits** (local Express, or Netlify function in production): Returns recent git commit history. Uses the global `fetch` API in production (Node 18+).
+- **/api/assets?asset=profile_icon**: Redirects to the asset URL defined in environment variables.
 
 ## Redirects and Routing
 
 The `public/_redirects` file ensures:
 
-- `/api/getAsset` routes to the Netlify function in production.
+- `/api/commits` routes to the Netlify function in production.
+- `/api/assets` routes to the Netlify function in production.
 - All other routes fallback to `index.html` for SPA support.
 
 Example:
 ```
-/api/getAsset    /.netlify/functions/getAsset    200
-/*               /index.html                     200
+/api/commits    /.netlify/functions/getCommits   200
+/api/assets     /.netlify/functions/getAssets    200
+/*              /index.html                     200
 ```
 
 ## Scripts
@@ -130,6 +137,14 @@ Example:
 - `npm run build` – Build the frontend for production
 - `npm run lint` – Lint the codebase
 - `npm run preview` – Preview the production build locally
+
+## Troubleshooting
+
+- **GitHub API 404 or errors in production:**
+	- Make sure your repo owner and name are correct in `getCommits.js`.
+	- If your repo is private, set a `GITHUB_TOKEN` in Netlify environment variables.
+	- For public repos, no token is needed and the Authorization header should be removed.
+	- Ensure your Netlify function runtime is Node 18+ for global `fetch` support.
 
 ## License
 
