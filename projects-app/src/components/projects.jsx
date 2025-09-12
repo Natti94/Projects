@@ -38,9 +38,7 @@ function Projects() {
 
         <div
           className="project-card project-card--chat"
-          onClick={() =>
-            window.open(assets.chat_link, "_blank", "noreferrer")
-          }
+          onClick={() => window.open(assets.chat_link, "_blank", "noreferrer")}
         >
           <h2 className="project-card__title">Chatify</h2>
           <div className="project-card__image-wrapper">
@@ -75,11 +73,7 @@ function Projects() {
         <div
           className="project-card project-card--quiz-plu"
           onClick={() =>
-            window.open(
-              "https://example.com/quiz-plu",
-              "_blank",
-              "noreferrer"
-            )
+            window.open("https://example.com/quiz-plu", "_blank", "noreferrer")
           }
         >
           <h2 className="project-card__title">Quiz Plu</h2>
@@ -95,11 +89,7 @@ function Projects() {
         <div
           className="project-card project-card--quiz-apt"
           onClick={() =>
-            window.open(
-              "https://example.com/quiz-apt",
-              "_blank",
-              "noreferrer"
-            )
+            window.open("https://example.com/quiz-apt", "_blank", "noreferrer")
           }
         >
           <h2 className="project-card__title">Quiz Apt</h2>

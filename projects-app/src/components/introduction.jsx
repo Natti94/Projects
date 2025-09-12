@@ -12,11 +12,7 @@ function Introduction() {
       <div className="introduction__section">
         <h2>PROFILE</h2>
         <div className="introduction__description">
-          Hello! My name is Natnael and I'm a Fullstack Developer passionate
-          about understanding the real needs of end users. I enjoy exploring
-          unique challenges and finding niche opportunities where technology can
-          make a difference. My main goal is to provide valuable services by
-          identifying gaps and creating solutions that truly help people.
+          Hello! My name is Natnael, and I'm currently a student on my way to becoming a Fullstack Developer specializing in web security. I'm passionate about understanding the real needs of end users and enjoy exploring unique challenges and finding niche opportunities where technology can make a difference. My main goal is to provide valuable services by identifying gaps and creating solutions that truly help people.
           <br />
           <br />
           Projects like{" "}
@@ -29,10 +25,7 @@ function Introduction() {
           >
             Tibia Optimizer
           </strong>{" "}
-          are examples of my approach — discovering specific needs and building
-          applications that address them. I am always looking for new ideas and
-          ways to deliver meaningful improvements, whether through optimizing
-          user experiences or developing entirely new tools.
+          are examples of my approach—discovering specific needs and building applications that address them. I am always looking for new ideas and ways to deliver meaningful improvements, whether by optimizing user experiences or developing entirely new tools.
         </div>
         <h2>SKILLS</h2>
         <img
@@ -41,30 +34,28 @@ function Introduction() {
           className="skills__image"
         />
         <div className="introduction__description">
-          <p>
-            My main tech stack is the MERN stack (MongoDB, Express.js, React.js,
-            Node.js). Upon that foundation, I have experience with applying
-            various related security aspects such as:
+          <p className="skills-intro">
+            My main tech stack is the <b>MERN</b> stack (MongoDB, Express.js, React.js {"(JavaScript, HTML & CSS)"}, Node.js).<br />
+            I focus on applying modern security best practices:
           </p>
-          <ul>
-            <li>Authentication and Authorization</li>
-            <li>Data Validation and Input Sanitization (e.g., DOMPurify)</li>
-            <li>
-              Session and Token Management (removing sensitive data from
-              storage)
-            </li>
-            <li>JWT-based Authentication</li>
-            <li>Secure API Development</li>
-            <li>Use of Security Middleware</li>
-            <li>HTTPS and Secure Communication</li>
-            <li>CSRF Protection (e.g., csrfToken)</li>
-            <li>Database Security</li>
-            <li>Error Handling and Logging</li>
-            <li>Environment Variable Management</li>
-            <li>Secure Port and Cookie Configurations</li>
-            <li>Regular Security Updates</li>
-            <li>Secure Package Management and Dependency Auditing</li>
-          </ul>
+          <div className="skills-list-box">
+            <ul className="skills-list">
+              <li><span className="skills-list__icon">✘</span> <b>Authentication</b> &amp; <b>Authorization</b></li>
+              <li><span className="skills-list__icon">✘</span> Data Validation &amp; Input Sanitization</li>
+              <li><span className="skills-list__icon">✘</span> Session &amp; Token Management</li>
+              <li><span className="skills-list__icon">✘</span> <b>JWT</b>-based Authentication</li>
+              <li><span className="skills-list__icon">✘</span> Secure API Development</li>
+              <li><span className="skills-list__icon">✘</span> Use of Security Middleware</li>
+              <li><span className="skills-list__icon">✘</span> <b>HTTPS</b> &amp; Secure Communication</li>
+              <li><span className="skills-list__icon">✘</span> <b>CSRF</b> Protection</li>
+              <li><span className="skills-list__icon">✘</span> Database Security</li>
+              <li><span className="skills-list__icon">✘</span> Error Handling &amp; Logging</li>
+              <li><span className="skills-list__icon">✘</span> Environment Variable Management</li>
+              <li><span className="skills-list__icon">✘</span> Secure Port &amp; Cookie Configurations</li>
+              <li><span className="skills-list__icon">✘</span> Regular Security Updates</li>
+              <li><span className="skills-list__icon">✘</span> Secure Package Management &amp; Dependency Auditing</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

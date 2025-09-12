@@ -24,7 +24,6 @@ function App() {
         <div className="layout__columns">
           <Introduction />
           <div className="divider" aria-hidden="true">
-            <hr className="divider__line" />
           </div>
           <Projects />
         </div>
