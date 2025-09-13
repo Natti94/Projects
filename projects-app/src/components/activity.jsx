@@ -51,7 +51,7 @@ function Activity() {
           <div className="activity__commit activity__commit--single">
             <span className="activity__label">ACTIVITY FEED</span>
             <span className="activity__message">
-              Commit message: {commits[current].message}
+            <strong>Message:</strong> {commits[current].message}
             </span>
             <div className="activity__meta">
               by {commits[current].author} - {formatRelativeTime(commits[current].date)}
