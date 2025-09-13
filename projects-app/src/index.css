@@ -4,15 +4,15 @@ body {
   box-sizing: border-box;
   font-family: 'Poppins', 'Segoe UI', 'Roboto', Arial, sans-serif;
   background:
-    linear-gradient(135deg, #232b2b 0%, #1e3c2b 60%, #7edc8a 100%),
-    radial-gradient(ellipse at 60% 20%, rgba(126,220,138,0.08) 0%, rgba(44,44,44,0.7) 100%);
+    linear-gradient(135deg, #232b2b 0%, #1e3c2b 60%, #1e3c2b 0%),
+    radial-gradient(ellipse at 60% 20%, rgba(126, 220, 138, 0.08) 0%, rgba(44, 44, 44, 0.7) 100%);
   background-blend-mode: overlay, normal;
   color: #e0e0e0;
   overflow-x: hidden;
   position: relative;
 }
 
-.background-image {
+.page-background-image {
   position: fixed;
   top: 0;
   left: 0;
@@ -22,7 +22,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.5;
   pointer-events: none;
   filter: none;
   transition: opacity 0.1s;
@@ -132,22 +132,12 @@ body {
 .projects {
   width: 100%;
   min-width: 220px;
-  color: #e0e0e0;
+  color: black;
   text-align: center;
-  z-index: 2;
-  margin-top: 1.3em;
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  box-shadow:
-    0 4px 16px 0 rgba(0, 0, 0, 0.50),
-    0 1.5px 0 #b6eac7,
-    0 8px 24px 0 rgba(0, 0, 0, 0.50),
-    0 0.5px 0 #7edc8a inset;
-  border: 2px solid lightgreen;
-  background:
-    linear-gradient(135deg, rgba(80,200,120,0.92) 0%, rgba(60,160,90,0.85) 60%, rgba(35,43,43,0.18) 100%),
-    radial-gradient(ellipse at 60% 20%, rgba(126,220,138,0.13) 0%, rgba(44,44,44,0.10) 100%);
-  background-blend-mode: overlay, normal;
 }
 
 .projects__grid {
@@ -173,22 +163,23 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 120px;
+  height: 140px;
+  position: relative;
+  z-index: 1;
   margin: 0 auto;
-  background:
-    black;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border: 2px solid lightgreen;
+  background: lightgreen;
 }
+
 
 .project-card--tibia:hover,
 .project-card--chat:hover,
 .project-card--weather:hover,
 .project-card--quiz-plu:hover,
 .project-card--quiz-apt:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   z-index: 2;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border: 2px solid lightgreen;
 }
 
 .project-card__image-wrapper {
@@ -251,11 +242,6 @@ body {
   margin: 0 auto 0.7rem auto;
   object-fit: contain;
   box-sizing: border-box;
-    box-shadow:
-    0 4px 16px 0 rgba(0, 0, 0, 0.50),
-    0 1.5px 0 #b6eac7,
-    0 8px 24px 0 rgba(0, 0, 0, 0.50),
-    0 0.5px 0 #7edc8a inset;
   border: 2px solid lightgreen;
   background: #2c2c2c;
 }
@@ -274,11 +260,6 @@ body {
   max-width: 580px;
   margin: 0 auto;
   box-sizing: border-box;
-    box-shadow:
-    0 4px 16px 0 rgba(0, 0, 0, 0.50),
-    0 1.5px 0 #b6eac7,
-    0 8px 24px 0 rgba(0, 0, 0, 0.50),
-    0 0.5px 0 #7edc8a inset;
   border: 2px solid lightgreen;
   background: #2c2c2c;
 }
@@ -340,10 +321,8 @@ body {
 
 .activity__commit {
   background: rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
   padding: 0.7rem 0.9rem;
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
-  border-left: 3px solid #e0e0e0;
   position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   width: 100%;
@@ -377,7 +356,7 @@ body {
 
 .activity__message {
   display: block;
-  font-family: 'Fira Code', 'Consolas', 'Menlo', 'Monaco', monospace;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: #fff;
   background: rgba(0, 0, 0, 0.10);
   border-radius: 7px;

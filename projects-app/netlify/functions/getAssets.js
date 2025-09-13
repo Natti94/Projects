@@ -1,5 +1,6 @@
 const assetPaths = {
   page_background: process.env.VITE_CLOUDINARY_PAGE_BACKGROUND,
+  projects_background: process.env.VITE_CLOUDINARY_PROJECTS_BACKGROUND,
   mern_image: process.env.VITE_CLOUDINARY_MERN_IMAGE,
   tibiaOptimizer_link: process.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_LINK,
   tibiaOptimizer_background:
@@ -55,4 +56,4 @@ export async function handler(event) {
     },
     body: "",
   };
-};
+}

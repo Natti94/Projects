@@ -16,7 +16,7 @@ function App() {
       <img
         src={assets.page_background}
         alt="Background"
-        className="background-image"
+        className="page-background-image"
       />
       <div className="layout__main">
         <Activity />

@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 
 function formatRelativeTime(dateString) {
@@ -8,17 +7,17 @@ function formatRelativeTime(dateString) {
   const now = new Date();
   const diff = Math.floor((now - date) / 1000);
   if (isNaN(diff)) return dateString;
-  if (diff < 60) return `${diff} second${diff !== 1 ? 's' : ''} ago`;
+  if (diff < 60) return `${diff} second${diff !== 1 ? "s" : ""} ago`;
   const min = Math.floor(diff / 60);
-  if (min < 60) return `${min} minute${min !== 1 ? 's' : ''} ago`;
+  if (min < 60) return `${min} minute${min !== 1 ? "s" : ""} ago`;
   const hr = Math.floor(min / 60);
-  if (hr < 24) return `${hr} hour${hr !== 1 ? 's' : ''} ago`;
+  if (hr < 24) return `${hr} hour${hr !== 1 ? "s" : ""} ago`;
   const day = Math.floor(hr / 24);
-  if (day < 30) return `${day} day${day !== 1 ? 's' : ''} ago`;
+  if (day < 30) return `${day} day${day !== 1 ? "s" : ""} ago`;
   const mo = Math.floor(day / 30);
-  if (mo < 12) return `${mo} month${mo !== 1 ? 's' : ''} ago`;
+  if (mo < 12) return `${mo} month${mo !== 1 ? "s" : ""} ago`;
   const yr = Math.floor(mo / 12);
-  return `${yr} year${yr !== 1 ? 's' : ''} ago`;
+  return `${yr} year${yr !== 1 ? "s" : ""} ago`;
 }
 
 function Activity() {
@@ -51,10 +50,11 @@ function Activity() {
           <div className="activity__commit activity__commit--single">
             <span className="activity__label">ACTIVITY FEED</span>
             <span className="activity__message">
-            <strong>Message:</strong> {commits[current].message}
+            {commits[current].message}
             </span>
             <div className="activity__meta">
-              by {commits[current].author} - {formatRelativeTime(commits[current].date)}
+              by {commits[current].author} -{" "}
+              {formatRelativeTime(commits[current].date)}
             </div>
           </div>
         )}
