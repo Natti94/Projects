@@ -1,5 +1,3 @@
-import React from "react";
-
 function Nav() {
   const isProd = import.meta.env.PROD;
 

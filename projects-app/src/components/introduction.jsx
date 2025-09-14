@@ -1,5 +1,3 @@
-import React from "react";
-
 function Introduction() {
   const isProd = import.meta.env.PROD;
 

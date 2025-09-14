@@ -1,5 +1,3 @@
-import React from "react";
-
 function Projects() {
   const isProd = import.meta.env.PROD;
 
