@@ -1,6 +1,8 @@
 
 # Projects App
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 > A full-stack React + Express + Vite application for showcasing projects, commit history, and asset management. Deployed to Netlify with serverless functions.
 
 ## Features
