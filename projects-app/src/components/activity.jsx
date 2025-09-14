@@ -52,8 +52,7 @@ function Activity() {
               git commit -m "{commits[current].message}"
             </span>
             <div className="activity__meta">
-              by {commits[current].author} -{" "}
-              {formatRelativeTime(commits[current].date)}
+              by {commits[current].author} · {commits[current].repository} · {formatRelativeTime(commits[current].date)}
             </div>
           </div>
         )}

@@ -19,6 +19,7 @@ exports.handler = async (event) => {
       date: commit.commit.author.date,
       message: commit.commit.message,
       url: commit.html_url,
+      repository: commit.repository?.full_name || `${owner}/${repo}`,
     }));
     return {
       statusCode: 200,
