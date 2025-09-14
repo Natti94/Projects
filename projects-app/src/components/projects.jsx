@@ -4,9 +4,6 @@ function Projects() {
   const isProd = import.meta.env.PROD;
 
   const assets = {
-    projects_background: isProd
-      ? "/api/assets?asset=projects_background"
-      : import.meta.env.VITE_CLOUDINARY_PROJECTS_BACKGROUND,
     tibiaOptimizer_background: isProd
       ? "/api/assets?asset=tibiaOptimizer_background"
       : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_BACKGROUND,
