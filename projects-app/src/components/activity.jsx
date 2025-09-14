@@ -42,7 +42,9 @@ function Activity() {
             className="button--prev"
             aria-label="Previous commit"
           >
-            🢀
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M15 6l-6 6 6 6" />
+            </svg>
           </button>
         )}
         {commits.length > 0 && (
@@ -63,7 +65,9 @@ function Activity() {
             className="button--next"
             aria-label="Next commit"
           >
-            🢂
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M9 6l6 6-6 6" />
+            </svg>
           </button>
         )}
       </div>

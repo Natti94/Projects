@@ -1,10 +1,10 @@
 function Introduction() {
   const isProd = import.meta.env.PROD;
 
+  const directMern = import.meta.env.VITE_CLOUDINARY_MERN_IMAGE;
   const assets = {
-    mern_image: isProd
-      ? "/api/assets?asset=mern_image"
-      : import.meta.env.VITE_CLOUDINARY_MERN_IMAGE,
+    mern_image:
+      directMern || (isProd ? "/api/assets?asset=mern_image" : directMern),
     tibiaOptimizer_link: isProd
       ? "/api/assets?asset=tibiaOptimizer_link"
       : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_LINK,
@@ -44,6 +44,12 @@ function Introduction() {
           src={assets.mern_image}
           alt="MERN Stack"
           className="skills__image"
+          onError={(e) => {
+            const fallback = import.meta.env.VITE_CLOUDINARY_MERN_IMAGE;
+            if (fallback && e.currentTarget.src !== fallback) {
+              e.currentTarget.src = fallback;
+            }
+          }}
         />
         <div className="introduction__description">
           <p className="skills-intro">

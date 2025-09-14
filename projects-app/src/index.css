@@ -474,6 +474,22 @@ body {
   transform: scale(1.4);
 }
 
+.button--next svg,
+.button--prev svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.button--next svg path,
+.button--prev svg path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .nav {
   position: fixed;
   top: 110px;
