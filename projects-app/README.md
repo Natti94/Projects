@@ -97,4 +97,4 @@ Artifacts in `dist/`.
 
 ## License
 
-MIT
+MIT — see `LICENSE` for details.
