@@ -500,6 +500,7 @@ body {
 }
 
 .nav__links button {
+  cursor: pointer;
   background: none;
   border: none;
   filter: invert(0.5);
