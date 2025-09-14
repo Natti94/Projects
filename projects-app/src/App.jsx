@@ -13,18 +13,17 @@ function App() {
   };
   return (
     <div className="layout">
-      <img
-        src={assets.page_background}
-        alt="Background"
-        className="page-background-image"
-      />
       <div className="layout__main">
+        <img
+          className="layout__background"
+          src={assets.page_background}
+          alt="Background"
+        />
         <Activity />
         <Nav />
         <div className="layout__columns">
           <Introduction />
-          <div className="divider" aria-hidden="true">
-          </div>
+          <div className="divider" aria-hidden="true"></div>
           <Projects />
         </div>
       </div>
