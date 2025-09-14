@@ -4,51 +4,46 @@ function Projects() {
   const isProd = import.meta.env.PROD;
 
   const assets = {
-    tibiaOptimizer_background: isProd
-      ? "/api/assets?asset=tibiaOptimizer_background"
-      : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_BACKGROUND,
-    chat_background: isProd
-      ? "/api/assets?asset=chat_background"
-      : import.meta.env.VITE_CLOUDINARY_CHAT_BACKGROUND,
+    tibiaOptimizer_card: isProd
+      ? "/api/assets?asset=tibiaOptimizer_card"
+      : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_CARD,
+    chat_card: isProd
+      ? "/api/assets?asset=chat_card"
+      : import.meta.env.VITE_CLOUDINARY_CHAT_CARD,
+    quiz_card: isProd
+      ? "/api/assets?asset=quiz_card"
+      : import.meta.env.VITE_CLOUDINARY_QUIZ_CARD,
     tibiaOptimizer_link: isProd
       ? "/api/assets?asset=tibiaOptimizer_link"
       : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_LINK,
     chat_link: isProd
       ? "/api/assets?asset=chat_link"
       : import.meta.env.VITE_CLOUDINARY_CHAT_LINK,
+    quiz_link: isProd
+      ? "/api/assets?asset=quiz_link"
+      : import.meta.env.VITE_CLOUDINARY_QUIZ_LINK,
   };
 
   const projectData = [
     {
       name: "Tibia Optimizer",
       description: "A tool to optimize gameplay strategies for Tibia players.",
-      image: assets.tibiaOptimizer_background,
+      image: assets.tibiaOptimizer_card,
       link: assets.tibiaOptimizer_link,
     },
     {
       name: "Chatify",
       description: "A real-time chat application with modern features.",
-      image: assets.chat_background,
+      image: assets.chat_card,
       link: assets.chat_link,
     },
     {
-      name: "Weather Forecast",
-      description: "A web app providing real-time weather updates.",
-      image: "https://placehold.co/200x200/2c2c2c/4caf50?text=Weather",
-      link: "https://example.com/weather-forecast",
+      name: "Quiz App",
+      description: "A web app providing quizzes in several subjects.",
+      image: assets.quiz_card,
+      link: assets.quiz_link,
     },
-    {
-      name: "Quiz Plu",
-      description: "An engaging quiz platform with multiple categories.",
-      image: "https://placehold.co/200x200/2c2c2c/4caf50?text=Quiz+Plu",
-      link: "https://example.com/quiz-plu",
-    },
-    {
-      name: "Quiz Apt",
-      description: "A quiz application tailored for aptitude testing.",
-      image: "https://placehold.co/200x200/2c2c2c/4caf50?text=Quiz+Apt",
-      link: "https://example.com/quiz-apt",
-    },
+
     {
       name: "Refrigerator",
       description: "A project simulating a smart refrigerator system.",

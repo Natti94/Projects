@@ -336,7 +336,7 @@ body {
 
 .project-card:hover .project-card__title,
 .project-card:hover .project-card__description {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.603);
   border: 1.5px solid rgba(255, 255, 255, 0.9);
   padding: 0.1rem 0.4rem;
   border-radius: 2px;
