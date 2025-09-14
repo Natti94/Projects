@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 function formatRelativeTime(dateString) {
-  // If already relative (e.g., '2 days ago'), just return
   if (!dateString || /ago$/.test(dateString)) return dateString;
   const date = new Date(dateString);
   const now = new Date();
@@ -50,7 +49,7 @@ function Activity() {
           <div className="activity__commit activity__commit--single">
             <span className="activity__label">ACTIVITY FEED</span>
             <span className="activity__message">
-            {commits[current].message}
+              git commit -m "{commits[current].message}"
             </span>
             <div className="activity__meta">
               by {commits[current].author} -{" "}

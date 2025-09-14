@@ -1,3 +1,5 @@
+import React from "react";
+
 function Projects() {
   const isProd = import.meta.env.PROD;
 
@@ -20,41 +22,41 @@ function Projects() {
   };
 
   const projectData = [
-    { 
-      name: "Tibia Optimizer", 
-      description: "A tool to optimize gameplay strategies for Tibia players.", 
-      image: assets.tibiaOptimizer_background, 
-      link: assets.tibiaOptimizer_link 
+    {
+      name: "Tibia Optimizer",
+      description: "A tool to optimize gameplay strategies for Tibia players.",
+      image: assets.tibiaOptimizer_background,
+      link: assets.tibiaOptimizer_link,
     },
-    { 
-      name: "Chatify", 
-      description: "A real-time chat application with modern features.", 
-      image: assets.chat_background, 
-      link: assets.chat_link 
+    {
+      name: "Chatify",
+      description: "A real-time chat application with modern features.",
+      image: assets.chat_background,
+      link: assets.chat_link,
     },
-    { 
-      name: "Weather Forecast", 
-      description: "A web app providing real-time weather updates.", 
-      image: "https://placehold.co/200x200/2c2c2c/7edc8a?text=Weather", 
-      link: "https://example.com/weather-forecast" 
+    {
+      name: "Weather Forecast",
+      description: "A web app providing real-time weather updates.",
+      image: "https://placehold.co/200x200/2c2c2c/4caf50?text=Weather",
+      link: "https://example.com/weather-forecast",
     },
-    { 
-      name: "Quiz Plu", 
-      description: "An engaging quiz platform with multiple categories.", 
-      image: "https://placehold.co/200x200/2c2c2c/7edc8a?text=Quiz+Plu", 
-      link: "https://example.com/quiz-plu" 
+    {
+      name: "Quiz Plu",
+      description: "An engaging quiz platform with multiple categories.",
+      image: "https://placehold.co/200x200/2c2c2c/4caf50?text=Quiz+Plu",
+      link: "https://example.com/quiz-plu",
     },
-    { 
-      name: "Quiz Apt", 
-      description: "A quiz application tailored for aptitude testing.", 
-      image: "https://placehold.co/200x200/2c2c2c/7edc8a?text=Quiz+Apt", 
-      link: "https://example.com/quiz-apt" 
+    {
+      name: "Quiz Apt",
+      description: "A quiz application tailored for aptitude testing.",
+      image: "https://placehold.co/200x200/2c2c2c/4caf50?text=Quiz+Apt",
+      link: "https://example.com/quiz-apt",
     },
-    { 
-      name: "Refrigerator", 
-      description: "A project simulating a smart refrigerator system.", 
-      image: "https://placehold.co/200x200/2c2c2c/7edc8a?text=Fridge", 
-      link: "https://example.com/refrigerator" 
+    {
+      name: "Refrigerator",
+      description: "A project simulating a smart refrigerator system.",
+      image: "https://placehold.co/200x200/2c2c2c/4caf50?text=Fridge",
+      link: "https://example.com/refrigerator",
     },
   ];
 
