@@ -1,10 +1,10 @@
 function Introduction() {
   const isProd = import.meta.env.PROD;
 
-  const directMern = import.meta.env.VITE_CLOUDINARY_MERN_IMAGE;
   const assets = {
-    mern_image:
-      directMern || (isProd ? "/api/assets?asset=mern_image" : directMern),
+    mern_image: isProd
+      ? "/api/assets?asset=mern_image"
+      : import.meta.env.VITE_CLOUDINARY_MERN_IMAGE,
     tibiaOptimizer_link: isProd
       ? "/api/assets?asset=tibiaOptimizer_link"
       : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_LINK,

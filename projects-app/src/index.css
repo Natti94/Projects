@@ -81,12 +81,12 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   background: linear-gradient(180deg, rgba(44, 44, 44, 0.78) 0%, rgba(38, 38, 38, 0.76) 100%);
-  padding: 1rem;
+  padding: 1rem 1rem 5rem 1rem;
   margin: 0 auto;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.32);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 0;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   z-index: 1;
 }
@@ -131,8 +131,8 @@ body {
   margin: 0 auto 0.7rem auto;
   object-fit: contain;
   box-sizing: border-box;
-  border-radius: 0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.28);
 }
 
 .skills-intro {
@@ -146,7 +146,7 @@ body {
   padding: 0.9em 0.9em;
   width: 100%;
   max-width: 560px;
-  margin: 0 auto;
+  margin: 0 auto 0.6rem;
   box-sizing: border-box;
   border-radius: 0;
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -154,9 +154,6 @@ body {
 }
 
 .skills-list {
-  columns: 2;
-  -webkit-columns: 2;
-  -moz-columns: 2;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -164,6 +161,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .skills-list li {
@@ -352,15 +350,7 @@ body {
   color: lightgreen;
 }
 
-.news-feed {
-  flex: 1 1 22%;
-  font-family: 'Fira Code', monospace;
-  color: #ffffff;
-  max-width: 260px;
-  min-width: 180px;
-  text-align: left;
-  min-height: calc(100vh - 160px - 60px);
-}
+/* Removed unused .news-feed styles */
 
 .activity {
   position: fixed;
@@ -559,10 +549,6 @@ body {
     max-width: 900px;
   }
 
-  .news-feed {
-    max-width: 450px;
-  }
-
   .projects__grid {
     gap: 0.9rem;
     max-width: 100%;
@@ -578,10 +564,6 @@ body {
 
   .introduction {
     max-width: 700px;
-  }
-
-  .news-feed {
-    max-width: 400px;
   }
 
   .projects__grid {
@@ -649,10 +631,6 @@ body {
     max-width: 500px;
   }
 
-  .news-feed {
-    max-width: 250px;
-  }
-
   .projects__grid {
     grid-template-columns: repeat(2, minmax(160px, 1fr));
     gap: 0.8rem;
@@ -669,10 +647,6 @@ body {
 
   .introduction {
     max-width: 450px;
-  }
-
-  .news-feed {
-    max-width: 220px;
   }
 
   .projects__grid {
@@ -715,10 +689,6 @@ body {
     max-width: 425px;
   }
 
-  .news-feed {
-    max-width: 210px;
-  }
-
   .projects__grid {
     grid-template-columns: repeat(2, minmax(140px, 1fr));
     gap: 0.7rem;
@@ -734,10 +704,6 @@ body {
 
   .introduction {
     max-width: 400px;
-  }
-
-  .news-feed {
-    max-width: 200px;
   }
 
   .projects__grid {
@@ -763,8 +729,7 @@ body {
     max-width: 500px;
   }
 
-  .introduction,
-  .news-feed {
+  .introduction {
     min-height: calc(100vh - 150px - 60px);
   }
 
@@ -830,6 +795,7 @@ body {
   .project-card {
     height: auto;
     aspect-ratio: 4/3;
+
   }
 }
 
@@ -838,8 +804,7 @@ body {
     max-width: 350px;
   }
 
-  .introduction,
-  .news-feed {
+  .introduction {
     min-height: calc(100vh - 150px - 60px);
   }
 
@@ -869,8 +834,7 @@ body {
     max-width: 300px;
   }
 
-  .introduction,
-  .news-feed {
+  .introduction {
     min-height: calc(100vh - 150px - 60px);
   }
 
@@ -900,8 +864,7 @@ body {
     max-width: 250px;
   }
 
-  .introduction,
-  .news-feed {
+  .introduction {
     min-height: calc(100vh - 150px - 60px);
   }
 
@@ -931,8 +894,7 @@ body {
     max-width: 200px;
   }
 
-  .introduction,
-  .news-feed {
+  .introduction {
     min-height: calc(100vh - 150px - 60px);
   }
 
