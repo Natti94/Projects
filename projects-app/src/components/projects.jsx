@@ -30,7 +30,7 @@ function Projects() {
 
   const projectData = [
     {
-      name: "Tibia Optimizer",
+      name: "Tibia Optimizer [STILL UNDER DEVELOPMENT]",
       description: "A tool to optimize gameplay strategies for Tibia players.",
       image: assets.tibiaOptimizer_card,
       link: assets.tibiaOptimizer_link,
