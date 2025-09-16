@@ -8,6 +8,8 @@ const assetPaths = {
   chat_card: process.env.VITE_CLOUDINARY_CHAT_CARD,
   quiz_link: process.env.VITE_CLOUDINARY_QUIZ_LINK,
   quiz_card: process.env.VITE_CLOUDINARY_QUIZ_CARD,
+  weather_link: process.env.VITE_CLOUDINARY_WEATHER_LINK,
+  weather_card: process.env.VITE_CLOUDINARY_WEATHER_CARD,
   cv_link: process.env.VITE_CLOUDINARY_CV_LINK,
   cv_icon: process.env.VITE_CLOUDINARY_CV_ICON,
   linkedIn_link: process.env.VITE_CLOUDINARY_LINKEDIN_LINK,
