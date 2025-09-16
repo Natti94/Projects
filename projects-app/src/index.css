@@ -8,6 +8,10 @@ body {
   position: relative;
 }
 
+html {
+  overflow-x: clip;
+}
+
 .layout {
   display: flex;
   min-height: 100vh;
@@ -53,6 +57,7 @@ body {
   box-sizing: border-box;
   min-height: 100%;
   flex-grow: 1;
+  overflow-x: clip;
 }
 
 .divider {
@@ -67,7 +72,7 @@ body {
   width: 2px;
   height: 100%;
   background-color: rgba(76, 175, 80, 0.5);
-  border-radius: 2px;
+  border-radius: 0;
   opacity: 0.7;
 }
 
@@ -81,25 +86,33 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   background: linear-gradient(180deg, rgba(44, 44, 44, 0.78) 0%, rgba(38, 38, 38, 0.76) 100%);
-  padding: 1rem 1rem 5rem 1rem;
+  padding: 1rem;
   margin: 0 auto;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.32);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 0;
-  overflow: visible;
+  overflow-x: hidden;
+  overflow-y: visible;
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .introduction__section>h2 {
   color: #4CAF50;
-  font-size: 2.1rem;
+  font-size: clamp(1.25rem, 4.5vw, 2.1rem);
   font-weight: 800;
   letter-spacing: 0.5px;
   margin-top: 0.5rem;
   margin-bottom: 0.4rem;
   position: relative;
   text-align: center;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
 }
 
 .introduction__section>h2::after {
@@ -111,21 +124,21 @@ body {
   margin-left: auto;
   margin-right: auto;
   background: linear-gradient(90deg, #4CAF50, rgba(76, 175, 80, 0));
-  border-radius: 2px;
+  border-radius: 0;
 }
 
 .introduction__description {
   font-size: 1.1rem;
   color: #ffffff;
   margin: 0 auto 1.1rem auto;
-  max-width: 720px;
+  max-width: 100%;
   text-align: center;
   line-height: 1.6;
 }
 
 .skills__image {
   width: 100%;
-  max-width: 520px;
+  max-width: 100%;
   height: auto;
   display: block;
   margin: 0 auto 0.7rem auto;
@@ -145,12 +158,27 @@ body {
   background: rgba(44, 44, 44, 0.4);
   padding: 0.9em 0.9em;
   width: 100%;
-  max-width: 560px;
+  max-width: 100%;
   margin: 0 auto 0.6rem;
   box-sizing: border-box;
   border-radius: 0;
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.28);
+}
+
+/* Ensure section wrapper follows container width */
+.introduction__section {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Prevent any child from forcing horizontal overflow at high zoom */
+.introduction,
+.introduction * {
+  max-width: 100%;
+  min-width: 0;
 }
 
 .skills-list {
@@ -192,7 +220,7 @@ body {
   display: flex;
   flex-direction: column;
   background: rgba(35, 40, 35, 0.78);
-  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+  padding: 1rem 1rem 1.2rem 1rem;
   margin: 0;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.32);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -200,16 +228,22 @@ body {
   overflow: visible;
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .projects>h2 {
   color: #4CAF50;
-  font-size: 2.1rem;
+  font-size: clamp(1.25rem, 4.5vw, 2.1rem);
   font-weight: 800;
   letter-spacing: 0.5px;
   margin-top: 0.5rem;
   margin-bottom: 0.4rem;
   text-align: center;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
 }
 
 .projects>h2::after {
@@ -219,7 +253,7 @@ body {
   height: 3px;
   margin: 6px auto 0 auto;
   background: linear-gradient(90deg, #4CAF50, rgba(76, 175, 80, 0));
-  border-radius: 2px;
+  border-radius: 0;
 }
 
 .projects__grid {
@@ -337,7 +371,7 @@ body {
   background: rgba(0, 0, 0, 0.603);
   border: 1.5px solid rgba(255, 255, 255, 0.9);
   padding: 0.1rem 0.4rem;
-  border-radius: 2px;
+  border-radius: 0;
 }
 
 .link--highlight {
@@ -357,7 +391,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  min-width: 340px;
+  min-width: 0;
   max-width: 100vw;
   height: 110px;
   background: #4CAF50;
@@ -492,6 +526,7 @@ body {
   z-index: 90;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .nav__links {
@@ -611,11 +646,11 @@ body {
   }
 
   .introduction {
-    max-width: 550px;
+    max-width: 100%;
   }
 
   .projects__grid {
-    max-width: 400px;
+    max-width: 100%;
     gap: 0.7rem;
     grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   }
@@ -628,13 +663,13 @@ body {
   }
 
   .introduction {
-    max-width: 500px;
+    max-width: 100%;
   }
 
   .projects__grid {
     grid-template-columns: repeat(2, minmax(160px, 1fr));
     gap: 0.8rem;
-    max-width: 600px;
+    max-width: 100%;
     justify-content: center;
   }
 
@@ -646,13 +681,13 @@ body {
   }
 
   .introduction {
-    max-width: 450px;
+    max-width: 100%;
   }
 
   .projects__grid {
     grid-template-columns: repeat(2, minmax(150px, 1fr));
     gap: 0.75rem;
-    max-width: 600px;
+    max-width: 100%;
     justify-content: center;
   }
 
@@ -686,7 +721,7 @@ body {
   }
 
   .introduction {
-    max-width: 425px;
+    max-width: 100%;
   }
 
   .projects__grid {
@@ -703,13 +738,13 @@ body {
   }
 
   .introduction {
-    max-width: 400px;
+    max-width: 100%;
   }
 
   .projects__grid {
     grid-template-columns: repeat(2, minmax(140px, 1fr));
     gap: 0.7rem;
-    max-width: 600px;
+    max-width: 100%;
     justify-content: center;
   }
 
@@ -736,7 +771,7 @@ body {
   .projects__grid {
     grid-template-columns: repeat(2, minmax(130px, 1fr));
     gap: 0.6rem;
-    max-width: 600px;
+    max-width: 100%;
     justify-content: center;
   }
 
@@ -756,7 +791,7 @@ body {
   .introduction,
   .projects {
     padding: 1rem 0.3rem 1rem 0.3rem;
-    border-radius: 8px;
+    border-radius: 0;
   }
 
   .projects__grid {
@@ -811,7 +846,7 @@ body {
   .projects__grid {
     grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
     gap: 0.45rem;
-    max-width: 200px;
+    max-width: 100%;
     justify-content: center;
   }
 
@@ -841,7 +876,7 @@ body {
   .projects__grid {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 0.4rem;
-    max-width: 200px;
+    max-width: 100%;
     justify-content: center;
   }
 
@@ -871,7 +906,7 @@ body {
   .projects__grid {
     grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
     gap: 0.2rem;
-    max-width: 200px;
+    max-width: 100%;
     justify-content: center;
   }
 
@@ -901,7 +936,7 @@ body {
   .projects__grid {
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
     gap: 0.2rem;
-    max-width: 200px;
+    max-width: 100%;
     justify-content: center;
   }
 

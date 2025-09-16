@@ -1,191 +1,103 @@
-
 # Projects App
 
->A full-stack React + Express + Vite application for showcasing projects, commit history, and asset management, deployed on Netlify with serverless functions.
+>A React + Vite app with a local Express helper for development and Netlify Functions in production. Shows projects, recent commits, and serves asset links via environment variables.
 
-## Features
+## Repo layout
 
-- **Modern React UI**: Responsive, themed interface with navigation, project panels, and commit history.
-- **Commit History Panel**: Displays recent git commits from the backend.
-- **Asset Management**: All asset URLs (images, links, icons) are managed via environment variables and served through a Netlify serverless function for secure, dynamic access.
-- **Express API**: Backend API for commit history, proxied in development via Vite.
-- **Netlify Functions**: Production API endpoints and asset redirects handled by Netlify serverless functions.
-- **SPA Routing**: Client-side routing with React Router and Netlify `_redirects` for seamless navigation.
-- **Environment Variable Support**: Uses `.env` for local development and Netlify environment variables for production.
-
-## Project Structure
-
-```
-├── netlify/
-│   └── functions/
-│       ├── getAssets.js       # Netlify function for asset redirects
-│       └── getCommits.js      # Netlify function for commit history
-├── public/
-│   └── _redirects             # Netlify redirects for SPA and API
-├── src/
-│   ├── App.jsx                # Main React app
-│   ├── main.jsx               # Entry point
-│   ├── index.css              # Global styles
-├── package.json               # Scripts and dependencies
-├── vite.config.js             # Vite config with API proxy
-└── README.md                  # Project documentation
-```
-
-## Getting Started
-
-### Prerequisites
-- Node.js (v18+ recommended)
-- npm
-
-### Local Development
-
-1. **Clone the repository:**
-	```sh
-	git clone <your-repo-url>
-	cd projects-app
-	```
-
-2. **Install dependencies:**
-	```sh
-	npm install
-	```
-
-3. **Set up environment variables:**
-4. **Start the development servers:**
-	```sh
-	npm run dev
-	```
-	- This runs both the Vite frontend and Express backend (with API proxying). The Express backend is only used locally; in production, Netlify functions handle API routes.
-
-5. **View the app:**
-	- Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-### Build for Production
-
-```sh
-npm run build
-```
-- Output is in the `dist/` folder.
-- Ensure `public/_redirects` is copied to `dist/_redirects` for Netlify deployment.
-
-### Deploying to Netlify
-
-1. **Connect your repo to Netlify.**
-2. **Set environment variables** in the Netlify dashboard (same as in `.env`).
-3. **Set build command:**
-	```sh
-4. **Set publish directory:**
-	```
-	dist
-	```
-5. **Functions directory:**
-	```
-	netlify/functions
-	```
-6. **Ensure `_redirects` is present in `dist/` after build.**
-7. **Node version for Netlify Functions:**
-	- This project uses the global `fetch` API in Netlify functions (Node 18+). No need for `node-fetch`.
-	- If you get errors about `fetch` not being defined, set your Netlify function runtime to Node 18+ (see Netlify docs or add a `netlify.toml` with `[functions] node_version = "18"`).
-
-## Environment Variables
-
-All asset URLs and external links are managed via environment variables. Example:
-
-```
-VITE_CLOUDINARY_PROFILE_ICON=...
-VITE_CLOUDINARY_CODE_EFFECT_LINK=...
-VITE_CLOUDINARY_MERN_IMAGE=...
-# ...etc
-```
-
-These are used by both the frontend and the Netlify function for secure, dynamic asset access.
-
-## API Endpoints
-
-- **/api/commits** (local Express, or Netlify function in production): Returns recent git commit history. Uses the global `fetch` API in production (Node 18+).
-## Redirects and Routing
-
-- `/api/assets` routes to the Netlify function in production.
-- All other routes fallback to `index.html` for SPA support.
-
-Example:
-```
-/api/commits    /.netlify/functions/getCommits   200
-/api/assets     /.netlify/functions/getAssets    200
-
-- `npm run build` – Build the frontend for production
-- `npm run lint` – Lint the codebase
-- `npm run preview` – Preview the production build locally
-
-## Troubleshooting
-
-
-# Projects App
-
-- **GitHub API 404 or errors in production:**
-
-## Features
-
-- Responsive React UI with Introduction, Projects, and Activity panels
-- Project cards: smooth hover, image stays bright, and readable title/description boxes on hover (no green card border)
-- Navigation icons turn white on hover for contrast
-- Commit Activity: shows message, author, repository name, and relative time
-- Asset management via environment variables, served securely by a Netlify Function
-- Local Express API for dev; Netlify Functions in production
-
-## Repository layout
-
-This repo contains the app inside the `projects-app/` folder:
+This repository contains the app inside the `projects-app/` folder:
 
 ```
 projects-app/
-	netlify/functions/        # Netlify Functions: getAssets, getCommits
-	public/_redirects         # SPA routing + API rewrites
-	src/                      # React app (components, styles)
-	package.json, vite.config.js, README.md
+	netlify/
+		functions/
+			getAssets.js   # Netlify Function: redirects to asset URLs from env
+			getCommits.js  # Netlify Function: fetch recent commits from GitHub
+	public/
+		_redirects       # SPA routing + API rewrites for Netlify
+	src/
+		App.jsx, main.jsx, index.css, server.js (local dev Express API)
+	package.json, vite.config.js
 ```
 
-## Quick start
+## Features
 
-1) Clone, then enter the app folder
+- Responsive React UI (Introduction, Projects, Activity)
+- Commit Activity (message, author, repo, relative time)
+- Asset links served via a Netlify Function using env variables
+- Local Express API for dev; Netlify Functions in production
 
-```sh
-git clone <your-repo-url>
-cd Projects/projects-app
-```
+## Local development
 
-2) Install and run
+In `projects-app/`:
 
 ```sh
 npm install
 npm run dev
 ```
 
-App: http://localhost:5173
+- App will be at http://localhost:5173
+- Vite proxies `/api/*` to the local Express server (see `vite.config.js`).
+- Locally, only `/api/commits` is handled by Express (`src/server.js`).
 
-## Environment variables (examples)
+- To test Netlify Functions locally (e.g., `/api/assets`), use Netlify Dev:
+	- Install: `npm i -g netlify-cli`
+	- Run from `projects-app/`: `netlify dev`
 
-Create `.env` in `projects-app/` with the variables your assets use:
+## Environment variables
+
+Create `projects-app/.env` with the variables your assets use, for example:
 
 ```
 VITE_CLOUDINARY_MERN_IMAGE=
-VITE_CLOUDINARY_TIBIA_OPTIMIZER_BACKGROUND=
-VITE_CLOUDINARY_CHAT_BACKGROUND=
+VITE_CLOUDINARY_TIBIA_OPTIMIZER_CARD=
+
 VITE_CLOUDINARY_TIBIA_OPTIMIZER_LINK=
+VITE_CLOUDINARY_CHAT_CARD=
 VITE_CLOUDINARY_CHAT_LINK=
 
-VITE_CLOUDINARY_CV_LINK=
-VITE_CLOUDINARY_LINKEDIN_LINK=
-VITE_CLOUDINARY_MAIL_LINK=
-VITE_CLOUDINARY_GITHUB_LINK=
-VITE_CLOUDINARY_DISCORD_LINK=
+VITE_CLOUDINARY_QUIZ_CARD=
+VITE_CLOUDINARY_QUIZ_LINK=
+VITE_CLOUDINARY_WEATHER_CARD=
 
+VITE_CLOUDINARY_WEATHER_LINK=
 VITE_CLOUDINARY_CV_ICON=
+VITE_CLOUDINARY_CV_LINK=
+
 VITE_CLOUDINARY_LINKEDIN_ICON=
+VITE_CLOUDINARY_LINKEDIN_LINK=
 VITE_CLOUDINARY_MAIL_ICON=
+
+VITE_CLOUDINARY_MAIL_LINK=
 VITE_CLOUDINARY_GITHUB_ICON=
+VITE_CLOUDINARY_GITHUB_LINK=
+
 VITE_CLOUDINARY_DISCORD_ICON=
+VITE_CLOUDINARY_DISCORD_LINK=
 ```
+
+## API endpoints
+
+- Dev (local Express):
+	- `GET /api/commits` — returns recent commits from local git history
+- Production (Netlify Functions):
+
+	- `GET /api/commits` → `/.netlify/functions/getCommits`
+	- `GET /api/assets?asset=<name>` → `/.netlify/functions/getAssets` (redirects to the URL from env)
+
+`public/_redirects` contains the rules used by Netlify:
+
+```
+/api/commits    /.netlify/functions/getCommits   200
+/api/assets     /.netlify/functions/getAssets    200
+
+/*              /index.html                      200
+```
+
+Notes for `getCommits.js`:
+
+- Uses GitHub’s public API. Update `owner`/`repo` as needed.
+- For private repos, set `GITHUB_TOKEN` in Netlify env and add the Authorization header.
+- Functions run on Node 18+ where `fetch` is global.
 
 ## Build and deploy (Netlify)
 
@@ -193,15 +105,16 @@ VITE_CLOUDINARY_DISCORD_ICON=
 npm run build
 ```
 
-- Publish dir: `dist`
-- Functions dir: `netlify/functions`
-- Ensure `public/_redirects` gets copied to `dist/_redirects`
+- Publish directory: `dist`
+- Functions directory: `netlify/functions`
+- Ensure `_redirects` is present in `dist/` after build (Vite will copy from `public/`).
+
 - Netlify Functions runtime: Node 18+
 
-## API routes
+## Troubleshooting
 
-- `/api/commits` → get recent commits (Netlify Function in prod)
-- `/api/assets?asset=<name>` → redirects to the asset URL from env
+- If `/api/assets` works in production but 404s locally, run with Netlify Dev (`netlify dev`) to proxy functions.
+- If GitHub API returns 403/404, verify repo path and auth (token for private repos).
 
 ## License
 
