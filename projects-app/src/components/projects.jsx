@@ -36,20 +36,20 @@ function Projects() {
       link: assets.tibiaOptimizer_link,
     },
     {
-      name: "Chatify",
+      name: "Chat",
       description: "A real-time chat application with modern features.",
       image: assets.chat_card,
       link: assets.chat_link,
     },
     {
-      name: "Quiz App",
+      name: "Quiz",
       description: "A web app providing quizzes in several subjects.",
       image: assets.quiz_card,
       link: assets.quiz_link,
     },
 
     {
-      name: "Weather App",
+      name: "Weather",
       description: "A project providing weather forecasts and information.",
       image: assets.weather_card,
       link: assets.weather_link,
