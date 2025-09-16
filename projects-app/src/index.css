@@ -297,8 +297,8 @@ html {
 
 .project-card:hover {
   transform: translateZ(0) scale(1.05);
-  border: 2px solid transparent;
-  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.5);
+  border: 2px solid lightgreen;
+  box-shadow: 0 8px 25px rgba(0, 255, 8, 0.801);
   z-index: 9999;
 }
 
