@@ -11,6 +11,9 @@ function Projects() {
     quiz_card: isProd
       ? "/api/assets?asset=quiz_card"
       : import.meta.env.VITE_CLOUDINARY_QUIZ_CARD,
+    weather_card: isProd
+      ? "/api/assets?asset=weather_card"
+      : import.meta.env.VITE_CLOUDINARY_WEATHER_CARD,
     tibiaOptimizer_link: isProd
       ? "/api/assets?asset=tibiaOptimizer_link"
       : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_LINK,
@@ -43,10 +46,10 @@ function Projects() {
     },
 
     {
-      name: "Refrigerator",
-      description: "A project simulating a smart refrigerator system.",
-      image: "https://placehold.co/200x200/2c2c2c/4caf50?text=Fridge",
-      link: "https://example.com/refrigerator",
+      name: "Weather App",
+      description: "A project providing weather forecasts and information.",
+      image: assets.weather_card,
+      link: assets.weather_link,
     },
   ];
 
