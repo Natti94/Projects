@@ -23,7 +23,10 @@ function Projects() {
     quiz_link: isProd
       ? "/api/assets?asset=quiz_link"
       : import.meta.env.VITE_CLOUDINARY_QUIZ_LINK,
-  };
+    weather_link: isProd
+      ? "/api/assets?asset=weather_link"
+      : import.meta.env.VITE_CLOUDINARY_WEATHER_LINK,
+    };
 
   const projectData = [
     {
