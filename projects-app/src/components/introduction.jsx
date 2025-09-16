@@ -44,12 +44,6 @@ function Introduction() {
           src={assets.mern_image}
           alt="MERN Stack"
           className="skills__image"
-          onError={(e) => {
-            const fallback = import.meta.env.VITE_CLOUDINARY_MERN_IMAGE;
-            if (fallback && e.currentTarget.src !== fallback) {
-              e.currentTarget.src = fallback;
-            }
-          }}
         />
         <div className="introduction__description">
           <p className="skills-intro">
