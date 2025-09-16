@@ -1,6 +1,6 @@
 # Projects App
 
->A React + Vite app with a local Express helper for development and Netlify Functions in production. Shows projects, recent commits, and serves asset links via environment variables.
+>Portfolio with a local Express helper for development and Netlify Functions in production. Shows projects, recent commits, and serves asset links via environment variables.
 
 ## Repo layout
 
