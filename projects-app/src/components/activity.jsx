@@ -22,11 +22,33 @@ function formatRelativeTime(dateString) {
 function Activity() {
   const [commits, setCommits] = useState([]);
   const [current, setCurrent] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("/api/commits")
-      .then((res) => res.json())
-      .then(setCommits);
+    const params = new URLSearchParams({
+      all_repos: "true",
+      per_page: "20",
+      limit: "100",
+    });
+    setLoading(true);
+    setError("");
+    fetch(`/api/commits?${params.toString()}`)
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then((data) => {
+        const sorted = Array.isArray(data)
+          ? data
+              .filter((c) => c && c.date)
+              .sort((a, b) => new Date(b.date) - new Date(a.date))
+          : [];
+        setCommits(sorted);
+        setCurrent(0);
+      })
+      .catch((e) => setError(e.message || "Failed to load commits"))
+      .finally(() => setLoading(false));
   }, []);
 
   const goLeft = () => setCurrent((prev) => (prev > 0 ? prev - 1 : prev));
@@ -36,6 +58,18 @@ function Activity() {
   return (
     <div className="activity">
       <div className="activity__navigation">
+        {loading && (
+          <div className="activity__commit activity__commit--single">
+            <span className="activity__label">ACTIVITY FEED</span>
+            <span className="activity__message">Loading commits…</span>
+          </div>
+        )}
+        {!loading && error && (
+          <div className="activity__commit activity__commit--single">
+            <span className="activity__label">ACTIVITY FEED</span>
+            <span className="activity__message">{error}</span>
+          </div>
+        )}
         {current > 0 && (
           <button
             onClick={goLeft}
@@ -47,7 +81,7 @@ function Activity() {
             </svg>
           </button>
         )}
-        {commits.length > 0 && (
+        {!loading && !error && commits.length > 0 && (
           <div className="activity__commit activity__commit--single">
             <span className="activity__label">ACTIVITY FEED</span>
             <span className="activity__message">
@@ -57,6 +91,12 @@ function Activity() {
               by {commits[current].author} · {commits[current].repository} ·{" "}
               {formatRelativeTime(commits[current].date)}
             </div>
+          </div>
+        )}
+        {!loading && !error && commits.length === 0 && (
+          <div className="activity__commit activity__commit--single">
+            <span className="activity__label">ACTIVITY FEED</span>
+            <span className="activity__message">No recent commits found</span>
           </div>
         )}
         {current < commits.length - 1 && (
