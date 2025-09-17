@@ -47,7 +47,6 @@ function Projects() {
       image: assets.quiz_card,
       link: assets.quiz_link,
     },
-
     {
       name: "Weather",
       description: "A project providing weather forecasts and information.",
