@@ -62,9 +62,8 @@ function Projects() {
     {
       name: "Gomoku",
       description: "A web-based implementation of the classic Gomoku game.",
-      image:
-        "https://res.cloudinary.com/dk0z4ums3/image/upload/v1696347203/gomoku_card_uxh2rj.png",
-      link: "https://gomoku-app.vercel.app/",
+      image: assets.gomoku_card,
+      link: assets.gomoku_link,
     },
   ];
 
