@@ -47,7 +47,7 @@ exports.handler = async (event) => {
         while (results.length < reposLimit) {
           const url = `${base}?per_page=${Math.min(
             100,
-            reposLimit
+            reposLimit,
           )}&page=${rp}&type=owner&sort=updated`;
           const res = await fetch(url, { headers });
           if (!res.ok) return false;
@@ -61,7 +61,7 @@ exports.handler = async (event) => {
       };
 
       const okUser = await listEndpoint(
-        `https://api.github.com/users/${owner}/repos`
+        `https://api.github.com/users/${owner}/repos`,
       );
       if (!okUser) {
         await listEndpoint(`https://api.github.com/orgs/${owner}/repos`);

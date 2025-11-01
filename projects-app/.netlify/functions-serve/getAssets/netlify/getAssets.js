@@ -7,25 +7,30 @@ var __export = (target, all) => {
     __defProp(target, name, { get: all[name], enumerable: true });
 };
 var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
+  if ((from && typeof from === "object") || typeof from === "function") {
     for (let key of __getOwnPropNames(from))
       if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+        __defProp(to, key, {
+          get: () => from[key],
+          enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable,
+        });
   }
   return to;
 };
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var __toCommonJS = (mod) =>
+  __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
 // netlify/getAssets.js
 var getAssets_exports = {};
 __export(getAssets_exports, {
-  handler: () => handler
+  handler: () => handler,
 });
 module.exports = __toCommonJS(getAssets_exports);
 var assetPaths = {
   mern_image: process.env.VITE_CLOUDINARY_MERN_IMAGE,
   tibiaOptimizer_link: process.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_LINK,
-  tibiaOptimizer_background: process.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_BACKGROUND,
+  tibiaOptimizer_background:
+    process.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_BACKGROUND,
   tibiaOptimizer_icon: process.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_ICON,
   chat_link: process.env.VITE_CLOUDINARY_CHAT_LINK,
   chat_icon: process.env.VITE_CLOUDINARY_CHAT_ICON,
@@ -38,7 +43,7 @@ var assetPaths = {
   gitHub_icon: process.env.VITE_CLOUDINARY_GITHUB_ICON,
   gitHub_link: process.env.VITE_CLOUDINARY_GITHUB_LINK,
   discord_link: process.env.VITE_CLOUDINARY_DISCORD_LINK,
-  discord_icon: process.env.VITE_CLOUDINARY_DISCORD_ICON
+  discord_icon: process.env.VITE_CLOUDINARY_DISCORD_ICON,
 };
 async function handler(event) {
   const { asset } = event.queryStringParameters;
@@ -46,36 +51,37 @@ async function handler(event) {
     console.error("No asset parameter provided");
     return {
       statusCode: 400,
-      body: JSON.stringify({ error: "Asset parameter is required" })
+      body: JSON.stringify({ error: "Asset parameter is required" }),
     };
   }
   const url = assetPaths[asset];
   if (!url) {
     console.error(
       `Asset '${asset}' not found or environment variable not set. Available assets: ${Object.keys(
-        assetPaths
-      ).join(", ")}`
+        assetPaths,
+      ).join(", ")}`,
     );
     return {
       statusCode: 400,
       body: JSON.stringify({
         error: `Asset '${asset}' not found or environment variable not set. Available assets: ${Object.keys(
-          assetPaths
-        ).join(", ")}`
-      })
+          assetPaths,
+        ).join(", ")}`,
+      }),
     };
   }
   console.log(`Redirecting to asset: ${url} for asset: ${asset}`);
   return {
     statusCode: 302,
     headers: {
-      Location: url
+      Location: url,
     },
-    body: ""
+    body: "",
   };
 }
 // Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  handler
-});
+0 &&
+  (module.exports = {
+    handler,
+  });
 //# sourceMappingURL=getAssets.js.map

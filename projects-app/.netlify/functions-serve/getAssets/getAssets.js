@@ -1,1 +1,1 @@
-module.exports = require('./netlify/getAssets.js')
+module.exports = require("./netlify/getAssets.js");

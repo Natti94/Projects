@@ -14,6 +14,9 @@ function Projects() {
     weather_card: isProd
       ? "/api/assets?asset=weather_card"
       : import.meta.env.VITE_CLOUDINARY_WEATHER_CARD,
+    gomoku_card: isProd
+      ? "/api/assets?asset=gomoku_card"
+      : import.meta.env.VITE_CLOUDINARY_GOMOKU_CARD,
     tibiaOptimizer_link: isProd
       ? "/api/assets?asset=tibiaOptimizer_link"
       : import.meta.env.VITE_CLOUDINARY_TIBIA_OPTIMIZER_LINK,
@@ -26,7 +29,10 @@ function Projects() {
     weather_link: isProd
       ? "/api/assets?asset=weather_link"
       : import.meta.env.VITE_CLOUDINARY_WEATHER_LINK,
-    };
+    gomoku_link: isProd
+      ? "/api/assets?asset=gomoku_link"
+      : import.meta.env.VITE_CLOUDINARY_GOMOKU_LINK,
+  };
 
   const projectData = [
     {
@@ -52,6 +58,13 @@ function Projects() {
       description: "A project providing weather forecasts and information.",
       image: assets.weather_card,
       link: assets.weather_link,
+    },
+    {
+      name: "Gomoku",
+      description: "A web-based implementation of the classic Gomoku game.",
+      image:
+        "https://res.cloudinary.com/dk0z4ums3/image/upload/v1696347203/gomoku_card_uxh2rj.png",
+      link: "https://gomoku-app.vercel.app/",
     },
   ];
 

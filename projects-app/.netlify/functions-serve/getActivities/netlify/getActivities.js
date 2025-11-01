@@ -7,19 +7,23 @@ var __export = (target, all) => {
     __defProp(target, name, { get: all[name], enumerable: true });
 };
 var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
+  if ((from && typeof from === "object") || typeof from === "function") {
     for (let key of __getOwnPropNames(from))
       if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+        __defProp(to, key, {
+          get: () => from[key],
+          enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable,
+        });
   }
   return to;
 };
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var __toCommonJS = (mod) =>
+  __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
 // netlify/getActivities.js
 var getActivities_exports = {};
 __export(getActivities_exports, {
-  handler: () => handler
+  handler: () => handler,
 });
 module.exports = __toCommonJS(getActivities_exports);
 async function handler(event) {
@@ -29,7 +33,7 @@ async function handler(event) {
   const url = `https://api.github.com/repos/${owner}/${repo}/commits?per_page=${per_page}`;
   try {
     const headers = {
-      "User-Agent": "NetlifyFunction"
+      "User-Agent": "NetlifyFunction",
     };
     if (process.env.GITHUB_TOKEN) {
       headers["Authorization"] = `token ${process.env.GITHUB_TOKEN}`;
@@ -44,27 +48,28 @@ async function handler(event) {
       author: activity2.commit.author.name,
       date: activity2.commit.author.date,
       message: activity2.commit.message,
-      url: activity2.html_url
+      url: activity2.html_url,
     }));
     return {
       statusCode: 200,
       body: JSON.stringify(activity),
       headers: {
-        "Content-Type": "application/json"
-      }
+        "Content-Type": "application/json",
+      },
     };
   } catch (err) {
     return {
       statusCode: 500,
       body: JSON.stringify({
         error: "Failed to retrieve activity",
-        details: err.message
-      })
+        details: err.message,
+      }),
     };
   }
 }
 // Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  handler
-});
+0 &&
+  (module.exports = {
+    handler,
+  });
 //# sourceMappingURL=getActivities.js.map

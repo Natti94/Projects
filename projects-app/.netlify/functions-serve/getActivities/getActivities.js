@@ -1,1 +1,1 @@
-module.exports = require('./netlify/getActivities.js')
+module.exports = require("./netlify/getActivities.js");

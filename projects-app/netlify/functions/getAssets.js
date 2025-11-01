@@ -10,6 +10,8 @@ const assetPaths = {
   quiz_card: process.env.VITE_CLOUDINARY_QUIZ_CARD,
   weather_link: process.env.VITE_CLOUDINARY_WEATHER_LINK,
   weather_card: process.env.VITE_CLOUDINARY_WEATHER_CARD,
+  gomoku_link: process.env.VITE_CLOUDINARY_GOMOKU_LINK,
+  gomoku_card: process.env.VITE_CLOUDINARY_GOMOKU_CARD,
   cv_link: process.env.VITE_CLOUDINARY_CV_LINK,
   cv_icon: process.env.VITE_CLOUDINARY_CV_ICON,
   linkedIn_link: process.env.VITE_CLOUDINARY_LINKEDIN_LINK,
@@ -37,14 +39,14 @@ export async function handler(event) {
   if (!url) {
     console.error(
       `Asset '${asset}' not found or environment variable not set. Available assets: ${Object.keys(
-        assetPaths
-      ).join(", ")}`
+        assetPaths,
+      ).join(", ")}`,
     );
     return {
       statusCode: 400,
       body: JSON.stringify({
         error: `Asset '${asset}' not found or environment variable not set. Available assets: ${Object.keys(
-          assetPaths
+          assetPaths,
         ).join(", ")}`,
       }),
     };

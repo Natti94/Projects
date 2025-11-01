@@ -40,6 +40,7 @@
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js (v18+ recommended)
 - npm
 
@@ -99,17 +100,17 @@ Artifacts in `dist/`.
 ## API Endpoints
 
 - `/api/commits` – GitHub commits (Netlify Function in production)
-	- Query params:
-		- `owner` (optional) – GitHub owner/user/org; defaults to env `GITHUB_OWNER` or `Natti94`
-		- `repo` (optional) – repository name; defaults to env `GITHUB_REPO` or `Projects`
-		- `page` (optional) – page index (default 1)
-		- `per_page` (optional) – items per page (1–100, default 30)
-		- `all` (optional) – `true` to fetch all pages; respects `limit` and caps at ~1000 by default
-		- `limit` (optional) – max commits to return when `all=true` (safety cap up to 5000)
-	- Examples:
-		- `/api/commits?owner=Natti94&repo=Projects&per_page=10`
-		- `/api/commits?owner=Natti94&repo=Projects&all=true&limit=200`
-	- Auth: set `GITHUB_TOKEN` (or `GH_TOKEN`) to raise GitHub API rate limits.
+  - Query params:
+    - `owner` (optional) – GitHub owner/user/org; defaults to env `GITHUB_OWNER` or `Natti94`
+    - `repo` (optional) – repository name; defaults to env `GITHUB_REPO` or `Projects`
+    - `page` (optional) – page index (default 1)
+    - `per_page` (optional) – items per page (1–100, default 30)
+    - `all` (optional) – `true` to fetch all pages; respects `limit` and caps at ~1000 by default
+    - `limit` (optional) – max commits to return when `all=true` (safety cap up to 5000)
+  - Examples:
+    - `/api/commits?owner=Natti94&repo=Projects&per_page=10`
+    - `/api/commits?owner=Natti94&repo=Projects&all=true&limit=200`
+  - Auth: set `GITHUB_TOKEN` (or `GH_TOKEN`) to raise GitHub API rate limits.
 - `/api/assets?asset=<name>` – redirects to env-defined asset URL
 
 ## License
