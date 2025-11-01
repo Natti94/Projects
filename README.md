@@ -1,6 +1,6 @@
 # Projects App
 
->Portfolio with a local Express helper for development and Netlify Functions in production. Shows projects, recent commits, and serves asset links via environment variables.
+> Portfolio with a local Express helper for development and Netlify Functions in production. Shows projects, recent commits, and serves asset links via environment variables.
 
 ## Repo layout
 
@@ -40,8 +40,8 @@ npm run dev
 - Locally, only `/api/commits` is handled by Express (`src/server.js`).
 
 - To test Netlify Functions locally (e.g., `/api/assets`), use Netlify Dev:
-	- Install: `npm i -g netlify-cli`
-	- Run from `projects-app/`: `netlify dev`
+  - Install: `npm i -g netlify-cli`
+  - Run from `projects-app/`: `netlify dev`
 
 ## Environment variables
 
@@ -78,11 +78,10 @@ VITE_CLOUDINARY_DISCORD_LINK=
 ## API endpoints
 
 - Dev (local Express):
-	- `GET /api/commits` — returns recent commits from local git history
+  - `GET /api/commits` — returns recent commits from local git history
 - Production (Netlify Functions):
-
-	- `GET /api/commits` → `/.netlify/functions/getCommits`
-	- `GET /api/assets?asset=<name>` → `/.netlify/functions/getAssets` (redirects to the URL from env)
+  - `GET /api/commits` → `/.netlify/functions/getCommits`
+  - `GET /api/assets?asset=<name>` → `/.netlify/functions/getAssets` (redirects to the URL from env)
 
 `public/_redirects` contains the rules used by Netlify:
 
@@ -118,11 +117,7 @@ npm run build
 
 ## License
 
-MIT
-	- Make sure your repo owner and name are correct in `getCommits.js`.
-	- If your repo is private, set a `GITHUB_TOKEN` in Netlify environment variables.
-	- For public repos, no token is needed and the Authorization header should be removed.
-	- Ensure your Netlify function runtime is Node 18+ for global `fetch` support.
+MIT - Make sure your repo owner and name are correct in `getCommits.js`. - If your repo is private, set a `GITHUB_TOKEN` in Netlify environment variables. - For public repos, no token is needed and the Authorization header should be removed. - Ensure your Netlify function runtime is Node 18+ for global `fetch` support.
 
 ## License
 
